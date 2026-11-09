@@ -1,0 +1,74 @@
+variant_rank,representative_case_id,activity_position,activity
+1,PALM-000006,1,Harvest Batch Created
+1,PALM-000006,2,Harvest Plan Approved
+1,PALM-000006,3,Field Team Assigned
+1,PALM-000006,4,Harvest Collection Dispatched
+1,PALM-000006,5,Palm Ripeness Assessed
+1,PALM-000006,6,FFB Harvested
+1,PALM-000006,7,FFB Field Grading
+1,PALM-000006,8,FFB Loaded for Transport
+1,PALM-000006,9,Transport to Palm Oil Mill
+1,PALM-000006,10,Mill Weighbridge Inbound
+1,PALM-000006,11,Incoming FFB Quality Inspection
+1,PALM-000006,12,FFB Receipt Accepted
+1,PALM-000006,13,Steam and Boiler Readiness Checked
+1,PALM-000006,14,FFB Unloaded at Sterilizer Ramp
+1,PALM-000006,15,FFB Sterilization Completed
+1,PALM-000006,16,FFB Threshing Completed
+1,PALM-000006,17,Fruit Digestion Completed
+1,PALM-000006,18,Crude Oil Pressing Completed
+1,PALM-000006,19,Kernel Separation Completed
+1,PALM-000006,20,Oil Clarification Completed
+1,PALM-000006,21,Kernel Drying Completed
+1,PALM-000006,22,Oil Purification Completed
+1,PALM-000006,23,CPO Laboratory Tested
+1,PALM-000006,24,CPO Storage Tank Updated
+1,PALM-000006,25,CPO Transfer Authorized
+1,PALM-000006,26,CPO Loaded for Dispatch
+1,PALM-000006,27,CPO Dispatch Confirmed
+1,PALM-000006,28,CPO Sales Invoice Issued
+1,PALM-000006,29,Buyer Remittance Matched
+1,PALM-000006,30,Harvest Lot Closed
+2,PALM-000007,1,Harvest Batch Created
+2,PALM-000007,2,Harvest Plan Approved
+2,PALM-000007,3,Field Team Assigned
+2,PALM-000007,4,Harvest Collection Dispatched
+2,PALM-000007,5,Palm Ripeness Assessed
+2,PALM-000007,6,FFB Harvested
+2,PALM-000007,7,FFB Field Grading
+2,PALM-000007,8,FFB Loaded for Transport
+2,PALM-000007,9,Transport to Palm Oil Mill
+2,PALM-000007,10,Mill Weighbridge Inbound
+2,PALM-000007,11,Incoming FFB Quality Inspection
+2,PALM-000007,12,FFB Lot Rejected
+2,PALM-000007,13,Harvest Lot Closed
+3,PALM-000005,1,Harvest Batch Created
+3,PALM-000005,2,Harvest Plan Approved
+3,PALM-000005,3,Field Team Assigned
+3,PALM-000005,4,Harvest Collection Dispatched
+3,PALM-000005,5,Palm Ripeness Assessed
+3,PALM-000005,6,FFB Harvested
+3,PALM-000005,7,FFB Field Grading
+3,PALM-000005,8,FFB Loaded for Transport
+3,PALM-000005,9,Transport to Palm Oil Mill
+3,PALM-000005,10,Mill Weighbridge Inbound
+3,PALM-000005,11,Incoming FFB Quality Inspection
+3,PALM-000005,12,FFB Receipt Accepted
+3,PALM-000005,13,Steam and Boiler Readiness Checked
+3,PALM-000005,14,FFB Unloaded at Sterilizer Ramp
+3,PALM-000005,15,FFB Sterilization Completed
+3,PALM-000005,16,FFB Threshing Completed
+3,PALM-000005,17,Fruit Digestion Completed
+3,PALM-000005,18,Crude Oil Pressing Completed
+3,PALM-000005,19,Oil Clarification Completed
+3,PALM-000005,20,Kernel Separation Completed
+3,PALM-000005,21,Oil Purification Completed
+3,PALM-000005,22,Kernel Drying Completed
+3,PALM-000005,23,CPO Laboratory Tested
+3,PALM-000005,24,CPO Storage Tank Updated
+3,PALM-000005,25,CPO Transfer Authorized
+3,PALM-000005,26,CPO Loaded for Dispatch
+3,PALM-000005,27,CPO Dispatch Confirmed
+3,PALM-000005,28,CPO Sales Invoice Issued
+3,PALM-000005,29,Buyer Remittance Matched
+3,PALM-000005,30,Harvest Lot Closed

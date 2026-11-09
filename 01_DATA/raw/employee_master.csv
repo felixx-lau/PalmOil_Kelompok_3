@@ -1,0 +1,82 @@
+employee_id,employee_name,employee_role,department_id,department,experience_years,hourly_cost_myr,resource_id,organizational_unit
+EMP-001,Synthetic Estate Scheduler Duty Slot 1,Estate Scheduler,DEP-01,Plantation Planning,2,34.00,RES-001,Estate Management
+EMP-002,Synthetic Estate Scheduler Duty Slot 2,Estate Scheduler,DEP-01,Plantation Planning,3,34.85,RES-002,Estate Management
+EMP-003,Synthetic Estate Scheduler Duty Slot 3,Estate Scheduler,DEP-01,Plantation Planning,4,35.70,RES-003,Estate Management
+EMP-004,Synthetic Estate Supervisor Duty Slot 1,Estate Supervisor,DEP-01,Plantation Planning,2,44.00,RES-004,Estate Management
+EMP-005,Synthetic Estate Supervisor Duty Slot 2,Estate Supervisor,DEP-01,Plantation Planning,3,45.10,RES-005,Estate Management
+EMP-006,Synthetic Estate Supervisor Duty Slot 3,Estate Supervisor,DEP-01,Plantation Planning,4,46.20,RES-006,Estate Management
+EMP-007,Synthetic Estate Supervisor Duty Slot 1,Estate Supervisor,DEP-02,Plantation Operations,2,44.00,RES-007,Plantation Division
+EMP-008,Synthetic Estate Supervisor Duty Slot 2,Estate Supervisor,DEP-02,Plantation Operations,3,45.10,RES-008,Plantation Division
+EMP-009,Synthetic Agronomy Inspector Duty Slot 1,Agronomy Inspector,DEP-03,Agronomy,2,38.00,RES-009,Plantation Quality
+EMP-010,Synthetic Agronomy Inspector Duty Slot 2,Agronomy Inspector,DEP-03,Agronomy,3,38.95,RES-010,Plantation Quality
+EMP-011,Synthetic Agronomy Inspector Duty Slot 3,Agronomy Inspector,DEP-03,Agronomy,4,39.90,RES-011,Plantation Quality
+EMP-012,Synthetic Agronomy Inspector Duty Slot 4,Agronomy Inspector,DEP-03,Agronomy,5,40.85,RES-012,Plantation Quality
+EMP-013,Synthetic Harvester Duty Slot 1,Harvester,DEP-02,Plantation Operations,2,21.00,RES-013,Plantation Division
+EMP-014,Synthetic Harvester Duty Slot 2,Harvester,DEP-02,Plantation Operations,3,21.52,RES-014,Plantation Division
+EMP-015,Synthetic Harvester Duty Slot 3,Harvester,DEP-02,Plantation Operations,4,22.05,RES-015,Plantation Division
+EMP-016,Synthetic Harvester Duty Slot 4,Harvester,DEP-02,Plantation Operations,5,22.57,RES-016,Plantation Division
+EMP-017,Synthetic Harvester Duty Slot 5,Harvester,DEP-02,Plantation Operations,6,23.10,RES-017,Plantation Division
+EMP-018,Synthetic Harvester Duty Slot 6,Harvester,DEP-02,Plantation Operations,7,23.62,RES-018,Plantation Division
+EMP-019,Synthetic Harvester Duty Slot 7,Harvester,DEP-02,Plantation Operations,8,24.15,RES-019,Plantation Division
+EMP-020,Synthetic Harvester Duty Slot 8,Harvester,DEP-02,Plantation Operations,2,21.00,RES-020,Plantation Division
+EMP-021,Synthetic Transport Dispatcher Duty Slot 1,Transport Dispatcher,DEP-04,Transport Logistics,2,33.00,RES-021,Inbound Supply Chain
+EMP-022,Synthetic Transport Dispatcher Duty Slot 2,Transport Dispatcher,DEP-04,Transport Logistics,3,33.82,RES-022,Inbound Supply Chain
+EMP-023,Synthetic Transport Dispatcher Duty Slot 3,Transport Dispatcher,DEP-04,Transport Logistics,4,34.65,RES-023,Inbound Supply Chain
+EMP-024,Synthetic Transport Operator Duty Slot 1,Transport Operator,DEP-04,Transport Logistics,2,29.00,RES-024,Inbound Supply Chain
+EMP-025,Synthetic Transport Operator Duty Slot 2,Transport Operator,DEP-04,Transport Logistics,3,29.72,RES-025,Inbound Supply Chain
+EMP-026,Synthetic Transport Operator Duty Slot 3,Transport Operator,DEP-04,Transport Logistics,4,30.45,RES-026,Inbound Supply Chain
+EMP-027,Synthetic Transport Operator Duty Slot 4,Transport Operator,DEP-04,Transport Logistics,5,31.17,RES-027,Inbound Supply Chain
+EMP-028,Synthetic Transport Operator Duty Slot 5,Transport Operator,DEP-04,Transport Logistics,6,31.90,RES-028,Inbound Supply Chain
+EMP-029,Synthetic Transport Operator Duty Slot 6,Transport Operator,DEP-04,Transport Logistics,7,32.62,RES-029,Inbound Supply Chain
+EMP-030,Synthetic Weighbridge Clerk Duty Slot 1,Weighbridge Clerk,DEP-05,Mill Receiving,2,29.00,RES-030,Mill Operations
+EMP-031,Synthetic Weighbridge Clerk Duty Slot 2,Weighbridge Clerk,DEP-05,Mill Receiving,3,29.72,RES-031,Mill Operations
+EMP-032,Synthetic Weighbridge Clerk Duty Slot 3,Weighbridge Clerk,DEP-05,Mill Receiving,4,30.45,RES-032,Mill Operations
+EMP-033,Synthetic Receiving Operator Duty Slot 1,Receiving Operator,DEP-05,Mill Receiving,2,25.00,RES-033,Mill Operations
+EMP-034,Synthetic Receiving Operator Duty Slot 2,Receiving Operator,DEP-05,Mill Receiving,3,25.62,RES-034,Mill Operations
+EMP-035,Synthetic Receiving Operator Duty Slot 3,Receiving Operator,DEP-05,Mill Receiving,4,26.25,RES-035,Mill Operations
+EMP-036,Synthetic Receiving Operator Duty Slot 4,Receiving Operator,DEP-05,Mill Receiving,5,26.88,RES-036,Mill Operations
+EMP-037,Synthetic Receiving Operator Duty Slot 5,Receiving Operator,DEP-05,Mill Receiving,6,27.50,RES-037,Mill Operations
+EMP-038,Synthetic Mill Quality Inspector Duty Slot 1,Mill Quality Inspector,DEP-08,Mill Laboratory,2,41.00,RES-038,Quality Assurance
+EMP-039,Synthetic Mill Quality Inspector Duty Slot 2,Mill Quality Inspector,DEP-08,Mill Laboratory,3,42.02,RES-039,Quality Assurance
+EMP-040,Synthetic Mill Quality Inspector Duty Slot 3,Mill Quality Inspector,DEP-08,Mill Laboratory,4,43.05,RES-040,Quality Assurance
+EMP-041,Synthetic Boiler Operator Duty Slot 1,Boiler Operator,DEP-06,Milling Operations,2,42.00,RES-041,Mill Operations
+EMP-042,Synthetic Boiler Operator Duty Slot 2,Boiler Operator,DEP-06,Milling Operations,3,43.05,RES-042,Mill Operations
+EMP-043,Synthetic Boiler Operator Duty Slot 3,Boiler Operator,DEP-06,Milling Operations,4,44.10,RES-043,Mill Operations
+EMP-044,Synthetic Sterilizer Operator Duty Slot 1,Sterilizer Operator,DEP-06,Milling Operations,2,35.00,RES-044,Mill Operations
+EMP-045,Synthetic Sterilizer Operator Duty Slot 2,Sterilizer Operator,DEP-06,Milling Operations,3,35.88,RES-045,Mill Operations
+EMP-046,Synthetic Sterilizer Operator Duty Slot 3,Sterilizer Operator,DEP-06,Milling Operations,4,36.75,RES-046,Mill Operations
+EMP-047,Synthetic Sterilizer Operator Duty Slot 4,Sterilizer Operator,DEP-06,Milling Operations,5,37.62,RES-047,Mill Operations
+EMP-048,Synthetic Mill Process Operator Duty Slot 1,Mill Process Operator,DEP-06,Milling Operations,2,34.00,RES-048,Mill Operations
+EMP-049,Synthetic Mill Process Operator Duty Slot 2,Mill Process Operator,DEP-06,Milling Operations,3,34.85,RES-049,Mill Operations
+EMP-050,Synthetic Mill Process Operator Duty Slot 3,Mill Process Operator,DEP-06,Milling Operations,4,35.70,RES-050,Mill Operations
+EMP-051,Synthetic Mill Process Operator Duty Slot 4,Mill Process Operator,DEP-06,Milling Operations,5,36.55,RES-051,Mill Operations
+EMP-052,Synthetic Mill Process Operator Duty Slot 5,Mill Process Operator,DEP-06,Milling Operations,6,37.40,RES-052,Mill Operations
+EMP-053,Synthetic Mill Process Operator Duty Slot 6,Mill Process Operator,DEP-06,Milling Operations,7,38.25,RES-053,Mill Operations
+EMP-054,Synthetic Mill Process Operator Duty Slot 1,Mill Process Operator,DEP-07,Oil Refinement,2,34.00,RES-054,Mill Operations
+EMP-055,Synthetic Mill Process Operator Duty Slot 2,Mill Process Operator,DEP-07,Oil Refinement,3,34.85,RES-055,Mill Operations
+EMP-056,Synthetic Mill Process Operator Duty Slot 3,Mill Process Operator,DEP-07,Oil Refinement,4,35.70,RES-056,Mill Operations
+EMP-057,Synthetic Mill Process Operator Duty Slot 4,Mill Process Operator,DEP-07,Oil Refinement,5,36.55,RES-057,Mill Operations
+EMP-058,Synthetic Mill Process Operator Duty Slot 5,Mill Process Operator,DEP-07,Oil Refinement,6,37.40,RES-058,Mill Operations
+EMP-059,Synthetic Press Operator Duty Slot 1,Press Operator,DEP-06,Milling Operations,2,37.00,RES-059,Mill Operations
+EMP-060,Synthetic Press Operator Duty Slot 2,Press Operator,DEP-06,Milling Operations,3,37.92,RES-060,Mill Operations
+EMP-061,Synthetic Press Operator Duty Slot 3,Press Operator,DEP-06,Milling Operations,4,38.85,RES-061,Mill Operations
+EMP-062,Synthetic Press Operator Duty Slot 4,Press Operator,DEP-06,Milling Operations,5,39.77,RES-062,Mill Operations
+EMP-063,Synthetic Lab Chemist Duty Slot 1,Lab Chemist,DEP-08,Mill Laboratory,2,46.00,RES-063,Quality Assurance
+EMP-064,Synthetic Lab Chemist Duty Slot 2,Lab Chemist,DEP-08,Mill Laboratory,3,47.15,RES-064,Quality Assurance
+EMP-065,Synthetic Lab Chemist Duty Slot 3,Lab Chemist,DEP-08,Mill Laboratory,4,48.30,RES-065,Quality Assurance
+EMP-066,Synthetic Lab Chemist Duty Slot 4,Lab Chemist,DEP-08,Mill Laboratory,5,49.45,RES-066,Quality Assurance
+EMP-067,Synthetic Kernel Operator Duty Slot 1,Kernel Operator,DEP-09,Kernel Recovery,2,32.00,RES-067,Mill Operations
+EMP-068,Synthetic Kernel Operator Duty Slot 2,Kernel Operator,DEP-09,Kernel Recovery,3,32.80,RES-068,Mill Operations
+EMP-069,Synthetic Kernel Operator Duty Slot 3,Kernel Operator,DEP-09,Kernel Recovery,4,33.60,RES-069,Mill Operations
+EMP-070,Synthetic Kernel Operator Duty Slot 4,Kernel Operator,DEP-09,Kernel Recovery,5,34.40,RES-070,Mill Operations
+EMP-071,Synthetic Tank Farm Operator Duty Slot 1,Tank Farm Operator,DEP-10,Tank Farm,2,34.00,RES-071,Mill Logistics
+EMP-072,Synthetic Tank Farm Operator Duty Slot 2,Tank Farm Operator,DEP-10,Tank Farm,3,34.85,RES-072,Mill Logistics
+EMP-073,Synthetic Tank Farm Operator Duty Slot 3,Tank Farm Operator,DEP-10,Tank Farm,4,35.70,RES-073,Mill Logistics
+EMP-074,Synthetic Tank Farm Operator Duty Slot 4,Tank Farm Operator,DEP-10,Tank Farm,5,36.55,RES-074,Mill Logistics
+EMP-075,Synthetic Dispatch Operator Duty Slot 1,Dispatch Operator,DEP-11,Outbound Logistics,2,31.00,RES-075,Distribution
+EMP-076,Synthetic Dispatch Operator Duty Slot 2,Dispatch Operator,DEP-11,Outbound Logistics,3,31.77,RES-076,Distribution
+EMP-077,Synthetic Dispatch Operator Duty Slot 3,Dispatch Operator,DEP-11,Outbound Logistics,4,32.55,RES-077,Distribution
+EMP-078,Synthetic Dispatch Operator Duty Slot 4,Dispatch Operator,DEP-11,Outbound Logistics,5,33.32,RES-078,Distribution
+EMP-079,Synthetic Finance Officer Duty Slot 1,Finance Officer,DEP-12,Finance,2,45.00,RES-079,Commercial Finance
+EMP-080,Synthetic Finance Officer Duty Slot 2,Finance Officer,DEP-12,Finance,3,46.12,RES-080,Commercial Finance
+EMP-081,Synthetic Finance Officer Duty Slot 3,Finance Officer,DEP-12,Finance,4,47.25,RES-081,Commercial Finance

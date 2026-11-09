@@ -1,0 +1,13 @@
+department_id,department,organizational_unit
+DEP-01,Plantation Planning,Estate Management
+DEP-02,Plantation Operations,Plantation Division
+DEP-03,Agronomy,Plantation Quality
+DEP-04,Transport Logistics,Inbound Supply Chain
+DEP-05,Mill Receiving,Mill Operations
+DEP-06,Milling Operations,Mill Operations
+DEP-07,Oil Refinement,Mill Operations
+DEP-08,Mill Laboratory,Quality Assurance
+DEP-09,Kernel Recovery,Mill Operations
+DEP-10,Tank Farm,Mill Logistics
+DEP-11,Outbound Logistics,Distribution
+DEP-12,Finance,Commercial Finance

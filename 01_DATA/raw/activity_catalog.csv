@@ -1,0 +1,35 @@
+activity,required_role,department_id,activity_sla_minutes,facility_type,revenue_recognition_flag,business_description
+Harvest Batch Created,Estate Scheduler,DEP-01,80,,false,Completed FFB-to-CPO event: harvest batch created
+Harvest Plan Approved,Estate Supervisor,DEP-01,120,,false,Completed FFB-to-CPO event: harvest plan approved
+Harvest Batch Cancelled,Estate Scheduler,DEP-01,120,,false,Completed FFB-to-CPO event: harvest batch cancelled
+Field Team Assigned,Estate Supervisor,DEP-02,160,,false,Completed FFB-to-CPO event: field team assigned
+Palm Ripeness Assessed,Agronomy Inspector,DEP-03,210,Field Inspection Kit,false,Completed FFB-to-CPO event: palm ripeness assessed
+FFB Harvested,Harvester,DEP-02,320,Harvest Equipment,false,Completed FFB-to-CPO event: ffb harvested
+FFB Field Grading,Agronomy Inspector,DEP-03,170,Field Inspection Kit,false,Completed FFB-to-CPO event: ffb field grading
+Harvest Collection Dispatched,Transport Dispatcher,DEP-04,180,Logistics Console,false,Completed FFB-to-CPO event: harvest collection dispatched
+FFB Loaded for Transport,Transport Operator,DEP-04,240,Truck Loading Bay,false,Completed FFB-to-CPO event: ffb loaded for transport
+Transport to Palm Oil Mill,Transport Operator,DEP-04,470,Transport Truck,false,Completed FFB-to-CPO event: transport to palm oil mill
+Mill Weighbridge Inbound,Weighbridge Clerk,DEP-05,170,Weighbridge,false,Completed FFB-to-CPO event: mill weighbridge inbound
+Incoming FFB Quality Inspection,Mill Quality Inspector,DEP-08,210,FFB Inspection Station,false,Completed FFB-to-CPO event: incoming ffb quality inspection
+FFB Lot Rejected,Mill Quality Inspector,DEP-08,140,,false,Completed FFB-to-CPO event: ffb lot rejected
+FFB Receipt Accepted,Receiving Operator,DEP-05,150,,false,Completed FFB-to-CPO event: ffb receipt accepted
+FFB Unloaded at Sterilizer Ramp,Receiving Operator,DEP-05,230,Unloading Ramp,false,Completed FFB-to-CPO event: ffb unloaded at sterilizer ramp
+Steam and Boiler Readiness Checked,Boiler Operator,DEP-06,220,Steam Boiler,false,Completed FFB-to-CPO event: steam and boiler readiness checked
+FFB Sterilization Completed,Sterilizer Operator,DEP-06,360,Sterilizer Vessel,false,Completed FFB-to-CPO event: ffb sterilization completed
+FFB Threshing Completed,Mill Process Operator,DEP-06,310,Thresher Drum,false,Completed FFB-to-CPO event: ffb threshing completed
+Fruit Digestion Completed,Mill Process Operator,DEP-06,270,Digester,false,Completed FFB-to-CPO event: fruit digestion completed
+Crude Oil Pressing Completed,Press Operator,DEP-06,320,Screw Press,false,Completed FFB-to-CPO event: crude oil pressing completed
+Oil Clarification Completed,Mill Process Operator,DEP-07,330,Clarification Tank,false,Completed FFB-to-CPO event: oil clarification completed
+Oil Purification Completed,Mill Process Operator,DEP-07,300,Purifier,false,Completed FFB-to-CPO event: oil purification completed
+CPO Laboratory Tested,Lab Chemist,DEP-08,240,Oil Lab Bench,false,Completed FFB-to-CPO event: cpo laboratory tested
+CPO Quality Rework Applied,Mill Process Operator,DEP-07,340,Purifier,false,Completed FFB-to-CPO event: cpo quality rework applied
+Kernel Separation Completed,Kernel Operator,DEP-09,280,Kernel Separator,false,Completed FFB-to-CPO event: kernel separation completed
+Kernel Drying Completed,Kernel Operator,DEP-09,300,Kernel Dryer,false,Completed FFB-to-CPO event: kernel drying completed
+CPO Storage Tank Updated,Tank Farm Operator,DEP-10,260,CPO Storage Tank,false,Completed FFB-to-CPO event: cpo storage tank updated
+CPO Transfer Authorized,Tank Farm Operator,DEP-10,170,,false,Completed FFB-to-CPO event: cpo transfer authorized
+CPO Loaded for Dispatch,Dispatch Operator,DEP-11,260,Loading Gantry,false,Completed FFB-to-CPO event: cpo loaded for dispatch
+CPO Dispatch Confirmed,Dispatch Operator,DEP-11,230,Dispatch Terminal,true,Completed FFB-to-CPO event: cpo dispatch confirmed
+CPO Sales Invoice Issued,Finance Officer,DEP-12,190,,false,Completed FFB-to-CPO event: cpo sales invoice issued
+Buyer Remittance Matched,Finance Officer,DEP-12,240,,false,Completed FFB-to-CPO event: buyer remittance matched
+Authorized CPO Sales Allowance,Finance Officer,DEP-12,180,,false,Completed FFB-to-CPO event: authorized cpo sales allowance
+Harvest Lot Closed,Estate Scheduler,DEP-01,110,,false,Completed FFB-to-CPO event: harvest lot closed

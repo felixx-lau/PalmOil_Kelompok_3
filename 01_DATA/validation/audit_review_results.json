@@ -1,0 +1,4619 @@
+{
+  "00_import": [
+    {
+      "columns": [
+        "dataset",
+        "row_count"
+      ],
+      "rows": [
+        [
+          "raw_events",
+          6325
+        ],
+        [
+          "master_activities",
+          34
+        ],
+        [
+          "master_cases",
+          230
+        ],
+        [
+          "master_departments",
+          12
+        ],
+        [
+          "master_employees",
+          81
+        ],
+        [
+          "master_facilities",
+          62
+        ],
+        [
+          "master_ffb_grades",
+          4
+        ],
+        [
+          "master_estate_blocks",
+          4
+        ],
+        [
+          "master_resources",
+          81
+        ]
+      ]
+    }
+  ],
+  "01_profiling": [
+    {
+      "columns": [
+        "total_raw_rows",
+        "distinct_raw_rows",
+        "raw_distinct_event_id",
+        "normalized_distinct_event_id",
+        "duplicate_event_rows",
+        "raw_distinct_case_id",
+        "trimmed_distinct_case_id"
+      ],
+      "rows": [
+        [
+          6325,
+          6325,
+          6227,
+          6180,
+          145,
+          234,
+          230
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "raw_case_id",
+        "cleaned_case_id",
+        "occurrences"
+      ],
+      "rows": [
+        [
+          " PALM-000142 ",
+          "PALM-000142",
+          1
+        ],
+        [
+          " PALM-000024 ",
+          "PALM-000024",
+          1
+        ],
+        [
+          " PALM-000042 ",
+          "PALM-000042",
+          1
+        ],
+        [
+          " PALM-000018 ",
+          "PALM-000018",
+          1
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "normalized_event_id",
+        "occurrences"
+      ],
+      "rows": [
+        [
+          "EVT-0004878",
+          3
+        ],
+        [
+          "EVT-0005573",
+          3
+        ],
+        [
+          "EVT-0002617",
+          2
+        ],
+        [
+          "EVT-0002772",
+          2
+        ],
+        [
+          "EVT-0001701",
+          2
+        ],
+        [
+          "EVT-0001143",
+          2
+        ],
+        [
+          "EVT-0004166",
+          2
+        ],
+        [
+          "EVT-0000083",
+          2
+        ],
+        [
+          "EVT-0003186",
+          2
+        ],
+        [
+          "EVT-0005813",
+          2
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "raw_activity",
+        "event_count",
+        "catalog_activity"
+      ],
+      "rows": [
+        [
+          "FFB Field Grading",
+          243,
+          "FFB Field Grading"
+        ],
+        [
+          "Harvest Lot Closed",
+          233,
+          "Harvest Lot Closed"
+        ],
+        [
+          "Harvest Batch Created",
+          233,
+          "Harvest Batch Created"
+        ],
+        [
+          "Harvest Plan Approved",
+          232,
+          "Harvest Plan Approved"
+        ],
+        [
+          "Mill Weighbridge Inbound",
+          224,
+          "Mill Weighbridge Inbound"
+        ],
+        [
+          "Palm Ripeness Assessed",
+          222,
+          "Palm Ripeness Assessed"
+        ],
+        [
+          "Field Team Assigned",
+          220,
+          "Field Team Assigned"
+        ],
+        [
+          "FFB Harvested",
+          220,
+          "FFB Harvested"
+        ],
+        [
+          "CPO Laboratory Tested",
+          220,
+          "CPO Laboratory Tested"
+        ],
+        [
+          "Transport to Palm Oil Mill",
+          220,
+          "Transport to Palm Oil Mill"
+        ],
+        [
+          "Harvest Collection Dispatched",
+          220,
+          "Harvest Collection Dispatched"
+        ],
+        [
+          "FFB Loaded for Transport",
+          219,
+          "FFB Loaded for Transport"
+        ],
+        [
+          "Incoming FFB Quality Inspection",
+          217,
+          "Incoming FFB Quality Inspection"
+        ],
+        [
+          "CPO Storage Tank Updated",
+          194,
+          "CPO Storage Tank Updated"
+        ],
+        [
+          "Kernel Separation Completed",
+          194,
+          "Kernel Separation Completed"
+        ],
+        [
+          "Oil Purification Completed",
+          193,
+          "Oil Purification Completed"
+        ],
+        [
+          "FFB Sterilization Completed",
+          193,
+          "FFB Sterilization Completed"
+        ],
+        [
+          "CPO Transfer Authorized",
+          193,
+          "CPO Transfer Authorized"
+        ],
+        [
+          "Crude Oil Pressing Completed",
+          193,
+          "Crude Oil Pressing Completed"
+        ],
+        [
+          "FFB Receipt Accepted",
+          193,
+          "FFB Receipt Accepted"
+        ],
+        [
+          "Fruit Digestion Completed",
+          192,
+          "Fruit Digestion Completed"
+        ],
+        [
+          "CPO Loaded for Dispatch",
+          191,
+          "CPO Loaded for Dispatch"
+        ],
+        [
+          "Steam and Boiler Readiness Checked",
+          191,
+          "Steam and Boiler Readiness Checked"
+        ],
+        [
+          "Kernel Drying Completed",
+          191,
+          "Kernel Drying Completed"
+        ],
+        [
+          "Buyer Remittance Matched",
+          190,
+          "Buyer Remittance Matched"
+        ],
+        [
+          "CPO Sales Invoice Issued",
+          190,
+          "CPO Sales Invoice Issued"
+        ],
+        [
+          "FFB Unloaded at Sterilizer Ramp",
+          190,
+          "FFB Unloaded at Sterilizer Ramp"
+        ],
+        [
+          "FFB Threshing Completed",
+          190,
+          "FFB Threshing Completed"
+        ],
+        [
+          "CPO Dispatch Confirmed",
+          189,
+          "CPO Dispatch Confirmed"
+        ],
+        [
+          "Oil Clarification Completed",
+          188,
+          "Oil Clarification Completed"
+        ],
+        [
+          "FFB Lot Rejected",
+          29,
+          "FFB Lot Rejected"
+        ],
+        [
+          "CPO Quality Rework Applied",
+          26,
+          "CPO Quality Rework Applied"
+        ],
+        [
+          "Authorized CPO Sales Allowance",
+          15,
+          "Authorized CPO Sales Allowance"
+        ],
+        [
+          "Harvest Batch Cancelled",
+          12,
+          "Harvest Batch Cancelled"
+        ],
+        [
+          " harvest lot closed ",
+          4,
+          "Harvest Lot Closed"
+        ],
+        [
+          " cpo storage tank updated ",
+          3,
+          "CPO Storage Tank Updated"
+        ],
+        [
+          " ffb field grading ",
+          3,
+          "FFB Field Grading"
+        ],
+        [
+          " harvest plan approved ",
+          3,
+          "Harvest Plan Approved"
+        ],
+        [
+          " oil clarification completed ",
+          2,
+          "Oil Clarification Completed"
+        ],
+        [
+          " harvest batch created ",
+          2,
+          "Harvest Batch Created"
+        ],
+        [
+          " FFB Harvested ",
+          2,
+          "FFB Harvested"
+        ],
+        [
+          " steam and boiler readiness checked ",
+          2,
+          "Steam and Boiler Readiness Checked"
+        ],
+        [
+          " ffb sterilization completed ",
+          2,
+          "FFB Sterilization Completed"
+        ],
+        [
+          " ffb harvested ",
+          2,
+          "FFB Harvested"
+        ],
+        [
+          " harvest collection dispatched ",
+          2,
+          "Harvest Collection Dispatched"
+        ],
+        [
+          " cpo dispatch confirmed ",
+          2,
+          "CPO Dispatch Confirmed"
+        ],
+        [
+          " cpo transfer authorized ",
+          2,
+          "CPO Transfer Authorized"
+        ],
+        [
+          " mill weighbridge inbound ",
+          2,
+          "Mill Weighbridge Inbound"
+        ],
+        [
+          " palm ripeness assessed ",
+          2,
+          "Palm Ripeness Assessed"
+        ],
+        [
+          " crude oil pressing completed ",
+          2,
+          "Crude Oil Pressing Completed"
+        ],
+        [
+          " ffb threshing completed ",
+          1,
+          "FFB Threshing Completed"
+        ],
+        [
+          " kernel drying completed ",
+          1,
+          "Kernel Drying Completed"
+        ],
+        [
+          " field team assigned ",
+          1,
+          "Field Team Assigned"
+        ],
+        [
+          " cpo loaded for dispatch ",
+          1,
+          "CPO Loaded for Dispatch"
+        ],
+        [
+          " cpo sales invoice issued ",
+          1,
+          "CPO Sales Invoice Issued"
+        ],
+        [
+          " incoming ffb quality inspection ",
+          1,
+          "Incoming FFB Quality Inspection"
+        ],
+        [
+          " buyer remittance matched ",
+          1,
+          "Buyer Remittance Matched"
+        ],
+        [
+          "ffb loaded for transport",
+          1,
+          "FFB Loaded for Transport"
+        ],
+        [
+          " fruit digestion completed ",
+          1,
+          "Fruit Digestion Completed"
+        ],
+        [
+          " ffb unloaded at sterilizer ramp ",
+          1,
+          "FFB Unloaded at Sterilizer Ramp"
+        ],
+        [
+          " kernel separation completed ",
+          1,
+          "Kernel Separation Completed"
+        ],
+        [
+          "fruit digestion completed",
+          1,
+          "Fruit Digestion Completed"
+        ],
+        [
+          " authorized cpo sales allowance ",
+          1,
+          "Authorized CPO Sales Allowance"
+        ],
+        [
+          "steam and boiler readiness checked",
+          1,
+          "Steam and Boiler Readiness Checked"
+        ],
+        [
+          "buyer remittance matched",
+          1,
+          "Buyer Remittance Matched"
+        ],
+        [
+          "CPO QUALITY REWORK APPLIED",
+          1,
+          "CPO Quality Rework Applied"
+        ],
+        [
+          "KERNEL DRYING COMPLETED",
+          1,
+          "Kernel Drying Completed"
+        ],
+        [
+          " FFB Unloaded at Sterilizer Ramp ",
+          1,
+          "FFB Unloaded at Sterilizer Ramp"
+        ],
+        [
+          "HARVEST COLLECTION DISPATCHED",
+          1,
+          "Harvest Collection Dispatched"
+        ],
+        [
+          "cpo sales invoice issued",
+          1,
+          "CPO Sales Invoice Issued"
+        ],
+        [
+          " Field Team Assigned ",
+          1,
+          "Field Team Assigned"
+        ],
+        [
+          "oil clarification completed",
+          1,
+          "Oil Clarification Completed"
+        ],
+        [
+          "cpo laboratory tested",
+          1,
+          "CPO Laboratory Tested"
+        ],
+        [
+          " ffb receipt accepted ",
+          1,
+          "FFB Receipt Accepted"
+        ],
+        [
+          " cpo laboratory tested ",
+          1,
+          "CPO Laboratory Tested"
+        ],
+        [
+          "harvest batch created",
+          1,
+          "Harvest Batch Created"
+        ],
+        [
+          " CPO Loaded for Dispatch ",
+          1,
+          "CPO Loaded for Dispatch"
+        ],
+        [
+          "BUYER REMITTANCE MATCHED",
+          1,
+          "Buyer Remittance Matched"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "department_id",
+        "department",
+        "row_count"
+      ],
+      "rows": [
+        [
+          "DEP-10",
+          "Tank Farm Dept.",
+          1
+        ],
+        [
+          "DEP-07",
+          " Oil Refinement ",
+          2
+        ],
+        [
+          "DEP-06",
+          " Milling Operations ",
+          1
+        ],
+        [
+          "DEP-11",
+          "OUTBOUND LOGISTICS",
+          2
+        ],
+        [
+          "DEP-08",
+          "MILL LABORATORY",
+          1
+        ],
+        [
+          "DEP-04",
+          "TRANSPORT LOGISTICS",
+          2
+        ],
+        [
+          "DEP-09",
+          " Kernel Recovery ",
+          1
+        ],
+        [
+          "DEP-05",
+          "MILL RECEIVING",
+          1
+        ],
+        [
+          "DEP-01",
+          "Plantation Planning Dept.",
+          2
+        ],
+        [
+          "DEP-10",
+          " Tank Farm ",
+          1
+        ],
+        [
+          "DEP-11",
+          " Outbound Logistics ",
+          2
+        ],
+        [
+          "DEP-01",
+          " Plantation Planning ",
+          1
+        ],
+        [
+          "DEP-07",
+          "OIL REFINEMENT",
+          1
+        ],
+        [
+          "DEP-12",
+          "FINANCE",
+          1
+        ],
+        [
+          "DEP-01",
+          "PLANTATION PLANNING",
+          1
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "unmatched_employees",
+        "unmatched_facilities",
+        "unmatched_resources"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "raw_row_id",
+        "event_id",
+        "case_id",
+        "activity",
+        "activity_start_time",
+        "activity_end_time",
+        "timestamp"
+      ],
+      "rows": [
+        [
+          "RAW-0005170",
+          "EVT-0000623",
+          "PALM-000105",
+          "Buyer Remittance Matched",
+          "not-a-time",
+          "not-a-time",
+          "not-a-time"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "raw_row_id",
+        "activity",
+        "start_ts",
+        "end_ts",
+        "recorded_duration",
+        "diff_start_minus_end"
+      ],
+      "rows": [
+        [
+          "RAW-0000173",
+          "CPO Transfer Authorized",
+          "2026-05-09 13:27:00",
+          "2026-05-09 13:07:00",
+          "20.00",
+          20
+        ],
+        [
+          "RAW-0000466",
+          "Buyer Remittance Matched",
+          "2025-01-02 22:22:00",
+          "2025-01-02 21:55:00",
+          "27.00",
+          27
+        ],
+        [
+          "RAW-0000615",
+          "FFB Lot Rejected",
+          "2026-06-01 16:27:00",
+          "2026-06-01 16:10:00",
+          "17.00",
+          17
+        ],
+        [
+          "RAW-0000962",
+          "Palm Ripeness Assessed",
+          "2026-05-09 00:11:00",
+          "2026-05-08 23:41:00",
+          "30.00",
+          30
+        ],
+        [
+          "RAW-0000986",
+          "Buyer Remittance Matched",
+          "2025-01-09 06:05:00",
+          "2025-01-09 05:45:00",
+          "20.00",
+          20
+        ],
+        [
+          "RAW-0001742",
+          "Mill Weighbridge Inbound",
+          "2026-05-09 05:13:00",
+          "2026-05-09 04:50:00",
+          "23.00",
+          23
+        ],
+        [
+          "RAW-0001993",
+          "FFB Unloaded at Sterilizer Ramp",
+          "2025-09-03 18:42:00",
+          "2025-09-03 17:59:00",
+          "43.00",
+          43
+        ],
+        [
+          "RAW-0002016",
+          "Harvest Batch Created",
+          "2025-03-31 13:06:00",
+          "2025-03-31 12:52:00",
+          "14.00",
+          14
+        ],
+        [
+          "RAW-0002093",
+          "CPO Dispatch Confirmed",
+          "2026-05-09 23:19:00",
+          "2026-05-09 23:07:00",
+          "12.00",
+          12
+        ],
+        [
+          "RAW-0002652",
+          "Oil Clarification Completed",
+          "2025-07-18 18:53:00",
+          "2025-07-18 17:59:00",
+          "54.00",
+          54
+        ],
+        [
+          "RAW-0002657",
+          "CPO Transfer Authorized",
+          "2025-06-18 06:30:00",
+          "2025-06-18 06:15:00",
+          "15.00",
+          15
+        ],
+        [
+          "RAW-0003497",
+          "Kernel Separation Completed",
+          "2026-09-15 01:14:00",
+          "2026-09-15 00:35:00",
+          "39.00",
+          39
+        ],
+        [
+          "RAW-0003727",
+          "Mill Weighbridge Inbound",
+          "2026-03-30 20:46:00",
+          "2026-03-30 20:31:00",
+          "15.00",
+          15
+        ],
+        [
+          "RAW-0004090",
+          "Harvest Lot Closed",
+          "2025-11-10 20:43:00",
+          "2025-11-10 20:36:00",
+          "7.00",
+          7
+        ],
+        [
+          "RAW-0004659",
+          "Transport to Palm Oil Mill",
+          "2026-07-31 21:00:00",
+          "2026-07-31 20:01:00",
+          "59.00",
+          59
+        ],
+        [
+          "RAW-0005038",
+          "FFB Unloaded at Sterilizer Ramp",
+          "2026-05-06 22:33:00",
+          "2026-05-06 21:41:00",
+          "52.00",
+          52
+        ],
+        [
+          "RAW-0005938",
+          "CPO Laboratory Tested",
+          "2025-09-11 19:53:00",
+          "2025-09-11 19:25:00",
+          "28.00",
+          28
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "labor_cost_prefixes",
+        "material_cost_prefixes",
+        "material_cost_nulls",
+        "equipment_cost_prefixes",
+        "overhead_cost_prefixes",
+        "total_cost_prefixes",
+        "revenue_prefixes"
+      ],
+      "rows": [
+        [
+          3,
+          2,
+          3,
+          4,
+          2,
+          1,
+          5
+        ]
+      ]
+    }
+  ],
+  "02_cleaning": [
+    {
+      "columns": [
+        "table_name",
+        "total_clean_rows",
+        "distinct_event_ids",
+        "distinct_cases"
+      ],
+      "rows": [
+        [
+          "clean_events",
+          6179,
+          6179,
+          230
+        ]
+      ]
+    }
+  ],
+  "03_validation": [
+    {
+      "columns": [
+        "total_clean_events",
+        "unique_events",
+        "missing_event_ids",
+        "missing_case_ids",
+        "total_cases",
+        "master_cases_matched"
+      ],
+      "rows": [
+        [
+          6179,
+          6179,
+          0,
+          0,
+          230,
+          230
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "null_start_times",
+        "null_end_times",
+        "null_timestamps",
+        "inverted_durations",
+        "non_positive_durations",
+        "negative_waiting_times"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "cost_component_mismatches",
+        "contribution_identity_mismatches"
+      ],
+      "rows": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "activity",
+        "event_count",
+        "total_revenue_allocated",
+        "unauthorized_positive_revenue",
+        "unauthorized_negative_revenue"
+      ],
+      "rows": [
+        [
+          "CPO Dispatch Confirmed",
+          189,
+          "7095410.76",
+          0,
+          0
+        ],
+        [
+          "Authorized CPO Sales Allowance",
+          14,
+          "-20949.08",
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "unmapped_activities",
+        "unmapped_departments",
+        "unmapped_employees",
+        "unmapped_resources"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "csv_baseline": {
+    "columns": [
+      "events",
+      "ids",
+      "cases",
+      "cost",
+      "revenue",
+      "contribution"
+    ],
+    "rows": [
+      [
+        6179,
+        6179,
+        230,
+        "6216045.66",
+        "7074461.68",
+        "858416.02"
+      ]
+    ]
+  },
+  "case_type": {
+    "columns": [
+      "count_star()"
+    ],
+    "rows": [
+      [
+        20
+      ]
+    ]
+  },
+  "missing": {
+    "columns": [
+      "employee_blank",
+      "resource_blank"
+    ],
+    "rows": [
+      [
+        4,
+        2
+      ]
+    ]
+  },
+  "ready_vs_wait": {
+    "columns": [
+      "event_id",
+      "waiting_time_minutes",
+      "calculated_wait",
+      "activity_ready_time",
+      "activity_start_time"
+    ],
+    "rows": [
+      [
+        "EVT-0004091",
+        278.0,
+        0,
+        "2026-05-08 23:41:00",
+        "2026-05-08 23:41:00"
+      ]
+    ]
+  },
+  "duration_mismatch": {
+    "columns": [
+      "count_star()"
+    ],
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  "case_outcomes": {
+    "columns": [
+      "r",
+      "d",
+      "c",
+      "count_star()",
+      "sum(\"cost\")",
+      "sum(rev)",
+      "sum((rev - \"cost\"))"
+    ],
+    "rows": [
+      [
+        false,
+        false,
+        true,
+        12,
+        "1430.83",
+        "0.00",
+        "-1430.83"
+      ],
+      [
+        true,
+        false,
+        false,
+        29,
+        "711861.41",
+        "0.00",
+        "-711861.41"
+      ],
+      [
+        false,
+        true,
+        false,
+        189,
+        "5502753.42",
+        "7074461.68",
+        "1571708.26"
+      ]
+    ]
+  },
+  "pipeline_vs_csv": {
+    "columns": [
+      "count_star()"
+    ],
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  "fx_baseline": {
+    "columns": [
+      "contribution_idr",
+      "revenue_idr",
+      "cost_idr"
+    ],
+    "rows": [
+      [
+        "3764042653.62",
+        "31020594786.78",
+        "27256552133.16"
+      ]
+    ]
+  },
+  "rework": {
+    "columns": [
+      "count_star()",
+      "sum(CAST(activity_total_cost AS DECIMAL(18, 2)))"
+    ],
+    "rows": [
+      [
+        76,
+        "21823.19"
+      ]
+    ]
+  },
+  "Q01": [
+    {
+      "columns": [
+        "variant_rank",
+        "case_volume",
+        "case_percentage",
+        "avg_throughput_hours",
+        "avg_operational_cost",
+        "avg_revenue",
+        "avg_profit_contribution",
+        "total_variant_contribution",
+        "variant_path"
+      ],
+      "rows": [
+        [
+          1,
+          61,
+          26.52,
+          19.76,
+          28263.59,
+          37284.23,
+          9020.64,
+          "550259.10",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Kernel Separation Completed -> Oil Clarification Completed -> Kernel Drying Completed -> Oil Purification Completed -> CPO Laboratory Tested -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ],
+        [
+          2,
+          23,
+          10.0,
+          8.44,
+          23914.16,
+          0.0,
+          -23914.16,
+          "-550025.75",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Lot Rejected -> Harvest Lot Closed"
+        ],
+        [
+          3,
+          17,
+          7.39,
+          17.13,
+          28286.01,
+          37556.96,
+          9270.96,
+          "157606.30",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Oil Clarification Completed -> Kernel Separation Completed -> Oil Purification Completed -> Kernel Drying Completed -> CPO Laboratory Tested -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ],
+        [
+          4,
+          15,
+          6.52,
+          19.09,
+          29118.54,
+          39982.68,
+          10864.14,
+          "162962.08",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Kernel Separation Completed -> Oil Clarification Completed -> Oil Purification Completed -> Kernel Drying Completed -> CPO Laboratory Tested -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ],
+        [
+          5,
+          12,
+          5.22,
+          17.5,
+          30194.52,
+          41364.49,
+          11169.97,
+          "134039.61",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Oil Clarification Completed -> Kernel Separation Completed -> Kernel Drying Completed -> Oil Purification Completed -> CPO Laboratory Tested -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ],
+        [
+          6,
+          12,
+          5.22,
+          1.3,
+          119.24,
+          0.0,
+          -119.24,
+          "-1430.83",
+          "Harvest Batch Created -> Harvest Plan Approved -> Harvest Batch Cancelled -> Harvest Lot Closed"
+        ],
+        [
+          7,
+          7,
+          3.04,
+          18.25,
+          30152.25,
+          37755.99,
+          7603.74,
+          "53226.16",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Oil Clarification Completed -> Kernel Separation Completed -> Oil Purification Completed -> Kernel Drying Completed -> CPO Laboratory Tested -> CPO Quality Rework Applied -> CPO Laboratory Tested -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ],
+        [
+          8,
+          6,
+          2.61,
+          22.5,
+          26406.93,
+          33771.77,
+          7364.84,
+          "44189.03",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Kernel Separation Completed -> Oil Clarification Completed -> Kernel Drying Completed -> Oil Purification Completed -> CPO Laboratory Tested -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ],
+        [
+          9,
+          6,
+          2.61,
+          23.14,
+          30219.12,
+          34988.43,
+          4769.31,
+          "28615.85",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Kernel Separation Completed -> Oil Clarification Completed -> Kernel Drying Completed -> Oil Purification Completed -> CPO Laboratory Tested -> CPO Quality Rework Applied -> CPO Laboratory Tested -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ],
+        [
+          10,
+          6,
+          2.61,
+          24.02,
+          28160.16,
+          35920.82,
+          7760.66,
+          "46563.98",
+          "Harvest Batch Created -> Harvest Plan Approved -> Field Team Assigned -> Harvest Collection Dispatched -> Palm Ripeness Assessed -> FFB Harvested -> FFB Field Grading -> FFB Loaded for Transport -> Transport to Palm Oil Mill -> Mill Weighbridge Inbound -> Incoming FFB Quality Inspection -> FFB Receipt Accepted -> Steam and Boiler Readiness Checked -> FFB Unloaded at Sterilizer Ramp -> FFB Sterilization Completed -> FFB Threshing Completed -> Fruit Digestion Completed -> Crude Oil Pressing Completed -> Oil Clarification Completed -> Kernel Separation Completed -> Oil Purification Completed -> CPO Laboratory Tested -> Kernel Drying Completed -> CPO Storage Tank Updated -> CPO Transfer Authorized -> CPO Loaded for Dispatch -> CPO Dispatch Confirmed -> CPO Sales Invoice Issued -> Buyer Remittance Matched -> Harvest Lot Closed"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "variant_rank",
+        "cases",
+        "surge_cases",
+        "avg_throughput_hours",
+        "surge_avg_hours",
+        "other_period_avg_hours"
+      ],
+      "rows": [
+        [
+          1,
+          61,
+          26,
+          19.76,
+          26.16,
+          15.01
+        ],
+        [
+          3,
+          17,
+          4,
+          17.13,
+          24.68,
+          14.81
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "variant_rank",
+        "activity",
+        "executions",
+        "cases_with_activity"
+      ],
+      "rows": [
+        [
+          1,
+          "Buyer Remittance Matched",
+          61,
+          61
+        ],
+        [
+          3,
+          "Buyer Remittance Matched",
+          17,
+          17
+        ],
+        [
+          1,
+          "CPO Dispatch Confirmed",
+          61,
+          61
+        ],
+        [
+          3,
+          "CPO Dispatch Confirmed",
+          17,
+          17
+        ],
+        [
+          1,
+          "CPO Laboratory Tested",
+          61,
+          61
+        ],
+        [
+          3,
+          "CPO Laboratory Tested",
+          17,
+          17
+        ],
+        [
+          1,
+          "CPO Loaded for Dispatch",
+          61,
+          61
+        ],
+        [
+          3,
+          "CPO Loaded for Dispatch",
+          17,
+          17
+        ],
+        [
+          1,
+          "CPO Sales Invoice Issued",
+          61,
+          61
+        ],
+        [
+          3,
+          "CPO Sales Invoice Issued",
+          17,
+          17
+        ],
+        [
+          1,
+          "CPO Storage Tank Updated",
+          61,
+          61
+        ],
+        [
+          3,
+          "CPO Storage Tank Updated",
+          17,
+          17
+        ],
+        [
+          1,
+          "CPO Transfer Authorized",
+          61,
+          61
+        ],
+        [
+          3,
+          "CPO Transfer Authorized",
+          17,
+          17
+        ],
+        [
+          1,
+          "Crude Oil Pressing Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Crude Oil Pressing Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "FFB Field Grading",
+          61,
+          61
+        ],
+        [
+          3,
+          "FFB Field Grading",
+          17,
+          17
+        ],
+        [
+          1,
+          "FFB Harvested",
+          61,
+          61
+        ],
+        [
+          3,
+          "FFB Harvested",
+          17,
+          17
+        ],
+        [
+          1,
+          "FFB Loaded for Transport",
+          61,
+          61
+        ],
+        [
+          3,
+          "FFB Loaded for Transport",
+          17,
+          17
+        ],
+        [
+          1,
+          "FFB Receipt Accepted",
+          61,
+          61
+        ],
+        [
+          3,
+          "FFB Receipt Accepted",
+          17,
+          17
+        ],
+        [
+          1,
+          "FFB Sterilization Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "FFB Sterilization Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "FFB Threshing Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "FFB Threshing Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "FFB Unloaded at Sterilizer Ramp",
+          61,
+          61
+        ],
+        [
+          3,
+          "FFB Unloaded at Sterilizer Ramp",
+          17,
+          17
+        ],
+        [
+          1,
+          "Field Team Assigned",
+          61,
+          61
+        ],
+        [
+          3,
+          "Field Team Assigned",
+          17,
+          17
+        ],
+        [
+          1,
+          "Fruit Digestion Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Fruit Digestion Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "Harvest Batch Created",
+          61,
+          61
+        ],
+        [
+          3,
+          "Harvest Batch Created",
+          17,
+          17
+        ],
+        [
+          1,
+          "Harvest Collection Dispatched",
+          61,
+          61
+        ],
+        [
+          3,
+          "Harvest Collection Dispatched",
+          17,
+          17
+        ],
+        [
+          1,
+          "Harvest Lot Closed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Harvest Lot Closed",
+          17,
+          17
+        ],
+        [
+          1,
+          "Harvest Plan Approved",
+          61,
+          61
+        ],
+        [
+          3,
+          "Harvest Plan Approved",
+          17,
+          17
+        ],
+        [
+          1,
+          "Incoming FFB Quality Inspection",
+          61,
+          61
+        ],
+        [
+          3,
+          "Incoming FFB Quality Inspection",
+          17,
+          17
+        ],
+        [
+          1,
+          "Kernel Drying Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Kernel Drying Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "Kernel Separation Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Kernel Separation Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "Mill Weighbridge Inbound",
+          61,
+          61
+        ],
+        [
+          3,
+          "Mill Weighbridge Inbound",
+          17,
+          17
+        ],
+        [
+          1,
+          "Oil Clarification Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Oil Clarification Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "Oil Purification Completed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Oil Purification Completed",
+          17,
+          17
+        ],
+        [
+          1,
+          "Palm Ripeness Assessed",
+          61,
+          61
+        ],
+        [
+          3,
+          "Palm Ripeness Assessed",
+          17,
+          17
+        ],
+        [
+          1,
+          "Steam and Boiler Readiness Checked",
+          61,
+          61
+        ],
+        [
+          3,
+          "Steam and Boiler Readiness Checked",
+          17,
+          17
+        ],
+        [
+          1,
+          "Transport to Palm Oil Mill",
+          61,
+          61
+        ],
+        [
+          3,
+          "Transport to Palm Oil Mill",
+          17,
+          17
+        ]
+      ]
+    }
+  ],
+  "Q02": [
+    {
+      "columns": [
+        "outcome_category",
+        "lot_count",
+        "percentage_of_total_lots",
+        "total_revenue_myr",
+        "total_cost_myr",
+        "sunk_crop_production_cost_myr",
+        "transport_cost_myr",
+        "downstream_mill_cost_myr",
+        "total_profit_contribution_myr",
+        "avg_cost_per_lot_myr",
+        "avg_contribution_per_lot_myr"
+      ],
+      "rows": [
+        [
+          "Processed / Dispatched Lots",
+          189,
+          82.17,
+          "7074461.68",
+          "5502753.42",
+          "4232310.00",
+          "142301.63",
+          "1072019.84",
+          "1571708.26",
+          29115.1,
+          8315.92
+        ],
+        [
+          "Rejected Lots",
+          29,
+          12.61,
+          "0.00",
+          "711861.41",
+          "675040.72",
+          "22872.98",
+          "4864.67",
+          "-711861.41",
+          24546.95,
+          -24546.95
+        ],
+        [
+          "Cancelled Lots",
+          12,
+          5.22,
+          "0.00",
+          "1430.83",
+          "0.00",
+          "0.00",
+          "316.84",
+          "-1430.83",
+          119.24,
+          -119.24
+        ]
+      ]
+    }
+  ],
+  "Q03": [
+    {
+      "columns": [
+        "process_stage",
+        "total_executions",
+        "avg_waiting_minutes",
+        "total_waiting_minutes",
+        "total_waiting_hours",
+        "avg_duration_minutes",
+        "total_duration_minutes",
+        "total_processing_hours",
+        "avg_target_sla_minutes",
+        "total_sla_violations",
+        "sla_violation_rate_pct",
+        "total_stage_cost_myr"
+      ],
+      "rows": [
+        [
+          "1. Plantation / Harvesting",
+          1366,
+          35.93,
+          49085.0,
+          818.08,
+          29.17,
+          39843.0,
+          664.05,
+          174.71,
+          177,
+          12.96,
+          "4973669.70"
+        ],
+        [
+          "2. Transport & Logistics",
+          654,
+          11.87,
+          7763.0,
+          129.38,
+          48.04,
+          31415.0,
+          523.58,
+          296.67,
+          3,
+          0.46,
+          "165174.61"
+        ],
+        [
+          "3. Weighbridge & Reception",
+          838,
+          0.33,
+          279.0,
+          4.65,
+          27.45,
+          23007.0,
+          383.45,
+          188.15,
+          0,
+          0.0,
+          "44025.12"
+        ],
+        [
+          "4. Milling & Processing",
+          2133,
+          2.07,
+          4425.0,
+          73.75,
+          50.79,
+          108331.0,
+          1805.52,
+          290.0,
+          0,
+          0.0,
+          "952643.46"
+        ],
+        [
+          "5. Dispatch & Finance",
+          1188,
+          1.07,
+          1274.0,
+          21.23,
+          21.75,
+          25838.0,
+          430.63,
+          196.62,
+          0,
+          0.0,
+          "80532.77"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "event_month",
+        "waiting_events",
+        "total_waiting_hours",
+        "sla_violations"
+      ],
+      "rows": [
+        [
+          "2024-10-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2024-11-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2024-12-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-01-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-02-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-03-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-04-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-05-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-06-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-07-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-08-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-09-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-10-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-11-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2025-12-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-01-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-02-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-03-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-04-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-05-01 00:00:00",
+          726,
+          1047.1,
+          180
+        ],
+        [
+          "2026-06-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-07-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-08-01 00:00:00",
+          0,
+          0.0,
+          0
+        ],
+        [
+          "2026-09-01 00:00:00",
+          0,
+          0.0,
+          0
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "transport_date",
+        "shipments",
+        "cases"
+      ],
+      "rows": [
+        [
+          "2024-10-01",
+          2,
+          2
+        ],
+        [
+          "2024-10-07",
+          1,
+          1
+        ],
+        [
+          "2024-10-08",
+          2,
+          2
+        ],
+        [
+          "2024-10-13",
+          1,
+          1
+        ],
+        [
+          "2024-10-23",
+          1,
+          1
+        ],
+        [
+          "2024-10-31",
+          1,
+          1
+        ],
+        [
+          "2024-11-05",
+          1,
+          1
+        ],
+        [
+          "2024-11-21",
+          1,
+          1
+        ],
+        [
+          "2024-11-30",
+          1,
+          1
+        ],
+        [
+          "2024-12-08",
+          1,
+          1
+        ],
+        [
+          "2024-12-12",
+          1,
+          1
+        ],
+        [
+          "2024-12-15",
+          1,
+          1
+        ],
+        [
+          "2024-12-16",
+          1,
+          1
+        ],
+        [
+          "2024-12-24",
+          2,
+          2
+        ],
+        [
+          "2025-01-02",
+          1,
+          1
+        ],
+        [
+          "2025-01-03",
+          1,
+          1
+        ],
+        [
+          "2025-01-08",
+          1,
+          1
+        ],
+        [
+          "2025-01-15",
+          1,
+          1
+        ],
+        [
+          "2025-01-21",
+          1,
+          1
+        ],
+        [
+          "2025-02-05",
+          1,
+          1
+        ],
+        [
+          "2025-02-09",
+          1,
+          1
+        ],
+        [
+          "2025-02-11",
+          1,
+          1
+        ],
+        [
+          "2025-02-23",
+          2,
+          2
+        ],
+        [
+          "2025-02-24",
+          1,
+          1
+        ],
+        [
+          "2025-03-03",
+          1,
+          1
+        ],
+        [
+          "2025-03-14",
+          1,
+          1
+        ],
+        [
+          "2025-03-18",
+          1,
+          1
+        ],
+        [
+          "2025-03-19",
+          1,
+          1
+        ],
+        [
+          "2025-03-31",
+          1,
+          1
+        ],
+        [
+          "2025-04-24",
+          1,
+          1
+        ],
+        [
+          "2025-04-26",
+          1,
+          1
+        ],
+        [
+          "2025-05-01",
+          1,
+          1
+        ],
+        [
+          "2025-05-08",
+          1,
+          1
+        ],
+        [
+          "2025-05-19",
+          1,
+          1
+        ],
+        [
+          "2025-05-21",
+          1,
+          1
+        ],
+        [
+          "2025-05-28",
+          2,
+          2
+        ],
+        [
+          "2025-06-02",
+          1,
+          1
+        ],
+        [
+          "2025-06-08",
+          1,
+          1
+        ],
+        [
+          "2025-06-09",
+          1,
+          1
+        ],
+        [
+          "2025-06-10",
+          1,
+          1
+        ],
+        [
+          "2025-06-17",
+          2,
+          2
+        ],
+        [
+          "2025-06-26",
+          1,
+          1
+        ],
+        [
+          "2025-06-29",
+          1,
+          1
+        ],
+        [
+          "2025-06-30",
+          1,
+          1
+        ],
+        [
+          "2025-07-08",
+          2,
+          2
+        ],
+        [
+          "2025-07-10",
+          1,
+          1
+        ],
+        [
+          "2025-07-15",
+          1,
+          1
+        ],
+        [
+          "2025-07-16",
+          1,
+          1
+        ],
+        [
+          "2025-07-18",
+          1,
+          1
+        ],
+        [
+          "2025-07-25",
+          1,
+          1
+        ],
+        [
+          "2025-07-28",
+          1,
+          1
+        ],
+        [
+          "2025-08-07",
+          1,
+          1
+        ],
+        [
+          "2025-08-08",
+          1,
+          1
+        ],
+        [
+          "2025-08-10",
+          1,
+          1
+        ],
+        [
+          "2025-08-13",
+          1,
+          1
+        ],
+        [
+          "2025-08-15",
+          1,
+          1
+        ],
+        [
+          "2025-08-18",
+          1,
+          1
+        ],
+        [
+          "2025-08-19",
+          1,
+          1
+        ],
+        [
+          "2025-08-23",
+          1,
+          1
+        ],
+        [
+          "2025-08-27",
+          1,
+          1
+        ],
+        [
+          "2025-08-28",
+          1,
+          1
+        ],
+        [
+          "2025-09-02",
+          1,
+          1
+        ],
+        [
+          "2025-09-03",
+          1,
+          1
+        ],
+        [
+          "2025-09-04",
+          2,
+          2
+        ],
+        [
+          "2025-09-08",
+          1,
+          1
+        ],
+        [
+          "2025-09-11",
+          2,
+          2
+        ],
+        [
+          "2025-09-12",
+          1,
+          1
+        ],
+        [
+          "2025-09-15",
+          1,
+          1
+        ],
+        [
+          "2025-09-18",
+          1,
+          1
+        ],
+        [
+          "2025-09-19",
+          1,
+          1
+        ],
+        [
+          "2025-09-24",
+          1,
+          1
+        ],
+        [
+          "2025-09-29",
+          2,
+          2
+        ],
+        [
+          "2025-10-01",
+          1,
+          1
+        ],
+        [
+          "2025-10-03",
+          1,
+          1
+        ],
+        [
+          "2025-10-05",
+          1,
+          1
+        ],
+        [
+          "2025-10-06",
+          1,
+          1
+        ],
+        [
+          "2025-10-08",
+          1,
+          1
+        ],
+        [
+          "2025-10-13",
+          1,
+          1
+        ],
+        [
+          "2025-10-20",
+          1,
+          1
+        ],
+        [
+          "2025-10-22",
+          1,
+          1
+        ],
+        [
+          "2025-11-10",
+          1,
+          1
+        ],
+        [
+          "2025-11-22",
+          1,
+          1
+        ],
+        [
+          "2025-11-27",
+          1,
+          1
+        ],
+        [
+          "2025-12-03",
+          1,
+          1
+        ],
+        [
+          "2025-12-08",
+          1,
+          1
+        ],
+        [
+          "2025-12-09",
+          1,
+          1
+        ],
+        [
+          "2026-01-02",
+          1,
+          1
+        ],
+        [
+          "2026-01-06",
+          1,
+          1
+        ],
+        [
+          "2026-01-13",
+          1,
+          1
+        ],
+        [
+          "2026-01-21",
+          1,
+          1
+        ],
+        [
+          "2026-01-31",
+          1,
+          1
+        ],
+        [
+          "2026-02-06",
+          2,
+          2
+        ],
+        [
+          "2026-02-08",
+          1,
+          1
+        ],
+        [
+          "2026-02-12",
+          1,
+          1
+        ],
+        [
+          "2026-02-27",
+          1,
+          1
+        ],
+        [
+          "2026-03-01",
+          1,
+          1
+        ],
+        [
+          "2026-03-02",
+          1,
+          1
+        ],
+        [
+          "2026-03-12",
+          1,
+          1
+        ],
+        [
+          "2026-03-30",
+          2,
+          2
+        ],
+        [
+          "2026-03-31",
+          1,
+          1
+        ],
+        [
+          "2026-04-01",
+          1,
+          1
+        ],
+        [
+          "2026-04-22",
+          1,
+          1
+        ],
+        [
+          "2026-04-26",
+          1,
+          1
+        ],
+        [
+          "2026-04-29",
+          1,
+          1
+        ],
+        [
+          "2026-05-01",
+          1,
+          1
+        ],
+        [
+          "2026-05-06",
+          3,
+          3
+        ],
+        [
+          "2026-05-08",
+          23,
+          23
+        ],
+        [
+          "2026-05-09",
+          44,
+          44
+        ],
+        [
+          "2026-05-12",
+          1,
+          1
+        ],
+        [
+          "2026-05-14",
+          1,
+          1
+        ],
+        [
+          "2026-05-20",
+          1,
+          1
+        ],
+        [
+          "2026-05-21",
+          1,
+          1
+        ],
+        [
+          "2026-05-30",
+          1,
+          1
+        ],
+        [
+          "2026-06-01",
+          1,
+          1
+        ],
+        [
+          "2026-06-05",
+          1,
+          1
+        ],
+        [
+          "2026-06-16",
+          1,
+          1
+        ],
+        [
+          "2026-06-18",
+          1,
+          1
+        ],
+        [
+          "2026-06-24",
+          1,
+          1
+        ],
+        [
+          "2026-06-26",
+          1,
+          1
+        ],
+        [
+          "2026-07-01",
+          1,
+          1
+        ],
+        [
+          "2026-07-09",
+          1,
+          1
+        ],
+        [
+          "2026-07-13",
+          1,
+          1
+        ],
+        [
+          "2026-07-21",
+          1,
+          1
+        ],
+        [
+          "2026-07-22",
+          2,
+          2
+        ],
+        [
+          "2026-07-30",
+          1,
+          1
+        ],
+        [
+          "2026-07-31",
+          3,
+          3
+        ],
+        [
+          "2026-08-04",
+          1,
+          1
+        ],
+        [
+          "2026-08-27",
+          1,
+          1
+        ],
+        [
+          "2026-08-29",
+          1,
+          1
+        ],
+        [
+          "2026-08-30",
+          2,
+          2
+        ],
+        [
+          "2026-09-02",
+          1,
+          1
+        ],
+        [
+          "2026-09-11",
+          1,
+          1
+        ],
+        [
+          "2026-09-14",
+          1,
+          1
+        ],
+        [
+          "2026-09-16",
+          1,
+          1
+        ],
+        [
+          "2026-09-18",
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "facility_id",
+        "processing_date",
+        "processing_hours",
+        "calendar_load_pct"
+      ],
+      "rows": [
+        [
+          "FAC-029",
+          "2024-10-01",
+          2.2333,
+          9.31
+        ],
+        [
+          "FAC-029",
+          "2024-10-07",
+          0.8,
+          3.33
+        ],
+        [
+          "FAC-029",
+          "2024-10-08",
+          0.7667,
+          3.19
+        ],
+        [
+          "FAC-029",
+          "2024-10-13",
+          0.8167,
+          3.4
+        ],
+        [
+          "FAC-029",
+          "2024-10-23",
+          0.4667,
+          1.94
+        ],
+        [
+          "FAC-029",
+          "2024-10-24",
+          1.05,
+          4.38
+        ],
+        [
+          "FAC-029",
+          "2024-11-05",
+          2.3333,
+          9.72
+        ],
+        [
+          "FAC-029",
+          "2024-11-21",
+          0.7333,
+          3.06
+        ],
+        [
+          "FAC-029",
+          "2024-12-01",
+          1.7833,
+          7.43
+        ],
+        [
+          "FAC-029",
+          "2024-12-08",
+          1.0833,
+          4.51
+        ],
+        [
+          "FAC-029",
+          "2024-12-12",
+          0.9333,
+          3.89
+        ],
+        [
+          "FAC-029",
+          "2024-12-15",
+          0.9333,
+          3.89
+        ],
+        [
+          "FAC-029",
+          "2024-12-16",
+          0.9,
+          3.75
+        ],
+        [
+          "FAC-029",
+          "2024-12-24",
+          0.8667,
+          3.61
+        ],
+        [
+          "FAC-029",
+          "2024-12-25",
+          1.7667,
+          7.36
+        ],
+        [
+          "FAC-029",
+          "2025-01-02",
+          1.0667,
+          4.44
+        ],
+        [
+          "FAC-029",
+          "2025-01-03",
+          1.7333,
+          7.22
+        ],
+        [
+          "FAC-029",
+          "2025-01-08",
+          1.4333,
+          5.97
+        ],
+        [
+          "FAC-029",
+          "2025-01-15",
+          1.4667,
+          6.11
+        ],
+        [
+          "FAC-029",
+          "2025-01-21",
+          1.6,
+          6.67
+        ],
+        [
+          "FAC-029",
+          "2025-02-05",
+          0.9333,
+          3.89
+        ],
+        [
+          "FAC-029",
+          "2025-02-11",
+          0.9,
+          3.75
+        ],
+        [
+          "FAC-029",
+          "2025-02-23",
+          2.5167,
+          10.49
+        ],
+        [
+          "FAC-029",
+          "2025-02-24",
+          0.8333,
+          3.47
+        ],
+        [
+          "FAC-029",
+          "2025-03-03",
+          1.35,
+          5.63
+        ],
+        [
+          "FAC-029",
+          "2025-03-14",
+          1.6167,
+          6.74
+        ],
+        [
+          "FAC-029",
+          "2025-03-18",
+          0.9667,
+          4.03
+        ],
+        [
+          "FAC-029",
+          "2025-03-19",
+          1.1833,
+          4.93
+        ],
+        [
+          "FAC-029",
+          "2025-03-31",
+          1.5667,
+          6.53
+        ],
+        [
+          "FAC-029",
+          "2025-04-26",
+          2.3,
+          9.58
+        ],
+        [
+          "FAC-029",
+          "2025-05-01",
+          1.2,
+          5.0
+        ],
+        [
+          "FAC-029",
+          "2025-05-08",
+          1.0,
+          4.17
+        ],
+        [
+          "FAC-029",
+          "2025-05-19",
+          1.3167,
+          5.49
+        ],
+        [
+          "FAC-029",
+          "2025-05-21",
+          1.0667,
+          4.44
+        ],
+        [
+          "FAC-029",
+          "2025-05-28",
+          1.55,
+          6.46
+        ],
+        [
+          "FAC-030",
+          "2025-05-28",
+          2.1833,
+          9.1
+        ],
+        [
+          "FAC-029",
+          "2025-06-02",
+          1.5333,
+          6.39
+        ],
+        [
+          "FAC-029",
+          "2025-06-08",
+          0.7667,
+          3.19
+        ],
+        [
+          "FAC-029",
+          "2025-06-09",
+          2.85,
+          11.88
+        ],
+        [
+          "FAC-029",
+          "2025-06-10",
+          1.1333,
+          4.72
+        ],
+        [
+          "FAC-029",
+          "2025-06-17",
+          1.9333,
+          8.06
+        ],
+        [
+          "FAC-029",
+          "2025-06-18",
+          0.7833,
+          3.26
+        ],
+        [
+          "FAC-029",
+          "2025-06-26",
+          1.7667,
+          7.36
+        ],
+        [
+          "FAC-029",
+          "2025-06-29",
+          0.9667,
+          4.03
+        ],
+        [
+          "FAC-029",
+          "2025-06-30",
+          1.5333,
+          6.39
+        ],
+        [
+          "FAC-029",
+          "2025-07-08",
+          2.2167,
+          9.24
+        ],
+        [
+          "FAC-029",
+          "2025-07-09",
+          0.9,
+          3.75
+        ],
+        [
+          "FAC-029",
+          "2025-07-15",
+          1.7167,
+          7.15
+        ],
+        [
+          "FAC-029",
+          "2025-07-16",
+          0.9167,
+          3.82
+        ],
+        [
+          "FAC-029",
+          "2025-07-18",
+          1.3667,
+          5.69
+        ],
+        [
+          "FAC-029",
+          "2025-07-28",
+          1.4833,
+          6.18
+        ],
+        [
+          "FAC-029",
+          "2025-08-07",
+          0.5833,
+          2.43
+        ],
+        [
+          "FAC-029",
+          "2025-08-08",
+          4.0833,
+          17.01
+        ],
+        [
+          "FAC-029",
+          "2025-08-10",
+          2.5,
+          10.42
+        ],
+        [
+          "FAC-029",
+          "2025-08-13",
+          2.0667,
+          8.61
+        ],
+        [
+          "FAC-029",
+          "2025-08-16",
+          1.3167,
+          5.49
+        ],
+        [
+          "FAC-029",
+          "2025-08-18",
+          1.1667,
+          4.86
+        ],
+        [
+          "FAC-029",
+          "2025-08-19",
+          1.05,
+          4.38
+        ],
+        [
+          "FAC-029",
+          "2025-08-23",
+          1.5833,
+          6.6
+        ],
+        [
+          "FAC-029",
+          "2025-08-28",
+          1.0167,
+          4.24
+        ],
+        [
+          "FAC-029",
+          "2025-09-02",
+          1.1667,
+          4.86
+        ],
+        [
+          "FAC-029",
+          "2025-09-03",
+          1.3833,
+          5.76
+        ],
+        [
+          "FAC-029",
+          "2025-09-04",
+          1.7333,
+          7.22
+        ],
+        [
+          "FAC-029",
+          "2025-09-05",
+          0.4,
+          1.67
+        ],
+        [
+          "FAC-029",
+          "2025-09-08",
+          0.9167,
+          3.82
+        ],
+        [
+          "FAC-029",
+          "2025-09-11",
+          2.6,
+          10.83
+        ],
+        [
+          "FAC-029",
+          "2025-09-12",
+          2.25,
+          9.38
+        ],
+        [
+          "FAC-029",
+          "2025-09-15",
+          1.8667,
+          7.78
+        ],
+        [
+          "FAC-029",
+          "2025-09-18",
+          1.6167,
+          6.74
+        ],
+        [
+          "FAC-029",
+          "2025-09-19",
+          1.4667,
+          6.11
+        ],
+        [
+          "FAC-029",
+          "2025-09-24",
+          1.1667,
+          4.86
+        ],
+        [
+          "FAC-029",
+          "2025-09-29",
+          2.7167,
+          11.32
+        ],
+        [
+          "FAC-029",
+          "2025-10-01",
+          1.25,
+          5.21
+        ],
+        [
+          "FAC-029",
+          "2025-10-04",
+          2.0,
+          8.33
+        ],
+        [
+          "FAC-029",
+          "2025-10-05",
+          1.4667,
+          6.11
+        ],
+        [
+          "FAC-029",
+          "2025-10-06",
+          1.45,
+          6.04
+        ],
+        [
+          "FAC-029",
+          "2025-10-08",
+          1.1833,
+          4.93
+        ],
+        [
+          "FAC-029",
+          "2025-10-13",
+          1.3,
+          5.42
+        ],
+        [
+          "FAC-029",
+          "2025-11-22",
+          1.0,
+          4.17
+        ],
+        [
+          "FAC-029",
+          "2025-11-27",
+          0.8167,
+          3.4
+        ],
+        [
+          "FAC-029",
+          "2025-11-28",
+          0.3667,
+          1.53
+        ],
+        [
+          "FAC-029",
+          "2025-12-08",
+          1.05,
+          4.38
+        ],
+        [
+          "FAC-029",
+          "2025-12-09",
+          2.2333,
+          9.31
+        ],
+        [
+          "FAC-029",
+          "2026-01-06",
+          1.6667,
+          6.94
+        ],
+        [
+          "FAC-029",
+          "2026-01-13",
+          1.0167,
+          4.24
+        ],
+        [
+          "FAC-029",
+          "2026-01-21",
+          1.0833,
+          4.51
+        ],
+        [
+          "FAC-029",
+          "2026-01-31",
+          1.3167,
+          5.49
+        ],
+        [
+          "FAC-029",
+          "2026-02-06",
+          2.85,
+          11.87
+        ],
+        [
+          "FAC-029",
+          "2026-02-08",
+          1.2667,
+          5.28
+        ],
+        [
+          "FAC-029",
+          "2026-02-12",
+          0.8167,
+          3.4
+        ],
+        [
+          "FAC-029",
+          "2026-02-28",
+          2.0833,
+          8.68
+        ],
+        [
+          "FAC-029",
+          "2026-03-01",
+          1.25,
+          5.21
+        ],
+        [
+          "FAC-029",
+          "2026-03-02",
+          1.0333,
+          4.31
+        ],
+        [
+          "FAC-029",
+          "2026-03-12",
+          0.7833,
+          3.26
+        ],
+        [
+          "FAC-029",
+          "2026-03-30",
+          1.0,
+          4.17
+        ],
+        [
+          "FAC-029",
+          "2026-03-31",
+          1.15,
+          4.79
+        ],
+        [
+          "FAC-029",
+          "2026-04-22",
+          1.15,
+          4.79
+        ],
+        [
+          "FAC-029",
+          "2026-04-26",
+          1.3333,
+          5.56
+        ],
+        [
+          "FAC-029",
+          "2026-04-29",
+          0.9667,
+          4.03
+        ],
+        [
+          "FAC-029",
+          "2026-04-30",
+          0.3,
+          1.25
+        ],
+        [
+          "FAC-029",
+          "2026-05-01",
+          1.3167,
+          5.49
+        ],
+        [
+          "FAC-029",
+          "2026-05-06",
+          3.5167,
+          14.65
+        ],
+        [
+          "FAC-029",
+          "2026-05-08",
+          8.0,
+          33.33
+        ],
+        [
+          "FAC-030",
+          "2026-05-08",
+          6.9167,
+          28.82
+        ],
+        [
+          "FAC-031",
+          "2026-05-08",
+          4.6167,
+          19.24
+        ],
+        [
+          "FAC-029",
+          "2026-05-09",
+          20.6333,
+          85.97
+        ],
+        [
+          "FAC-030",
+          "2026-05-09",
+          20.5333,
+          85.56
+        ],
+        [
+          "FAC-031",
+          "2026-05-09",
+          21.45,
+          89.38
+        ],
+        [
+          "FAC-029",
+          "2026-05-20",
+          1.6833,
+          7.01
+        ],
+        [
+          "FAC-029",
+          "2026-05-21",
+          1.2833,
+          5.35
+        ],
+        [
+          "FAC-029",
+          "2026-05-30",
+          1.5333,
+          6.39
+        ],
+        [
+          "FAC-029",
+          "2026-06-05",
+          1.0667,
+          4.44
+        ],
+        [
+          "FAC-029",
+          "2026-06-16",
+          1.25,
+          5.21
+        ],
+        [
+          "FAC-029",
+          "2026-06-17",
+          0.3833,
+          1.6
+        ],
+        [
+          "FAC-029",
+          "2026-06-18",
+          0.8333,
+          3.47
+        ],
+        [
+          "FAC-029",
+          "2026-06-24",
+          0.8,
+          3.33
+        ],
+        [
+          "FAC-029",
+          "2026-06-26",
+          1.5833,
+          6.6
+        ],
+        [
+          "FAC-029",
+          "2026-06-27",
+          0.0333,
+          0.14
+        ],
+        [
+          "FAC-029",
+          "2026-07-01",
+          1.1333,
+          4.72
+        ],
+        [
+          "FAC-029",
+          "2026-07-09",
+          0.8667,
+          3.61
+        ],
+        [
+          "FAC-029",
+          "2026-07-13",
+          1.0333,
+          4.31
+        ],
+        [
+          "FAC-029",
+          "2026-07-21",
+          0.9667,
+          4.03
+        ],
+        [
+          "FAC-029",
+          "2026-07-22",
+          1.5167,
+          6.32
+        ],
+        [
+          "FAC-029",
+          "2026-07-30",
+          1.45,
+          6.04
+        ],
+        [
+          "FAC-029",
+          "2026-07-31",
+          2.0833,
+          8.68
+        ],
+        [
+          "FAC-030",
+          "2026-07-31",
+          1.1167,
+          4.65
+        ],
+        [
+          "FAC-029",
+          "2026-08-01",
+          0.1833,
+          0.76
+        ],
+        [
+          "FAC-029",
+          "2026-08-04",
+          0.8833,
+          3.68
+        ],
+        [
+          "FAC-029",
+          "2026-08-27",
+          0.9667,
+          4.03
+        ],
+        [
+          "FAC-029",
+          "2026-08-30",
+          1.0333,
+          4.31
+        ],
+        [
+          "FAC-030",
+          "2026-08-30",
+          0.9833,
+          4.1
+        ],
+        [
+          "FAC-029",
+          "2026-09-02",
+          1.35,
+          5.63
+        ],
+        [
+          "FAC-029",
+          "2026-09-11",
+          1.1333,
+          4.72
+        ],
+        [
+          "FAC-029",
+          "2026-09-14",
+          1.4333,
+          5.97
+        ],
+        [
+          "FAC-029",
+          "2026-09-18",
+          1.25,
+          5.21
+        ]
+      ]
+    }
+  ],
+  "Q04": [
+    {
+      "columns": [
+        "lead_time_bucket",
+        "lots_arrived",
+        "lots_rejected",
+        "rejection_rate_pct",
+        "avg_lead_time_hours",
+        "total_rejected_cost_leakage_myr"
+      ],
+      "rows": [
+        [
+          "1. Rapid (< 2.0 hours)",
+          33,
+          6,
+          18.18,
+          1.79,
+          "133719.52"
+        ],
+        [
+          "2. Standard (2.0 - 3.0 hours)",
+          93,
+          7,
+          7.53,
+          2.36,
+          "157352.90"
+        ],
+        [
+          "3. Moderate Delay (3.0 - 4.0 hours)",
+          31,
+          7,
+          22.58,
+          3.41,
+          "193935.13"
+        ],
+        [
+          "4. Severe Delay (> 4.0 hours)",
+          61,
+          9,
+          14.75,
+          8.16,
+          "226853.86"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "ffb_grade",
+        "total_lots_received",
+        "lots_rejected",
+        "rejection_rate_pct",
+        "avg_lead_time_hours",
+        "total_rejected_cost_myr"
+      ],
+      "rows": [
+        [
+          "A",
+          94,
+          11,
+          11.7,
+          3.93,
+          "289952.06"
+        ],
+        [
+          "B",
+          77,
+          10,
+          12.99,
+          4.17,
+          "232974.12"
+        ],
+        [
+          "C",
+          44,
+          7,
+          15.91,
+          4.13,
+          "163392.20"
+        ],
+        [
+          "Unknown",
+          3,
+          1,
+          33.33,
+          3.04,
+          "25543.03"
+        ]
+      ]
+    }
+  ],
+  "Q05": [
+    {
+      "columns": [
+        "activity",
+        "total_lots_processed",
+        "assigned_facilities",
+        "avg_queue_wait_minutes",
+        "total_queue_wait_minutes",
+        "avg_processing_duration_minutes",
+        "total_processing_duration_minutes",
+        "total_processing_hours",
+        "total_equipment_cost_myr",
+        "total_activity_cost_myr"
+      ],
+      "rows": [
+        [
+          "FFB Sterilization Completed",
+          189,
+          3,
+          12.21,
+          2308.0,
+          81.2,
+          15346.0,
+          255.77,
+          "46038.00",
+          "203883.02"
+        ],
+        [
+          "Crude Oil Pressing Completed",
+          189,
+          3,
+          1.94,
+          366.0,
+          67.78,
+          12810.0,
+          213.5,
+          "36295.08",
+          "200031.15"
+        ],
+        [
+          "Oil Clarification Completed",
+          189,
+          3,
+          2.37,
+          448.0,
+          61.81,
+          11683.0,
+          194.72,
+          "21808.23",
+          "85697.96"
+        ],
+        [
+          "Fruit Digestion Completed",
+          189,
+          3,
+          0.43,
+          82.0,
+          50.22,
+          9492.0,
+          158.2,
+          "17243.82",
+          "65699.17"
+        ],
+        [
+          "Oil Purification Completed",
+          189,
+          3,
+          1.65,
+          312.0,
+          49.24,
+          9306.0,
+          155.1,
+          "17681.40",
+          "69660.76"
+        ],
+        [
+          "FFB Threshing Completed",
+          189,
+          3,
+          0.0,
+          0.0,
+          46.21,
+          8733.0,
+          145.55,
+          "20231.47",
+          "77863.53"
+        ],
+        [
+          "CPO Laboratory Tested",
+          216,
+          3,
+          0.04,
+          8.0,
+          35.69,
+          7708.0,
+          128.47,
+          "5138.70",
+          "16626.13"
+        ],
+        [
+          "Mill Weighbridge Inbound",
+          218,
+          2,
+          0.27,
+          58.0,
+          20.68,
+          4508.0,
+          75.13,
+          "2855.11",
+          "9577.07"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "activity",
+        "facility_id",
+        "lots_handled",
+        "avg_waiting_min",
+        "total_waiting_min",
+        "avg_duration_min",
+        "total_facility_busy_hours",
+        "total_cost_myr"
+      ],
+      "rows": [
+        [
+          "Crude Oil Pressing Completed",
+          "FAC-038",
+          150,
+          1.07,
+          161.0,
+          67.83,
+          169.58,
+          "169056.81"
+        ],
+        [
+          "Crude Oil Pressing Completed",
+          "FAC-039",
+          23,
+          6.26,
+          144.0,
+          71.65,
+          27.47,
+          "18985.93"
+        ],
+        [
+          "Crude Oil Pressing Completed",
+          "FAC-040",
+          16,
+          3.81,
+          61.0,
+          61.69,
+          16.45,
+          "11988.41"
+        ],
+        [
+          "FFB Sterilization Completed",
+          "FAC-029",
+          150,
+          6.42,
+          963.0,
+          79.19,
+          197.97,
+          "158802.61"
+        ],
+        [
+          "FFB Sterilization Completed",
+          "FAC-030",
+          21,
+          34.62,
+          727.0,
+          90.67,
+          31.73,
+          "24723.08"
+        ],
+        [
+          "FFB Sterilization Completed",
+          "FAC-031",
+          18,
+          34.33,
+          618.0,
+          86.89,
+          26.07,
+          "20357.33"
+        ],
+        [
+          "Oil Clarification Completed",
+          "FAC-041",
+          148,
+          0.47,
+          70.0,
+          62.32,
+          153.72,
+          "67045.13"
+        ],
+        [
+          "Oil Clarification Completed",
+          "FAC-042",
+          25,
+          8.6,
+          215.0,
+          60.44,
+          25.18,
+          "11332.87"
+        ],
+        [
+          "Oil Clarification Completed",
+          "FAC-043",
+          16,
+          10.19,
+          163.0,
+          59.31,
+          15.82,
+          "7319.96"
+        ]
+      ]
+    }
+  ],
+  "Q06": [
+    {
+      "columns": [
+        "activity",
+        "rework_flag",
+        "execution_count",
+        "total_labor_cost_myr",
+        "total_material_cost_myr",
+        "total_equipment_cost_myr",
+        "total_overhead_cost_myr",
+        "total_rework_cost_myr",
+        "avg_cost_per_execution_myr"
+      ],
+      "rows": [
+        [
+          "CPO Quality Rework Applied",
+          false,
+          27,
+          "1080.49",
+          "13007.56",
+          "3592.90",
+          "788.54",
+          "18469.49",
+          684.06
+        ],
+        [
+          "CPO Laboratory Tested",
+          true,
+          27,
+          "848.99",
+          "0.00",
+          "735.32",
+          "723.71",
+          "2308.02",
+          85.48
+        ],
+        [
+          "FFB Field Grading",
+          true,
+          22,
+          "407.55",
+          "0.00",
+          "128.00",
+          "510.13",
+          "1045.68",
+          47.53
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "case_id",
+        "activity",
+        "allowance_timestamp",
+        "allowance_deduction_myr",
+        "administrative_cost_myr",
+        "net_contribution_loss_myr"
+      ],
+      "rows": [
+        [
+          "PALM-000130",
+          "Authorized CPO Sales Allowance",
+          "2025-09-03 08:25:00",
+          "-2508.62",
+          "27.54",
+          "-2536.16"
+        ],
+        [
+          "PALM-000215",
+          "Authorized CPO Sales Allowance",
+          "2026-01-22 05:15:00",
+          "-2482.69",
+          "25.42",
+          "-2508.11"
+        ],
+        [
+          "PALM-000183",
+          "Authorized CPO Sales Allowance",
+          "2025-02-25 01:48:00",
+          "-2098.87",
+          "26.48",
+          "-2125.35"
+        ],
+        [
+          "PALM-000107",
+          "Authorized CPO Sales Allowance",
+          "2026-07-23 05:26:00",
+          "-2056.04",
+          "32.84",
+          "-2088.88"
+        ],
+        [
+          "PALM-000162",
+          "Authorized CPO Sales Allowance",
+          "2026-03-02 06:26:00",
+          "-1761.65",
+          "31.78",
+          "-1793.43"
+        ],
+        [
+          "PALM-000075",
+          "Authorized CPO Sales Allowance",
+          "2026-05-10 02:44:00",
+          "-1399.28",
+          "30.72",
+          "-1430.00"
+        ],
+        [
+          "PALM-000223",
+          "Authorized CPO Sales Allowance",
+          "2024-10-01 21:30:00",
+          "-1385.26",
+          "25.42",
+          "-1410.68"
+        ],
+        [
+          "PALM-000034",
+          "Authorized CPO Sales Allowance",
+          "2026-05-09 16:46:00",
+          "-1243.67",
+          "26.48",
+          "-1270.15"
+        ],
+        [
+          "PALM-000173",
+          "Authorized CPO Sales Allowance",
+          "2026-07-10 02:11:00",
+          "-1102.19",
+          "32.84",
+          "-1135.03"
+        ],
+        [
+          "PALM-000088",
+          "Authorized CPO Sales Allowance",
+          "2025-10-06 23:42:00",
+          "-1071.72",
+          "26.48",
+          "-1098.20"
+        ],
+        [
+          "PALM-000001",
+          "Authorized CPO Sales Allowance",
+          "2024-10-02 05:36:00",
+          "-1069.75",
+          "30.72",
+          "-1100.47"
+        ],
+        [
+          "PALM-000150",
+          "Authorized CPO Sales Allowance",
+          "2025-05-22 00:18:00",
+          "-1051.50",
+          "28.60",
+          "-1080.10"
+        ],
+        [
+          "PALM-000079",
+          "Authorized CPO Sales Allowance",
+          "2026-05-09 13:08:00",
+          "-903.56",
+          "39.67",
+          "-943.23"
+        ],
+        [
+          "PALM-000056",
+          "Authorized CPO Sales Allowance",
+          "2026-05-09 21:53:00",
+          "-814.28",
+          "36.02",
+          "-850.30"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "failure_type",
+        "executions",
+        "financial_loss_myr"
+      ],
+      "rows": [
+        [
+          "Operational Rework Expenses",
+          76,
+          "21823.19"
+        ],
+        [
+          "Commercial Sales Allowances (Penalty)",
+          14,
+          "-20949.08"
+        ]
+      ]
+    }
+  ],
+  "Q07": [
+    {
+      "columns": [
+        "activity",
+        "trip_count",
+        "baseline_waiting_minutes",
+        "baseline_waiting_hours",
+        "avg_waiting_minutes_per_trip",
+        "baseline_truck_cost",
+        "baseline_total_cost",
+        "minutes_saved_at_20pct",
+        "hours_saved_at_20pct"
+      ],
+      "rows": [
+        [
+          "Transport to Palm Oil Mill",
+          218,
+          4033.0,
+          67.22,
+          18.5,
+          "27472.43",
+          "109629.88",
+          806.6,
+          13.44
+        ],
+        [
+          "FFB Loaded for Transport",
+          218,
+          3723.0,
+          62.05,
+          17.08,
+          "9637.00",
+          "47378.04",
+          744.6,
+          12.41
+        ],
+        [
+          "Harvest Collection Dispatched",
+          218,
+          7.0,
+          0.12,
+          0.03,
+          "1106.75",
+          "8166.69",
+          1.4,
+          0.02
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "as_is_waiting_hours",
+        "to_be_waiting_hours",
+        "saved_waiting_hours",
+        "avoidable_cost_savings_myr",
+        "implementation_cost_myr",
+        "annual_operating_cost_myr",
+        "net_financial_benefit_myr",
+        "net_financial_benefit_idr"
+      ],
+      "rows": [
+        [
+          129.38333333333333,
+          103.51,
+          25.88,
+          "917.19",
+          "6000.00",
+          "1200.00",
+          "-6282.81",
+          "-27549312.45"
+        ]
+      ]
+    }
+  ],
+  "Q08": [
+    {
+      "columns": [
+        "baseline_rejected_lots",
+        "lots_rescued_from_rejection",
+        "incremental_revenue_myr",
+        "marginal_milling_cost_myr",
+        "implementation_cost_myr",
+        "additional_operating_cost_myr",
+        "net_financial_benefit_myr",
+        "net_financial_benefit_idr"
+      ],
+      "rows": [
+        [
+          29,
+          "4.35",
+          162824.91,
+          24673.47,
+          "20000.00",
+          "5000.00",
+          113151.44,
+          496154351.09
+        ]
+      ]
+    }
+  ],
+  "Q09": [
+    {
+      "columns": [
+        "demand_scenario",
+        "total_lots_sterilized",
+        "to_be_duration_min",
+        "incremental_revenue_myr",
+        "incremental_cpo_sales_idr",
+        "implementation_cost_myr",
+        "additional_operating_cost_myr",
+        "net_financial_benefit_myr",
+        "net_financial_benefit_idr",
+        "investment_verdict"
+      ],
+      "rows": [
+        [
+          "Fixed Demand Scenario (189 Processed Lots)",
+          "189",
+          70.61,
+          "0.00",
+          "0.00",
+          "110000.00",
+          "15000.00",
+          "-125000.00",
+          "-548108750.00",
+          "UNFEASIBLE: Under fixed demand, idle capacity increases costs without new revenue"
+        ],
+        [
+          "Growth Demand Scenario (+15% Harvest Expansion)",
+          "217",
+          70.61,
+          "235756.05",
+          "1033759624.39",
+          "110000.00",
+          "15000.00",
+          "110756.05",
+          "485650874.39",
+          "FEASIBLE: Positive ROI only if plantation acreage and crop intake expand concurrently"
+        ]
+      ]
+    }
+  ],
+  "Q10": [
+    {
+      "columns": [
+        "priority_rank",
+        "initiative",
+        "avoidable_savings_myr",
+        "incremental_revenue_myr",
+        "implementation_cost_myr",
+        "operating_cost_myr",
+        "net_benefit_myr",
+        "net_benefit_idr"
+      ],
+      "rows": [
+        [
+          1,
+          "Priority 1: Early FFB Grading & Field Ripeness Screening (Q08)",
+          "0.00",
+          "162824.89",
+          "20000.00",
+          "29673.46",
+          "113151.43",
+          "496154310.86"
+        ],
+        [
+          2,
+          "Priority 2: CPO Quality Retesting & Sales Allowance Mitigation (Q06)",
+          "8729.28",
+          "10474.54",
+          "8000.00",
+          "1500.00",
+          "9703.82",
+          "42549989.20"
+        ]
+      ]
+    },
+    {
+      "columns": [
+        "business_state",
+        "revenue_myr",
+        "revenue_idr",
+        "cost_myr",
+        "cost_idr",
+        "contribution_myr",
+        "contribution_idr"
+      ],
+      "rows": [
+        [
+          "As-Is Baseline",
+          "7074461.68",
+          "31020594786.78",
+          "6216045.66",
+          "27256552133.16",
+          "858416.02",
+          "3764042653.62"
+        ],
+        [
+          "No-Action Scenario (Status Quo Persistence)",
+          "7074461.68",
+          "31020594786.78",
+          "6216045.66",
+          "27256552133.16",
+          "858416.02",
+          "3764042653.62"
+        ],
+        [
+          "To-Be Recommended Scenario (P1 + P2 Implemented)",
+          "7247761.11",
+          "31780490258.41",
+          "6270219.12",
+          "27494095712.71",
+          "981271.27",
+          "4302746953.68"
+        ]
+      ]
+    }
+  ],
+  "missing_refs": [
+    {
+      "source": "04_JAWABAN/Q02/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q02/Q02_outcomes_cost_breakdown.png"
+    },
+    {
+      "source": "04_JAWABAN/Q04/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q04/Q04_time_to_mill_vs_rejection.png"
+    },
+    {
+      "source": "04_JAWABAN/Q05/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q05/Q05_milling_facility_bottlenecks.png"
+    },
+    {
+      "source": "04_JAWABAN/Q06/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q06/Q06_rework_and_sales_allowances.png"
+    },
+    {
+      "source": "04_JAWABAN/Q07/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q07/Q07_transport_scheduling_scenario.png"
+    },
+    {
+      "source": "04_JAWABAN/Q08/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q08/Q08_ffb_rejection_reduction_model.png"
+    },
+    {
+      "source": "04_JAWABAN/Q09/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q09/Q09_milling_capacity_investment_model.png"
+    },
+    {
+      "source": "04_JAWABAN/Q10/jawaban.md",
+      "missing": "03_CELONIS_EVIDENCE/Q10/Q10_business_case_ranking_myr_idr.png"
+    }
+  ],
+  "fx_errors": [
+    {
+      "file": "financial_baseline",
+      "row": "gross_revenue",
+      "column": "value_idr",
+      "actual": "31112450410.61",
+      "expected": "31112453779.20"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "sales_allowances",
+      "column": "value_idr",
+      "actual": "-91857117.14",
+      "expected": "-91858992.42"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "net_revenue",
+      "column": "value_idr",
+      "actual": "31020593293.47",
+      "expected": "31020594786.78"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "crop_feedstock_sunk_cost",
+      "column": "value_idr",
+      "actual": "21518095460.91",
+      "expected": "21518094951.61"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "harvest_operations_cost",
+      "column": "value_idr",
+      "actual": "290799679.03",
+      "expected": "290800105.83"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "transport_logistics_cost",
+      "column": "value_idr",
+      "actual": "724269151.75",
+      "expected": "724269192.15"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "milling_processing_cost",
+      "column": "value_idr",
+      "actual": "4370258169.88",
+      "expected": "4370262156.38"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "dispatch_finance_cost",
+      "column": "value_idr",
+      "actual": "353120637.24",
+      "expected": "353125727.19"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "total_operational_cost",
+      "column": "value_idr",
+      "actual": "27256552698.81",
+      "expected": "27256552133.16"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "profit_contribution",
+      "column": "value_idr",
+      "actual": "3764040594.66",
+      "expected": "3764042653.62"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "average_cost_per_lot",
+      "column": "value_idr",
+      "actual": "118506750.86",
+      "expected": "118506768.23"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "processed_lots_revenue",
+      "column": "value_idr",
+      "actual": "31020593293.47",
+      "expected": "31020594786.78"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "processed_lots_cost",
+      "column": "value_idr",
+      "actual": "24128889814.76",
+      "expected": "24128858388.76"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "processed_lots_contribution",
+      "column": "value_idr",
+      "actual": "6891703478.71",
+      "expected": "6891736398.03"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "rejected_lots_cost_leakage",
+      "column": "value_idr",
+      "actual": "3121419736.27",
+      "expected": "3121419740.87"
+    },
+    {
+      "file": "financial_baseline",
+      "row": "cancelled_lots_cost",
+      "column": "value_idr",
+      "actual": "6274003.78",
+      "expected": "6274003.54"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "AS_IS",
+      "column": "revenue_idr",
+      "actual": "31020593293.47",
+      "expected": "31020594786.78"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "AS_IS",
+      "column": "cost_idr",
+      "actual": "27256552698.81",
+      "expected": "27256552133.16"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "AS_IS",
+      "column": "to_be_contribution_idr",
+      "actual": "3764040594.66",
+      "expected": "3764042653.62"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "NO_ACTION",
+      "column": "revenue_idr",
+      "actual": "31020593293.47",
+      "expected": "31020594786.78"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "NO_ACTION",
+      "column": "cost_idr",
+      "actual": "27256552698.81",
+      "expected": "27256552133.16"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "NO_ACTION",
+      "column": "to_be_contribution_idr",
+      "actual": "3764040594.66",
+      "expected": "3764042653.62"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q07_SCHED",
+      "column": "revenue_idr",
+      "actual": "31020593293.47",
+      "expected": "31020594786.78"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q07_SCHED",
+      "column": "cost_idr",
+      "actual": "27273696773.68",
+      "expected": "27273696974.86"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q07_SCHED",
+      "column": "to_be_contribution_idr",
+      "actual": "3746895752.96",
+      "expected": "3746897811.92"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q08_GRADE",
+      "column": "revenue_idr",
+      "actual": "31734559868.58",
+      "expected": "31734560762.20"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q08_GRADE",
+      "column": "cost_idr",
+      "actual": "27474363715.34",
+      "expected": "27474363797.71"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q08_GRADE",
+      "column": "incremental_revenue_idr",
+      "actual": "713966575.11",
+      "expected": "713965975.41"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q08_GRADE",
+      "column": "net_financial_benefit_idr",
+      "actual": "496154378.13",
+      "expected": "496154310.86"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q08_GRADE",
+      "column": "to_be_contribution_idr",
+      "actual": "4260194972.79",
+      "expected": "4260196964.48"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q09_CAPEX_FIXED",
+      "column": "revenue_idr",
+      "actual": "31020593293.47",
+      "expected": "31020594786.78"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q09_CAPEX_FIXED",
+      "column": "cost_idr",
+      "actual": "27804661448.81",
+      "expected": "27804660883.16"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q09_CAPEX_FIXED",
+      "column": "to_be_contribution_idr",
+      "actual": "3215931844.66",
+      "expected": "3215933903.62"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q09_CAPEX_GROWTH",
+      "column": "incremental_revenue_idr",
+      "actual": "2326343056.53",
+      "expected": "2326341563.22"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q09_CAPEX_GROWTH",
+      "column": "net_financial_benefit_idr",
+      "actual": "344011746.50",
+      "expected": "343993051.50"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q09_CAPEX_GROWTH",
+      "column": "to_be_contribution_idr",
+      "actual": "4108052341.16",
+      "expected": "4108035705.12"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q10_COMBINED",
+      "column": "revenue_idr",
+      "actual": "31780487042.82",
+      "expected": "31780490258.41"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q10_COMBINED",
+      "column": "cost_idr",
+      "actual": "27477743265.51",
+      "expected": "27477743304.72"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q10_COMBINED",
+      "column": "avoidable_savings_idr",
+      "actual": "38276757.89",
+      "expected": "38276757.99"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q10_COMBINED",
+      "column": "incremental_revenue_idr",
+      "actual": "759894374.25",
+      "expected": "759895471.62"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q10_COMBINED",
+      "column": "net_financial_benefit_idr",
+      "actual": "538704294.02",
+      "expected": "538704300.07"
+    },
+    {
+      "file": "scenario_comparison",
+      "row": "Q10_COMBINED",
+      "column": "to_be_contribution_idr",
+      "actual": "4302744888.68",
+      "expected": "4302746953.68"
+    }
+  ],
+  "scenario_reconciliation": [
+    {
+      "scenario": "Q09_CAPEX_GROWTH",
+      "revenue_minus_cost": "937000.00",
+      "claimed_contribution": "936866.02"
+    }
+  ],
+  "docx_content_checks": [
+    {
+      "file": "00_START_HERE/PALM_OIL_PROCESS_MINING_FULL_REPORT.docx",
+      "chars": 79341,
+      "contains_old_claims": [
+        "953.023",
+        "12,61% (29 dari 218",
+        "paralelisasi operasi",
+        "keterbatasan koordinasi",
+        "kurang dari 6 bulan",
+        "21.000"
+      ]
+    },
+    {
+      "file": "00_START_HERE/README.docx",
+      "chars": 8661,
+      "contains_old_claims": []
+    },
+    {
+      "file": "01_DATA/validation/data_quality_report.docx",
+      "chars": 5935,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q01/jawaban.docx",
+      "chars": 4953,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q02/jawaban.docx",
+      "chars": 4475,
+      "contains_old_claims": [
+        "953.023",
+        "12,61% (29 dari 218"
+      ]
+    },
+    {
+      "file": "04_JAWABAN/Q03/jawaban.docx",
+      "chars": 5303,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q04/jawaban.docx",
+      "chars": 4777,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q05/jawaban.docx",
+      "chars": 5052,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q06/jawaban.docx",
+      "chars": 5005,
+      "contains_old_claims": [
+        "21.000"
+      ]
+    },
+    {
+      "file": "04_JAWABAN/Q07/jawaban.docx",
+      "chars": 4772,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q08/jawaban.docx",
+      "chars": 4744,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q09/jawaban.docx",
+      "chars": 4632,
+      "contains_old_claims": []
+    },
+    {
+      "file": "04_JAWABAN/Q10/jawaban.docx",
+      "chars": 5534,
+      "contains_old_claims": [
+        "kurang dari 6 bulan"
+      ]
+    },
+    {
+      "file": "05_FINANCIAL/bank_indonesia_evidence/kurs_bi_evidence.docx",
+      "chars": 937,
+      "contains_old_claims": []
+    },
+    {
+      "file": "05_FINANCIAL/scenario_assumptions.docx",
+      "chars": 5665,
+      "contains_old_claims": []
+    },
+    {
+      "file": "06_PRESENTATION/slides.docx",
+      "chars": 12446,
+      "contains_old_claims": [
+        "953.023"
+      ]
+    },
+    {
+      "file": "07_EXECUTIVE_SUMMARY/executive_summary.docx",
+      "chars": 7260,
+      "contains_old_claims": [
+        "953.023"
+      ]
+    },
+    {
+      "file": "09_REFERENCES/sources.docx",
+      "chars": 2647,
+      "contains_old_claims": []
+    }
+  ],
+  "audit_date": "2026-11-08",
+  "notes": "Read-only audit of submission content; no cleaning patch or answer changes applied.",
+  "additional_pipeline_execution": [
+    {
+      "script": "00_import",
+      "execution": "PASS in memory"
+    },
+    {
+      "script": "02_cleaning",
+      "execution": "PASS in memory"
+    },
+    {
+      "script": "04_financial_analysis",
+      "execution": "PASS in memory"
+    },
+    {
+      "script": "05_celonis_export",
+      "execution": "PASS with output redirected to /tmp/palm_audit/export_validation.csv"
+    }
+  ],
+  "raw_inversion_check": {
+    "inverted_rows": 17,
+    "ready_equal_original_end": 16,
+    "exceptions": 1
+  }
+}

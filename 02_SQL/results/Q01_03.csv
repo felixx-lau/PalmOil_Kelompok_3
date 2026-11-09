@@ -1,0 +1,61 @@
+variant_rank,activity,executions,cases_with_activity
+1,Buyer Remittance Matched,61,61
+3,Buyer Remittance Matched,17,17
+1,CPO Dispatch Confirmed,61,61
+3,CPO Dispatch Confirmed,17,17
+1,CPO Laboratory Tested,61,61
+3,CPO Laboratory Tested,17,17
+1,CPO Loaded for Dispatch,61,61
+3,CPO Loaded for Dispatch,17,17
+1,CPO Sales Invoice Issued,61,61
+3,CPO Sales Invoice Issued,17,17
+1,CPO Storage Tank Updated,61,61
+3,CPO Storage Tank Updated,17,17
+1,CPO Transfer Authorized,61,61
+3,CPO Transfer Authorized,17,17
+1,Crude Oil Pressing Completed,61,61
+3,Crude Oil Pressing Completed,17,17
+1,FFB Field Grading,61,61
+3,FFB Field Grading,17,17
+1,FFB Harvested,61,61
+3,FFB Harvested,17,17
+1,FFB Loaded for Transport,61,61
+3,FFB Loaded for Transport,17,17
+1,FFB Receipt Accepted,61,61
+3,FFB Receipt Accepted,17,17
+1,FFB Sterilization Completed,61,61
+3,FFB Sterilization Completed,17,17
+1,FFB Threshing Completed,61,61
+3,FFB Threshing Completed,17,17
+1,FFB Unloaded at Sterilizer Ramp,61,61
+3,FFB Unloaded at Sterilizer Ramp,17,17
+1,Field Team Assigned,61,61
+3,Field Team Assigned,17,17
+1,Fruit Digestion Completed,61,61
+3,Fruit Digestion Completed,17,17
+1,Harvest Batch Created,61,61
+3,Harvest Batch Created,17,17
+1,Harvest Collection Dispatched,61,61
+3,Harvest Collection Dispatched,17,17
+1,Harvest Lot Closed,61,61
+3,Harvest Lot Closed,17,17
+1,Harvest Plan Approved,61,61
+3,Harvest Plan Approved,17,17
+1,Incoming FFB Quality Inspection,61,61
+3,Incoming FFB Quality Inspection,17,17
+1,Kernel Drying Completed,61,61
+3,Kernel Drying Completed,17,17
+1,Kernel Separation Completed,61,61
+3,Kernel Separation Completed,17,17
+1,Mill Weighbridge Inbound,61,61
+3,Mill Weighbridge Inbound,17,17
+1,Oil Clarification Completed,61,61
+3,Oil Clarification Completed,17,17
+1,Oil Purification Completed,61,61
+3,Oil Purification Completed,17,17
+1,Palm Ripeness Assessed,61,61
+3,Palm Ripeness Assessed,17,17
+1,Steam and Boiler Readiness Checked,61,61
+3,Steam and Boiler Readiness Checked,17,17
+1,Transport to Palm Oil Mill,61,61
+3,Transport to Palm Oil Mill,17,17

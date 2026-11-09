@@ -1,0 +1,4 @@
+outcome,lots,pct_all_cases,revenue_myr,cost_myr,contribution_myr,revenue_idr,cost_idr,contribution_idr
+Processed / Dispatched,189,82.17,7074461.68,5502753.42,1571708.26,31020594786.78,24128858388.76,6891736398.03
+Rejected,29,12.61,0.00,711861.41,-711861.41,0.00,3121419740.87,-3121419740.87
+Cancelled,12,5.22,0.00,1430.83,-1430.83,0.00,6274003.54,-6274003.54

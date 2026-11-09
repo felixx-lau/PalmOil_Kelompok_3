@@ -1,0 +1,6 @@
+process_stage,total_executions,avg_waiting_minutes,total_waiting_minutes,total_waiting_hours,avg_duration_minutes,total_duration_minutes,total_processing_hours,avg_target_sla_minutes,total_sla_violations,sla_violation_rate_pct,total_stage_cost_myr
+1. Plantation / Harvesting,1366,35.93,49085.0,818.08,29.17,39843.0,664.05,174.71,177,12.96,4973669.70
+2. Transport & Logistics,654,11.87,7763.0,129.38,48.04,31415.0,523.58,296.67,3,0.46,165174.61
+3. Weighbridge & Reception,838,0.33,279.0,4.65,27.45,23007.0,383.45,188.15,0,0.0,44025.12
+4. Milling & Processing,2133,2.07,4425.0,73.75,50.79,108331.0,1805.52,290.0,0,0.0,952643.46
+5. Dispatch & Finance,1188,1.07,1274.0,21.23,21.75,25838.0,430.63,196.62,0,0.0,80532.77

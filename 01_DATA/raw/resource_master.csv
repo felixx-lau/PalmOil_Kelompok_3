@@ -1,0 +1,82 @@
+resource_id,resource_type,employee_id,department_id,department,cost_rate_myr_per_hour,capacity
+RES-001,Employee Workstation / Assigned Toolkit,EMP-001,DEP-01,Plantation Planning,6.00,1
+RES-002,Employee Workstation / Assigned Toolkit,EMP-002,DEP-01,Plantation Planning,6.00,1
+RES-003,Employee Workstation / Assigned Toolkit,EMP-003,DEP-01,Plantation Planning,6.00,1
+RES-004,Employee Workstation / Assigned Toolkit,EMP-004,DEP-01,Plantation Planning,9.00,1
+RES-005,Employee Workstation / Assigned Toolkit,EMP-005,DEP-01,Plantation Planning,9.00,1
+RES-006,Employee Workstation / Assigned Toolkit,EMP-006,DEP-01,Plantation Planning,9.00,1
+RES-007,Employee Workstation / Assigned Toolkit,EMP-007,DEP-02,Plantation Operations,9.00,1
+RES-008,Employee Workstation / Assigned Toolkit,EMP-008,DEP-02,Plantation Operations,9.00,1
+RES-009,Employee Workstation / Assigned Toolkit,EMP-009,DEP-03,Agronomy,7.00,1
+RES-010,Employee Workstation / Assigned Toolkit,EMP-010,DEP-03,Agronomy,7.00,1
+RES-011,Employee Workstation / Assigned Toolkit,EMP-011,DEP-03,Agronomy,7.00,1
+RES-012,Employee Workstation / Assigned Toolkit,EMP-012,DEP-03,Agronomy,7.00,1
+RES-013,Employee Workstation / Assigned Toolkit,EMP-013,DEP-02,Plantation Operations,8.00,1
+RES-014,Employee Workstation / Assigned Toolkit,EMP-014,DEP-02,Plantation Operations,8.00,1
+RES-015,Employee Workstation / Assigned Toolkit,EMP-015,DEP-02,Plantation Operations,8.00,1
+RES-016,Employee Workstation / Assigned Toolkit,EMP-016,DEP-02,Plantation Operations,8.00,1
+RES-017,Employee Workstation / Assigned Toolkit,EMP-017,DEP-02,Plantation Operations,8.00,1
+RES-018,Employee Workstation / Assigned Toolkit,EMP-018,DEP-02,Plantation Operations,8.00,1
+RES-019,Employee Workstation / Assigned Toolkit,EMP-019,DEP-02,Plantation Operations,8.00,1
+RES-020,Employee Workstation / Assigned Toolkit,EMP-020,DEP-02,Plantation Operations,8.00,1
+RES-021,Employee Workstation / Assigned Toolkit,EMP-021,DEP-04,Transport Logistics,9.00,1
+RES-022,Employee Workstation / Assigned Toolkit,EMP-022,DEP-04,Transport Logistics,9.00,1
+RES-023,Employee Workstation / Assigned Toolkit,EMP-023,DEP-04,Transport Logistics,9.00,1
+RES-024,Employee Workstation / Assigned Toolkit,EMP-024,DEP-04,Transport Logistics,20.00,1
+RES-025,Employee Workstation / Assigned Toolkit,EMP-025,DEP-04,Transport Logistics,20.00,1
+RES-026,Employee Workstation / Assigned Toolkit,EMP-026,DEP-04,Transport Logistics,20.00,1
+RES-027,Employee Workstation / Assigned Toolkit,EMP-027,DEP-04,Transport Logistics,20.00,1
+RES-028,Employee Workstation / Assigned Toolkit,EMP-028,DEP-04,Transport Logistics,20.00,1
+RES-029,Employee Workstation / Assigned Toolkit,EMP-029,DEP-04,Transport Logistics,20.00,1
+RES-030,Employee Workstation / Assigned Toolkit,EMP-030,DEP-05,Mill Receiving,10.00,1
+RES-031,Employee Workstation / Assigned Toolkit,EMP-031,DEP-05,Mill Receiving,10.00,1
+RES-032,Employee Workstation / Assigned Toolkit,EMP-032,DEP-05,Mill Receiving,10.00,1
+RES-033,Employee Workstation / Assigned Toolkit,EMP-033,DEP-05,Mill Receiving,12.00,1
+RES-034,Employee Workstation / Assigned Toolkit,EMP-034,DEP-05,Mill Receiving,12.00,1
+RES-035,Employee Workstation / Assigned Toolkit,EMP-035,DEP-05,Mill Receiving,12.00,1
+RES-036,Employee Workstation / Assigned Toolkit,EMP-036,DEP-05,Mill Receiving,12.00,1
+RES-037,Employee Workstation / Assigned Toolkit,EMP-037,DEP-05,Mill Receiving,12.00,1
+RES-038,Employee Workstation / Assigned Toolkit,EMP-038,DEP-08,Mill Laboratory,13.00,1
+RES-039,Employee Workstation / Assigned Toolkit,EMP-039,DEP-08,Mill Laboratory,13.00,1
+RES-040,Employee Workstation / Assigned Toolkit,EMP-040,DEP-08,Mill Laboratory,13.00,1
+RES-041,Employee Workstation / Assigned Toolkit,EMP-041,DEP-06,Milling Operations,22.00,1
+RES-042,Employee Workstation / Assigned Toolkit,EMP-042,DEP-06,Milling Operations,22.00,1
+RES-043,Employee Workstation / Assigned Toolkit,EMP-043,DEP-06,Milling Operations,22.00,1
+RES-044,Employee Workstation / Assigned Toolkit,EMP-044,DEP-06,Milling Operations,30.00,1
+RES-045,Employee Workstation / Assigned Toolkit,EMP-045,DEP-06,Milling Operations,30.00,1
+RES-046,Employee Workstation / Assigned Toolkit,EMP-046,DEP-06,Milling Operations,30.00,1
+RES-047,Employee Workstation / Assigned Toolkit,EMP-047,DEP-06,Milling Operations,30.00,1
+RES-048,Employee Workstation / Assigned Toolkit,EMP-048,DEP-06,Milling Operations,24.00,1
+RES-049,Employee Workstation / Assigned Toolkit,EMP-049,DEP-06,Milling Operations,24.00,1
+RES-050,Employee Workstation / Assigned Toolkit,EMP-050,DEP-06,Milling Operations,24.00,1
+RES-051,Employee Workstation / Assigned Toolkit,EMP-051,DEP-06,Milling Operations,24.00,1
+RES-052,Employee Workstation / Assigned Toolkit,EMP-052,DEP-06,Milling Operations,24.00,1
+RES-053,Employee Workstation / Assigned Toolkit,EMP-053,DEP-06,Milling Operations,24.00,1
+RES-054,Employee Workstation / Assigned Toolkit,EMP-054,DEP-07,Oil Refinement,24.00,1
+RES-055,Employee Workstation / Assigned Toolkit,EMP-055,DEP-07,Oil Refinement,24.00,1
+RES-056,Employee Workstation / Assigned Toolkit,EMP-056,DEP-07,Oil Refinement,24.00,1
+RES-057,Employee Workstation / Assigned Toolkit,EMP-057,DEP-07,Oil Refinement,24.00,1
+RES-058,Employee Workstation / Assigned Toolkit,EMP-058,DEP-07,Oil Refinement,24.00,1
+RES-059,Employee Workstation / Assigned Toolkit,EMP-059,DEP-06,Milling Operations,30.00,1
+RES-060,Employee Workstation / Assigned Toolkit,EMP-060,DEP-06,Milling Operations,30.00,1
+RES-061,Employee Workstation / Assigned Toolkit,EMP-061,DEP-06,Milling Operations,30.00,1
+RES-062,Employee Workstation / Assigned Toolkit,EMP-062,DEP-06,Milling Operations,30.00,1
+RES-063,Employee Workstation / Assigned Toolkit,EMP-063,DEP-08,Mill Laboratory,18.00,1
+RES-064,Employee Workstation / Assigned Toolkit,EMP-064,DEP-08,Mill Laboratory,18.00,1
+RES-065,Employee Workstation / Assigned Toolkit,EMP-065,DEP-08,Mill Laboratory,18.00,1
+RES-066,Employee Workstation / Assigned Toolkit,EMP-066,DEP-08,Mill Laboratory,18.00,1
+RES-067,Employee Workstation / Assigned Toolkit,EMP-067,DEP-09,Kernel Recovery,20.00,1
+RES-068,Employee Workstation / Assigned Toolkit,EMP-068,DEP-09,Kernel Recovery,20.00,1
+RES-069,Employee Workstation / Assigned Toolkit,EMP-069,DEP-09,Kernel Recovery,20.00,1
+RES-070,Employee Workstation / Assigned Toolkit,EMP-070,DEP-09,Kernel Recovery,20.00,1
+RES-071,Employee Workstation / Assigned Toolkit,EMP-071,DEP-10,Tank Farm,14.00,1
+RES-072,Employee Workstation / Assigned Toolkit,EMP-072,DEP-10,Tank Farm,14.00,1
+RES-073,Employee Workstation / Assigned Toolkit,EMP-073,DEP-10,Tank Farm,14.00,1
+RES-074,Employee Workstation / Assigned Toolkit,EMP-074,DEP-10,Tank Farm,14.00,1
+RES-075,Employee Workstation / Assigned Toolkit,EMP-075,DEP-11,Outbound Logistics,18.00,1
+RES-076,Employee Workstation / Assigned Toolkit,EMP-076,DEP-11,Outbound Logistics,18.00,1
+RES-077,Employee Workstation / Assigned Toolkit,EMP-077,DEP-11,Outbound Logistics,18.00,1
+RES-078,Employee Workstation / Assigned Toolkit,EMP-078,DEP-11,Outbound Logistics,18.00,1
+RES-079,Employee Workstation / Assigned Toolkit,EMP-079,DEP-12,Finance,6.00,1
+RES-080,Employee Workstation / Assigned Toolkit,EMP-080,DEP-12,Finance,6.00,1
+RES-081,Employee Workstation / Assigned Toolkit,EMP-081,DEP-12,Finance,6.00,1

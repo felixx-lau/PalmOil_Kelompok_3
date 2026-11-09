@@ -1,0 +1,522 @@
+[
+  {
+    "path": "00_START_HERE/PALM_OIL_PROCESS_MINING_FULL_REPORT.docx",
+    "bytes": 94622,
+    "sha256": "7a475b4a030503b448079608c51881d42090bb8d3e2dcd4b67d081e6535d5b74"
+  },
+  {
+    "path": "00_START_HERE/README.docx",
+    "bytes": 42339,
+    "sha256": "39abc7744ba03e6f8b228b93b744a3601d1ab9736bd14a8a4f279da581420eec"
+  },
+  {
+    "path": "00_START_HERE/README.md",
+    "bytes": 9498,
+    "sha256": "ea95e884537565c5c6ca596c5508d63167bb0531b4c845b31df8bba31dfb4558"
+  },
+  {
+    "path": "00_START_HERE/audit_kesesuaian_2026-11-08.md",
+    "bytes": 17787,
+    "sha256": "29f2c7dc1135c44750e2bc11db32a0086ae2eaa218eb3e5731067c50dab134d1"
+  },
+  {
+    "path": "01_DATA/cleaned/celonis_event_log_clean.csv",
+    "bytes": 2914690,
+    "sha256": "1760fcc1da8cadce4fba46c29466278e8d6639c9a1255db005787169f2f655d9"
+  },
+  {
+    "path": "01_DATA/raw/activity_catalog.csv",
+    "bytes": 4366,
+    "sha256": "21ca957fecf23c2be529a0326fb925d9ff89016f848f7c7aff29678967175912"
+  },
+  {
+    "path": "01_DATA/raw/case_master.csv",
+    "bytes": 32856,
+    "sha256": "a7ccbbe45b127dc6acc859d3cf27a634be44a07c3544f0c3f910a5b56e847579"
+  },
+  {
+    "path": "01_DATA/raw/department_master.csv",
+    "bytes": 538,
+    "sha256": "5de75316e253b233e1d8a429ba974d487d599d21f4e93ab0aeed734420d4e5f2"
+  },
+  {
+    "path": "01_DATA/raw/employee_master.csv",
+    "bytes": 10167,
+    "sha256": "44466380887e47cb796683ef6aea79661242a1d75018524b1aea44d0ea0e136d"
+  },
+  {
+    "path": "01_DATA/raw/estate_block_master.csv",
+    "bytes": 180,
+    "sha256": "7ef0a99ed4b8f28e6f52263a0899445b6584c6c007c2e19578bfa7dc3142276b"
+  },
+  {
+    "path": "01_DATA/raw/facility_master.csv",
+    "bytes": 2095,
+    "sha256": "e83c74107fad67d833f1627e5f0850c5125df24831415c2d87c82865d0d03fc9"
+  },
+  {
+    "path": "01_DATA/raw/ffb_grade_master.csv",
+    "bytes": 197,
+    "sha256": "64778bd067ab42e038807c0fb79d6a840b86d716481bd7d059f0f413d165662f"
+  },
+  {
+    "path": "01_DATA/raw/raw_event_log.csv",
+    "bytes": 3102406,
+    "sha256": "de4c4b756bb8a2ecc568d4ba38ead16395512d2962bf32965ff1b2a470674964"
+  },
+  {
+    "path": "01_DATA/raw/resource_master.csv",
+    "bytes": 7292,
+    "sha256": "5684e4ea4fea844468b3c39f8fd4721a0b10d758e12848874250697c100005b1"
+  },
+  {
+    "path": "01_DATA/validation/audit_review_results.json",
+    "bytes": 91795,
+    "sha256": "ddb4af5269fcac73e9ccc2d46d0b9b871d1532428c8a179fd9f9881b3d2d6566"
+  },
+  {
+    "path": "01_DATA/validation/data_quality_report.docx",
+    "bytes": 40965,
+    "sha256": "1190fdc70d9c17de31f32aac4fa60e69839529e8fde4a7dc792980cbbbfdbb51"
+  },
+  {
+    "path": "01_DATA/validation/data_quality_report.md",
+    "bytes": 6359,
+    "sha256": "288795560a1a5ed8e332604d74abbcb86e23be92a047de7f9c8a7d07a1d8c02e"
+  },
+  {
+    "path": "02_SQL/00_import.sql",
+    "bytes": 2539,
+    "sha256": "ec8df3856fafd9b9ff4200c3ea1ba0a164917e34c8bd8010f5cfa98563555283"
+  },
+  {
+    "path": "02_SQL/01_profiling.sql",
+    "bytes": 4885,
+    "sha256": "d2a6cd4237ffedd369f5d13eeca37f830dfffc4d2575791ac052c4455c8964f1"
+  },
+  {
+    "path": "02_SQL/02_cleaning.sql",
+    "bytes": 8331,
+    "sha256": "761fbe66db6ecf2f4e84166b01849f03796e83b7df91bfb19639b64921cd1b27"
+  },
+  {
+    "path": "02_SQL/03_validation.sql",
+    "bytes": 3006,
+    "sha256": "1f0f3a0f9ac636a9f66b7430663c61554f59079259d6ef56e642220766ed6b0f"
+  },
+  {
+    "path": "02_SQL/04_financial_analysis.sql",
+    "bytes": 5145,
+    "sha256": "d5c1118c1ad8e643bdc45fabca2bb55ae6b34ef4df11095693a47437e0aa6ebb"
+  },
+  {
+    "path": "02_SQL/05_celonis_export.sql",
+    "bytes": 1931,
+    "sha256": "45b8a8f2bf3ff265038e2b31f8a9c08882451b744149cf39281a4ee8c284f8df"
+  },
+  {
+    "path": "02_SQL/export_q01_q03_results.py",
+    "bytes": 1156,
+    "sha256": "e9ec6d696f644ab039788bd727ac27723d0a6b2fdfa31a8ae70ff34226e01db0"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q01.sql",
+    "bytes": 3938,
+    "sha256": "db23142a7d4956bf04c4d95ae4091fb149f774c8727f09308e17a596c8dce0b9"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q02.sql",
+    "bytes": 3072,
+    "sha256": "27d15bacd318b472674fdc813f997e4e9ac7b47f7c3ac1c66f60878f266439ad"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q03.sql",
+    "bytes": 4747,
+    "sha256": "c9a1dd28f44361d31f1fcc634346760574c5af01111b3b8cef0356bcf0b9f353"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q04.sql",
+    "bytes": 3474,
+    "sha256": "c050c32d2f37d7857569b3d0af750800f18335671809a02f99f9a1010750d531"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q05.sql",
+    "bytes": 2232,
+    "sha256": "fcb5e63cc5b08c705a1a3a1631f1ea604dcacceb502e6344ef0578bf1d134b88"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q06.sql",
+    "bytes": 2258,
+    "sha256": "bf871032f848c398ea931163ca053fe4ca5bdea456ec3df5ce1d4f2607d3b557"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q07.sql",
+    "bytes": 3176,
+    "sha256": "7907248ec616df1bb17b4d2f0d4bbfcd1dfa093bc17af1e1c52767c10617b9b8"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q08.sql",
+    "bytes": 3393,
+    "sha256": "affeb21d5c1682b97833d5efee229d16792a50367315c164c4583870f8e0925f"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q09.sql",
+    "bytes": 3216,
+    "sha256": "b24c7339d0f8b31966a1da8f94a45ae48537d12c9a0d896bfc2d44ac0fb1c1d6"
+  },
+  {
+    "path": "02_SQL/queries_by_question/Q10.sql",
+    "bytes": 4322,
+    "sha256": "250099ae437440ec4918c9e0b25ed7c32e92cfbf697fe8585374c2926048e3d0"
+  },
+  {
+    "path": "02_SQL/results/Q01_01.csv",
+    "bytes": 7900,
+    "sha256": "ab5ac8053d143f34c952d4b3517312ec1e083bec8d0d6694383df495e62683fb"
+  },
+  {
+    "path": "02_SQL/results/Q01_02.csv",
+    "bytes": 145,
+    "sha256": "5f94b4b835279ef9069a8bef783486f365fa0c4d47849aacdaeb500da927bfde"
+  },
+  {
+    "path": "02_SQL/results/Q01_03.csv",
+    "bytes": 2088,
+    "sha256": "94861a8ee5172b7b5f8f9b3758666df527900a8735731e088173fb578a986e26"
+  },
+  {
+    "path": "02_SQL/results/Q03_01.csv",
+    "bytes": 720,
+    "sha256": "5eab4b51bde0d7cdedda215cf84f84d296075d09d41fd36577bce620bd12de32"
+  },
+  {
+    "path": "02_SQL/results/Q03_02.csv",
+    "bytes": 766,
+    "sha256": "2652b9769892984b3aa894fc37b74b738b31cc2ffb8ceeba9459d424b9058f13"
+  },
+  {
+    "path": "02_SQL/results/Q03_03.csv",
+    "bytes": 2196,
+    "sha256": "010a116edc51348782d361d08206afc6e6fa6557b98ab030131b62b4cabe8803"
+  },
+  {
+    "path": "02_SQL/results/Q03_04.csv",
+    "bytes": 4302,
+    "sha256": "7de61cb182077e776f7e5aae21ae17c407e4568c123ac954fa0240b7f5c71fa6"
+  },
+  {
+    "path": "02_SQL/results/README.md",
+    "bytes": 1246,
+    "sha256": "0802bf407d4697914dafe14070bec86c7e82b034d71ebfe9b50b5662960389f5"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_process_map_overview_part1.png",
+    "bytes": 37573,
+    "sha256": "0db4062cfb74b6be249b03e155320186bd9d01c07dabd75ec9952f4ecd9bd0c5"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_process_map_overview_part2.png",
+    "bytes": 41199,
+    "sha256": "69b5b6a91efd620c34a5dd30488b912e7751f9e02f0aae4b7a1b4f4846f99900"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_variant1_happy_path_part1.png",
+    "bytes": 29095,
+    "sha256": "e1385166d0fac07d06e246c0b10e3c8693b10a3d874b94a067fe164d2c457ac6"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_variant1_happy_path_part2.png",
+    "bytes": 29259,
+    "sha256": "07f367e059b2dccb6666feeacb407e314655c835b9748a6c0390e67732068488"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_variant_list_top3.png",
+    "bytes": 30950,
+    "sha256": "652237dc0c9ddcdcbcb5d7c622da6063e7f97c12732e29d053b34e39921730e1"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q02/Q02_lot_outcomes.png",
+    "bytes": 8480,
+    "sha256": "acfd7919250bfdb07b456d80c39fc23cd556e93f19b6b04d649c72637b52fd82"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q03/Q03_sla_violations_by_activity.png",
+    "bytes": 31446,
+    "sha256": "b69dc6a61ac1060fae2bc070911a333b87d81249e8b3df5554c3ad0725cdae36"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q03/Q03_waiting_vs_processing_by_activity.png",
+    "bytes": 62571,
+    "sha256": "f682d0e23f2b811edc1e04447d369210c338090449bcdb5fabe7447087d2a76e"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q04/Q04_harvest_to_mill_by_grade.png",
+    "bytes": 13928,
+    "sha256": "a126d81b957896b0a71aed447064c42775d1df0097011ac9b41f8ab897f28892"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q04/Q04_rejection_by_grade.png",
+    "bytes": 8861,
+    "sha256": "f2bb8fadc9b326aa9f9dfb97629b9c2d0d18be15fd8d118ded306f1807bc0d87"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q05/Q05_sterilization_by_facility.png",
+    "bytes": 20174,
+    "sha256": "3af4eec3248453d9c04073d22a94e894b502ed0024a87ecbc5eb5d399d1c24fe"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q05/Q05_waiting_vs_processing_by_activity.png",
+    "bytes": 62571,
+    "sha256": "f682d0e23f2b811edc1e04447d369210c338090449bcdb5fabe7447087d2a76e"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q06/Q06_rework_and_allowance_summary.png",
+    "bytes": 14053,
+    "sha256": "152e2a250dd0bf748c9dd9d5bbe5ba2c0293826de87fb96145c73e9e305f37fa"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q07/Q07_transport_waiting_baseline.png",
+    "bytes": 8261,
+    "sha256": "3e932037f6e0c13c0dc5ea6a1e867c2d9590ece44a18eaa794cc2a6a285e346f"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q08/Q08_rejection_baseline_by_grade.png",
+    "bytes": 8861,
+    "sha256": "f2bb8fadc9b326aa9f9dfb97629b9c2d0d18be15fd8d118ded306f1807bc0d87"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q08/Q08_rejection_rate_baseline.png",
+    "bytes": 7805,
+    "sha256": "ac7edc437d550e5cb8cfa075cf1b9f070045612e124d88d44e9e19f7222374c9"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q09/Q09_sterilization_capacity_baseline.png",
+    "bytes": 20174,
+    "sha256": "3af4eec3248453d9c04073d22a94e894b502ed0024a87ecbc5eb5d399d1c24fe"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q09/Q09_sterilization_cost_components.png",
+    "bytes": 8301,
+    "sha256": "f11250cb754b27060879bc6b6478fa59a44b5bdac84900ded6ea9efd7b5659a8"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q10/Q10_financial_baseline.png",
+    "bytes": 11661,
+    "sha256": "51d9b6c6fbe0a6d3e7d1c7d42870fad3e6ce46eb7e8d75cf9be9fe0a7dc17751"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/performance_analysis/sla_violations_by_activity.png",
+    "bytes": 31446,
+    "sha256": "b69dc6a61ac1060fae2bc070911a333b87d81249e8b3df5554c3ad0725cdae36"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_map/process_map_overview_part1.png",
+    "bytes": 37573,
+    "sha256": "0db4062cfb74b6be249b03e155320186bd9d01c07dabd75ec9952f4ecd9bd0c5"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_map/process_map_overview_part2.png",
+    "bytes": 41199,
+    "sha256": "69b5b6a91efd620c34a5dd30488b912e7751f9e02f0aae4b7a1b4f4846f99900"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_variants/variant1_happy_path_part1.png",
+    "bytes": 29095,
+    "sha256": "e1385166d0fac07d06e246c0b10e3c8693b10a3d874b94a067fe164d2c457ac6"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_variants/variant1_happy_path_part2.png",
+    "bytes": 29259,
+    "sha256": "07f367e059b2dccb6666feeacb407e314655c835b9748a6c0390e67732068488"
+  },
+  {
+    "path": "04_JAWABAN/Q01/jawaban.docx",
+    "bytes": 40258,
+    "sha256": "a9c0904da3b8ef1d066cbc7e70463bccf3c3dd13e22dbd165f2ed07005cc13e7"
+  },
+  {
+    "path": "04_JAWABAN/Q01/jawaban.md",
+    "bytes": 5564,
+    "sha256": "26c7ab41e59752cc65f4cc2665dda8a3b3ecab226ac802e02717ef2198707e6d"
+  },
+  {
+    "path": "04_JAWABAN/Q02/jawaban.docx",
+    "bytes": 40182,
+    "sha256": "6f2286ccc72fe4d8857b9053e42961cf1d14292e8e39fe724d9303cb3afa6d0f"
+  },
+  {
+    "path": "04_JAWABAN/Q02/jawaban.md",
+    "bytes": 5096,
+    "sha256": "aab7f3ddd6a0acdae9f7223c57482dfc7ef928922682a61755b4e993cf5794c0"
+  },
+  {
+    "path": "04_JAWABAN/Q03/jawaban.docx",
+    "bytes": 40333,
+    "sha256": "ee8d7b97984271891da16bcf162a0f18236b5260da92cb6d1270e0af8a6387d4"
+  },
+  {
+    "path": "04_JAWABAN/Q03/jawaban.md",
+    "bytes": 5991,
+    "sha256": "c405e528eb1b32f7798f9df6d825338bfc71c1da89a9aca7475d08561e97e5d6"
+  },
+  {
+    "path": "04_JAWABAN/Q04/jawaban.docx",
+    "bytes": 40683,
+    "sha256": "a045e8810a0c62a2da3212d1938b75792df17d413aca1ce014f030ceb55cb811"
+  },
+  {
+    "path": "04_JAWABAN/Q04/jawaban.md",
+    "bytes": 5345,
+    "sha256": "d6236e229c9b679373b180c08fcccfc3637bcd707aa2943e9740c30b6a6a69ca"
+  },
+  {
+    "path": "04_JAWABAN/Q05/jawaban.docx",
+    "bytes": 41056,
+    "sha256": "2c44b6ec5892d98b72d28926912ac3d23b4acaff2d7f25f9ce3304483c4e0a4a"
+  },
+  {
+    "path": "04_JAWABAN/Q05/jawaban.md",
+    "bytes": 5699,
+    "sha256": "31e5d559d61cfc8fc8fbb5f1b1f1e34dd8acfcb7922a9c82cc81f4098344b4b3"
+  },
+  {
+    "path": "04_JAWABAN/Q06/jawaban.docx",
+    "bytes": 40633,
+    "sha256": "1254879af626560c88d25401da03d470f8e93771732f2dfb75a00148990e0a98"
+  },
+  {
+    "path": "04_JAWABAN/Q06/jawaban.md",
+    "bytes": 5559,
+    "sha256": "3e2a76b9d4f1b158e682577677e74e94c71c0022d7210c99238f6dcc3046b517"
+  },
+  {
+    "path": "04_JAWABAN/Q07/jawaban.docx",
+    "bytes": 40291,
+    "sha256": "3bbb8ed8d0324926eb91b727f94fe146d0236c03279620a37cf1bf8d6a7cce78"
+  },
+  {
+    "path": "04_JAWABAN/Q07/jawaban.md",
+    "bytes": 5373,
+    "sha256": "4f5b989212076bff2ad33d787a77adacf9e2b9d66aaf58304263455ed654ead2"
+  },
+  {
+    "path": "04_JAWABAN/Q08/jawaban.docx",
+    "bytes": 40391,
+    "sha256": "eb2238b47111a2b558e09363131e1874710ca7fc0ba7f9eebebb721fcb9053ef"
+  },
+  {
+    "path": "04_JAWABAN/Q08/jawaban.md",
+    "bytes": 5497,
+    "sha256": "3cf521c4afd701680848b77dc67e6b38f5a21d26f0ee721390fd0c95e00470a5"
+  },
+  {
+    "path": "04_JAWABAN/Q09/jawaban.docx",
+    "bytes": 40180,
+    "sha256": "e1d8616ae036681ac204aeaf8f20703be902f7f5e85822f59281d171c0c6e02f"
+  },
+  {
+    "path": "04_JAWABAN/Q09/jawaban.md",
+    "bytes": 5238,
+    "sha256": "6d2f1fc4bd7b1f013db4cfc801c49b4b9b60d7c7fd3abdfc2dfb453ffa1fca8c"
+  },
+  {
+    "path": "04_JAWABAN/Q10/jawaban.docx",
+    "bytes": 41039,
+    "sha256": "09381c67ec6bc6c29859f66607d8526846723f39b22be0734f7195060f6a6e8e"
+  },
+  {
+    "path": "04_JAWABAN/Q10/jawaban.md",
+    "bytes": 6357,
+    "sha256": "02eefc24a4d3581eb2de8d9407e2c1243ef37e45667c52474c5ab8d8bd810eeb"
+  },
+  {
+    "path": "05_FINANCIAL/bank_indonesia_evidence/kurs_bi_evidence.docx",
+    "bytes": 37788,
+    "sha256": "a801f630ea6fe43adf689ee5d86b795e9715ecf5deeb700ebaaf240ee4afa7f4"
+  },
+  {
+    "path": "05_FINANCIAL/bank_indonesia_evidence/kurs_bi_evidence.md",
+    "bytes": 1104,
+    "sha256": "280169e7a49c6a940f4ab8288f95712857ec1f771a6501ccfbd07425e309b70f"
+  },
+  {
+    "path": "05_FINANCIAL/exchange_rate.csv",
+    "bytes": 234,
+    "sha256": "e470d16082b06e9de81860b95667f7604b346866f38c2df9162fcafcad046375"
+  },
+  {
+    "path": "05_FINANCIAL/financial_baseline.csv",
+    "bytes": 2076,
+    "sha256": "911a3d2e8aff7165c58dd4118f1d2c81ba72732a6ad7b11d7056c9f84c781201"
+  },
+  {
+    "path": "05_FINANCIAL/scenario_assumptions.docx",
+    "bytes": 40190,
+    "sha256": "c9a85bab9bd676363d0d52dc8b6dfe793e47c1a85f9da823adb547307fedd6b1"
+  },
+  {
+    "path": "05_FINANCIAL/scenario_assumptions.md",
+    "bytes": 6155,
+    "sha256": "9dce86de9f9a64b5820553f501d99731557a9b838a004ef47d5eec9ff0e0fdda"
+  },
+  {
+    "path": "05_FINANCIAL/scenario_comparison.csv",
+    "bytes": 2205,
+    "sha256": "1f23f0fbed47e18f88a4580c94f6b82b0151d81173d8d79ef05778ddb98c9861"
+  },
+  {
+    "path": "06_PRESENTATION/slides.docx",
+    "bytes": 44582,
+    "sha256": "160ac1b6b74601e95760fdd15ceb5a259add4077d70101abbb1413225136b56c"
+  },
+  {
+    "path": "06_PRESENTATION/slides.md",
+    "bytes": 12748,
+    "sha256": "e90c60847c43e6d7714d89e5216bd672d3198c1c1293d6905ebc6f65c04e8960"
+  },
+  {
+    "path": "06_PRESENTATION/slides.pdf",
+    "bytes": 1778839,
+    "sha256": "ef88e99b49b04cb1c11ebb3cb3f3712b94e2ed9b757ea336389a0c1465433676"
+  },
+  {
+    "path": "07_EXECUTIVE_SUMMARY/executive_summary.docx",
+    "bytes": 42205,
+    "sha256": "f308c1e06ba2f1fd67cbf544a87889e9c74f8f17bd7d9ea5fee5cb3d06ee15ca"
+  },
+  {
+    "path": "07_EXECUTIVE_SUMMARY/executive_summary.md",
+    "bytes": 7644,
+    "sha256": "23a762e3bcc59fa7f9926670027b749b2443248be917050a23d2cc394578fc82"
+  },
+  {
+    "path": "07_EXECUTIVE_SUMMARY/executive_summary.pdf",
+    "bytes": 8848,
+    "sha256": "7013dacad9bedd13cb9f1d81472dc6fb62653a8caa59a7418246f88c19befa5b"
+  },
+  {
+    "path": "08_CONTRIBUTIONS/member_contributions.csv",
+    "bytes": 1329,
+    "sha256": "d4a62ed705f6ab9f47b62a6cdd8d822ab22809734e676e4c4406240d2fe1a8ff"
+  },
+  {
+    "path": "09_REFERENCES/sources.docx",
+    "bytes": 38433,
+    "sha256": "e37fbdbfbf1378281ff4cf067f876986dc9cdef86070296cae4b7cd4dca42c59"
+  },
+  {
+    "path": "09_REFERENCES/sources.md",
+    "bytes": 2790,
+    "sha256": "0fc4616af837df8e876b6b64745ca8453cf4a8a8303251afaa3352160c839104"
+  },
+  {
+    "path": "build_pdfs.py",
+    "bytes": 41351,
+    "sha256": "2d5ea00452b33f885bcc273c23d689f237fffc1cc32c8fa3897c4ae40d98a8e5"
+  },
+  {
+    "path": "generate_evidence.py",
+    "bytes": 17764,
+    "sha256": "ab9e166e3b0e7c763d4a73d5845e2696cae90547ceed2f3c6d73e34fd43133d1"
+  }
+]

@@ -1,0 +1,5 @@
+ffb_grade,total_lots_received,lots_rejected,rejection_rate_pct,avg_lead_time_hours,total_rejected_cost_myr
+A,94,11,11.7,3.93,289952.06
+B,77,10,12.99,4.17,232974.12
+C,44,7,15.91,4.13,163392.20
+Unknown,3,1,33.33,3.04,25543.03

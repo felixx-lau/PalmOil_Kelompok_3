@@ -1,0 +1,4 @@
+activity,rework_flag,execution_count,total_labor_cost_myr,total_material_cost_myr,total_equipment_cost_myr,total_overhead_cost_myr,total_rework_cost_myr,avg_cost_per_execution_myr
+CPO Quality Rework Applied,False,27,1080.49,13007.56,3592.90,788.54,18469.49,684.06
+CPO Laboratory Tested,True,27,848.99,0.00,735.32,723.71,2308.02,85.48
+FFB Field Grading,True,22,407.55,0.00,128.00,510.13,1045.68,47.53
