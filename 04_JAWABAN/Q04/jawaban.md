@@ -7,7 +7,7 @@
 
 - **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`
 - **Query Eksekusi**: `02_SQL/queries_by_question/Q04.sql`
-- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q04/Q04_time_to_mill_vs_rejection.png`
+- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q04/Q04_harvest_to_mill_by_grade.png`
 
 #### Tabel 1: Hubungan Durasi Panen-ke-Pabrik (*Harvest-to-Mill Lead Time*) terhadap Penolakan:
 | Kelompok Waktu (*Lead Time Bucket*) | Rentang Waktu Tempuh | Jumlah Lot Tiba | Jumlah Lot Ditolak | Tingkat Penolakan (%) | Rata-rata Durasi (Jam) | Total Kerugian Biaya Lot Ditolak (MYR) |
@@ -56,7 +56,7 @@ Sebanyak 29 lot reject mencatat biaya MYR 711.861,41 tanpa revenue. Dari biaya t
 
 ### 07 Evidence File Paths / SQL References
 - **SQL Analysis Script**: [`02_SQL/queries_by_question/Q04.sql`](../../02_SQL/queries_by_question/Q04.sql)
-- **Visual Chart (Evidence)**: [`03_CELONIS_EVIDENCE/Q04/Q04_time_to_mill_vs_rejection.png`](../../03_CELONIS_EVIDENCE/Q04/Q04_time_to_mill_vs_rejection.png)
+- **Visual Chart (Evidence)**: [`Q04_harvest_to_mill_by_grade.png`](../../03_CELONIS_EVIDENCE/Q04/Q04_harvest_to_mill_by_grade.png), [`Q04_rejection_by_grade.png`](../../03_CELONIS_EVIDENCE/Q04/Q04_rejection_by_grade.png)
 
 
 Hasil DuckDB yang mendasari tabel:
