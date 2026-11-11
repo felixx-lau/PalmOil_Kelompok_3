@@ -1,5 +1,3 @@
-[jawaban.md](https://github.com/user-attachments/files/34676035/jawaban.md)
-[jawaban.docx](https://github.com/user-attachments/files/34676034/jawaban.docx)
 # Analisis Q05 · Diagnostic
 ## Milling Facility Bottlenecks
 
