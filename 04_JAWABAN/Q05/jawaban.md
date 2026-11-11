@@ -1,3 +1,5 @@
+[jawaban.md](https://github.com/user-attachments/files/34676035/jawaban.md)
+[jawaban.docx](https://github.com/user-attachments/files/34676034/jawaban.docx)
 # Analisis Q05 · Diagnostic
 ## Milling Facility Bottlenecks
 
@@ -7,12 +9,12 @@
 
 - **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`
 - **Query Eksekusi**: `02_SQL/queries_by_question/Q05.sql`
-- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q05/Q05_milling_facility_bottlenecks.png`
+- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q05/Q05_waiting_vs_processing_by_activity.png`
 
 #### Tabel 1: Analisis Stasiun Pabrik Kelapa Sawit (Processing vs. Queue Delay):
 | Aktivitas Stasiun Pabrik | Fasilitas Terlibat | Jumlah Eksekusi | Rata-rata Queue Wait (Menit) | Total Queue Wait (Jam) | Rata-rata Durasi Proses (Menit) | Total Durasi Proses (Jam) | Total Biaya Stasiun (MYR) | Status Bottleneck |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **FFB Sterilization Completed** | FAC-029, 030, 031 | 189 | **12,21** | **38,47** | **81,20** | **255,77** | 203.883,02 | **Utama (#1 Bottleneck)** |
+| **FFB Sterilization Completed** | FAC-029, 030, 031 | 189 | **12,21** | **38,47** | **81,20** | **255,77** | 203.883,02 | **Kandidat #1 (satu episode 8–9 Mei)** |
 | **Crude Oil Pressing Completed** | FAC-038, 039, 040 | 189 | 1,94 | 6,10 | 67,78 | 213,50 | 200.031,15 | Sekunder (#2) |
 | **Oil Clarification Completed** | FAC-041, 042, 043 | 189 | 2,37 | 7,47 | 61,81 | 194,72 | 85.697,96 | Tersier (#3) |
 | **Fruit Digestion Completed** | FAC-035, 036, 037 | 189 | 0,43 | 1,37 | 50,22 | 158,20 | 65.699,17 | Lancar |
@@ -31,11 +33,11 @@
 ---
 
 ### 02 Descriptive Finding
-1. **Identifikasi Bottleneck Utama**: Stasiun **Sterilisasi (*FFB Sterilization*)** adalah bottleneck fasilitas terberat di pabrik, menyerap total waktu operasi terlama (255,77 jam) dan mengakumulasi waktu antre tertinggi (38,47 jam atau 2.308 menit).
+1. **Identifikasi Bottleneck Utama**: Stasiun **Sterilisasi (*FFB Sterilization*)** adalah kandidat bottleneck terberat di pabrik, dengan total waktu operasi terlama (255,77 jam) dan waktu antre tertinggi (38,47 jam atau 2.308 menit). Seluruh 38,47 jam waiting sterilisasi tercatat pada **8–9 Mei 2026** (0,97 jam pada 8 Mei dan 37,50 jam pada 9 Mei); di luar dua hari itu waiting sterilisasi tepat nol, termasuk 129 eksekusi FAC-029. Karena itu antrean ini adalah **episode lonjakan dua hari, bukan keterbatasan kapasitas yang terbukti kronis**.
 2. **Pemisahan Queue Delay vs Processing Delay**:
    - *Processing Delay*: Waktu perebusan uap (*sterilization cooking cycle*) rata-rata memakan waktu 81,20 menit per eksekusi.
    - *Queue Delay*: Terjadi penumpukan antrean rata-rata 12,21 menit per lot sebelum masuk sterilizer.
-3. **Ketimpangan Beban Fasilitas (*Imbalanced Load*)**: Unit FAC-029 menangani 150 dari 189 lot (79,4%). Lot pada FAC-030 dan FAC-031 mencatat rata-rata antrean **34,62 menit** dan **34,33 menit** per lot.
+3. **Ketimpangan Beban Fasilitas (*Imbalanced Load*)**: Unit FAC-029 menangani 150 dari 189 lot (79,4%). Lot pada FAC-030 dan FAC-031 mencatat rata-rata antrean **34,62 menit** dan **34,33 menit** per lot, tetapi hampir seluruh eksekusi kedua unit itu terjadi pada episode 8–9 Mei. Pada hari lonjakan ketiga unit sama-sama sibuk: rata-rata waiting 45,86 (FAC-029), 40,39 (FAC-030), dan 34,33 menit (FAC-031), dengan beban kalender 9 Mei 85,97%, 85,56%, dan 89,38%. Jadi angka waiting yang lebih tinggi pada FAC-030/031 adalah efek episode, bukan bukti unit itu bermasalah.
 4. **Kinerja Weighbridge**: Jembatan timbang bukan bottleneck (rata-rata antre hanya 0,27 menit dan durasi 20,68 menit).
 
 ---
@@ -62,7 +64,7 @@ Biaya aktivitas sterilisasi adalah MYR 203.883,02, tertinggi di antara delapan a
 
 ### 07 Evidence File Paths / SQL References
 - **SQL Analysis Script**: [`02_SQL/queries_by_question/Q05.sql`](../../02_SQL/queries_by_question/Q05.sql)
-- **Visual Chart (Evidence)**: [`03_CELONIS_EVIDENCE/Q05/Q05_milling_facility_bottlenecks.png`](../../03_CELONIS_EVIDENCE/Q05/Q05_milling_facility_bottlenecks.png)
+- **Visual Chart (Evidence)**: [`Q05_waiting_vs_processing_by_activity.png`](../../03_CELONIS_EVIDENCE/Q05/Q05_waiting_vs_processing_by_activity.png), [`Q05_sterilization_by_facility.png`](../../03_CELONIS_EVIDENCE/Q05/Q05_sterilization_by_facility.png)
 
 
 Hasil DuckDB yang mendasari tabel:
