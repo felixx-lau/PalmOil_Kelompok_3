@@ -7,15 +7,15 @@
 
 - **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`
 - **Query Eksekusi**: `02_SQL/queries_by_question/Q06.sql`
-- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q06/Q06_rework_and_sales_allowances.png`
+- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q06/Q06_rework_and_allowance_summary.png`
 
 #### Tabel 1: Biaya Rework Operasional yang Tercatat (*Recorded Rework Cost*):
 | Aktivitas Rework Sah | Penanda Rework (*rework_flag*) | Frekuensi Eksekusi | Total Biaya Tenaga Kerja (MYR) | Total Biaya Bahan & Kimia (MYR) | Total Biaya Alat/Mesin (MYR) | Total Biaya Overhead (MYR) | Total Biaya Rework (MYR) | Rata-rata Biaya per Kasus (MYR) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **CPO Quality Rework Applied** | False (Aktivitas Rework) | 27 | 7.965,00 | 1.834,16 | 4.887,00 | 3.783,33 | **18.469,49** | 684,06 |
-| **CPO Laboratory Tested** | **True** (Uji Ulang Lab) | 27 | 1.053,00 | 0,00 | 340,20 | 914,82 | **2.308,02** | 85,48 |
-| **FFB Field Grading** | **True** (Grading Ulang Kebun) | 22 | 536,25 | 0,00 | 101,20 | 408,23 | **1.045,68** | 47,53 |
-| **Total Beban Rework Operasional** | — | **76** | **9.554,25** | **1.834,16** | **5.328,40** | **5.106,38** | **21.823,19** | **287,15** |
+| **CPO Quality Rework Applied** | False (Aktivitas Rework) | 27 | 1.080,49 | 13.007,56 | 3.592,90 | 788,54 | **18.469,49** | 684,06 |
+| **CPO Laboratory Tested** | **True** (Uji Ulang Lab) | 27 | 848,99 | 0,00 | 735,32 | 723,71 | **2.308,02** | 85,48 |
+| **FFB Field Grading** | **True** (Grading Ulang Kebun) | 22 | 407,55 | 0,00 | 128,00 | 510,13 | **1.045,68** | 47,53 |
+| **Total Beban Rework Operasional** | — | **76** | **2.337,03** | **13.007,56** | **4.456,22** | **2.022,38** | **21.823,19** | **287,15** |
 
 #### Tabel 2: Penyesuaian Penjualan Komersial (*Authorized Sales Allowances*):
 | Aktivitas Penyesuaian | Frekuensi Kasus | Total Pengurangan Pendapatan (MYR) | Biaya Administrasi Penyesuaian (MYR) | Total Dampak Negatif Kontribusi (MYR) |
@@ -49,7 +49,7 @@ Log membuktikan biaya rework dan allowance, tetapi belum memastikan deviasi suhu
 ### 05 As Is No Action and To Be
 - **As-Is**: 27 dari 189 lot olah (14,29%) membutuhkan rework mutu CPO, dan 14 dari 189 lot (7,41%) memiliki allowance. Beban rework MYR 21.823,19 ditambah penurunan revenue MYR 20.949,08 serta administrasi MYR 421,01 menghasilkan total MYR 43.193,28 pada horizon 24 bulan. Beban ini sudah masuk baseline kontribusi.
 - **No-Action**: Pada komposisi lot dan kondisi yang sama, beban dapat berulang; angka 24 bulan tidak boleh disebut kerugian tahunan tanpa normalisasi dan bukti pola waktu.
-- **To-Be**: Mengikuti asumsi portofolio Q10, uji penurunan allowance 50% dan biaya rework operasional 40%. Pemulihan revenue = 50% × MYR 20.949,08 = MYR 10.474,54; penghematan rework = 40% × MYR 21.823,19 = MYR 8.729,28 setelah pembulatan. Manfaat kotor MYR 19.203,82 dikurangi implementasi MYR 8.000,00 dan OPEX MYR 1.500,00 menghasilkan **manfaat bersih MYR 9.703,82** pada horizon model yang sama. Biaya administrasi allowance tidak dimasukkan sebagai penghematan tambahan. Angka ini adalah skenario, bukan hasil pilot. Pengurangan 40% mencakup seluruh biaya rework teridentifikasi, termasuk grading kebun; kelayakan cakupan intervensi harus diuji agar manfaatnya tidak tumpang tindih dengan Q08.
+- **To-Be**: Mengikuti asumsi portofolio Q10, uji penurunan allowance 50% dan biaya rework operasional 40%. Pemulihan revenue = 50% × MYR 20.949,08 = MYR 10.474,54; penghematan rework = 40% × MYR 21.823,19 = MYR 8.729,28 setelah pembulatan. Manfaat kotor MYR 19.203,82 dikurangi implementasi MYR 8.000,00 dan OPEX MYR 1.500,00 menghasilkan **manfaat bersih MYR 9.703,82** pada horizon model yang sama. Biaya administrasi allowance tidak dimasukkan sebagai penghematan tambahan. **Sensitivitas**: jika allowance tidak turun sama sekali, net benefit = -MYR 770,72; net benefit baru positif bila allowance turun lebih dari ±3,68% (`05_FINANCIAL/sensitivity.csv`). Angka ini adalah skenario, bukan hasil pilot. Pengurangan 40% mencakup seluruh biaya rework teridentifikasi, termasuk grading kebun; kelayakan cakupan intervensi harus diuji agar manfaatnya tidak tumpang tindih dengan Q08.
 
 ### 06 Recommendation Risk and Assumptions
 - **Rekomendasi**: Telusuri parameter proses yang berkaitan dengan rework dan klaim pembeli, kemudian uji stabilisasi proses dengan kontrol mutu tetap berjalan.
@@ -58,7 +58,7 @@ Log membuktikan biaya rework dan allowance, tetapi belum memastikan deviasi suhu
 
 ### 07 Evidence File Paths / SQL References
 - **SQL Analysis Script**: [`02_SQL/queries_by_question/Q06.sql`](../../02_SQL/queries_by_question/Q06.sql)
-- **Visual Chart (Evidence)**: [`03_CELONIS_EVIDENCE/Q06/Q06_rework_and_sales_allowances.png`](../../03_CELONIS_EVIDENCE/Q06/Q06_rework_and_sales_allowances.png)
+- **Visual Chart (Evidence)**: [`03_CELONIS_EVIDENCE/Q06/Q06_rework_and_allowance_summary.png`](../../03_CELONIS_EVIDENCE/Q06/Q06_rework_and_allowance_summary.png)
 
 
 Hasil DuckDB yang mendasari tabel:
