@@ -1,74 +1,66 @@
-# Data Quality & Cleaning Audit Report
-## Tanjung Palma Agro-Industrial Estate — FFB Harvest-to-CPO Processing
-**Author**: 24SI1 • GROUP 03  
-**Dataset**: `raw_event_log.csv` (Synthetic Oil Palm Plantation & Mill Operations)  
-**Output Target**: `01_DATA/cleaned/celonis_event_log_clean.csv`  
+# Laporan final cleaning data Palm Oil
 
----
+Rilis 11 November 2026, 24SI1 Group 03. Cleaning selesai untuk aturan dataset sintetis yang didokumentasikan. CSV siap dipakai untuk analisis Q01–Q10 dengan batas kelengkapan satu event yang dikarantina. Istilah final berarti pipeline dapat direproduksi dan lolos pemeriksaan yang disebutkan, bukan jaminan bahwa data simulasi mewakili kebenaran lapangan secara sempurna.
 
-### 1. Executive Summary of Data Quality Findings
-An exhaustive data engineering and profiling assessment was conducted on `raw_event_log.csv` (6.325 initial raw rows) using DuckDB SQL. The audit identified structural anomalies, data entry inconsistencies, duplicate logging records, and chronological inversions. Following justified, rule-based data cleaning and quarantine protocols:
-- **Raw Input Rows**: 6.325
-- **Source Duplicate Records Removed**: 145 (redundant extractions of identical event executions)
-- **Quarantined Records**: 1 (`RAW-0005170`, event `EVT-0000623` with corrupted `'not-a-time'` values)
-- **Final Valid Clean Events**: **6.179**
-- **Unique Case Lots**: **230** (100% matched against `case_master.csv`)
-- **Master Data Mapping Accuracy**: **100%** across activities, departments, employees, and resources.
+## Sumber dan hasil rilis
 
----
+Data mentah berasal dari sembilan CSV dalam `01_DATA/raw/`. Definisi yang dipakai tersedia pada [data dictionary](source_documentation/data_dictionary.md), [laboratory instructions](source_documentation/laboratory_instructions.md), dan [business process](source_documentation/business_process_description.md). Salinan dokumentasi sumber disertakan agar keputusan cleaning dapat ditinjau tanpa bergantung pada folder di luar proyek.
 
-### 2. Evaluation Across Data Quality Dimensions
+| Ukuran | Hasil |
+|---|---|
+| Baris raw | 6.325 |
+| Duplikat ekstraksi yang dihapus | 145 |
+| Event dengan timestamp tidak dapat dipulihkan | 1 |
+| Event akhir | 6.179 |
+| Event ID unik | 6.179 |
+| Case unik | 230 |
+| Pemeriksaan rilis | 26 lolos, 0 gagal |
+| Selisih ekspor dan impor ulang CSV | 0 |
+| Event berubah dibanding CSV sebelum patch | 27 |
 
-| Dimension | Initial Raw Log Status | Remediation & Transformation | Final Clean Status |
-|---|---|---|---|
-| **Uniqueness** | 143 duplicated `event_id` strings (accounting for 288 rows / 145 redundant rows) | Applied `ROW_NUMBER() OVER (PARTITION BY UPPER(TRIM(event_id)) ...)` keeping the cleanest record | 100% unique `event_id` (6.179 unique records) |
-| **Completeness** | 3 missing `material_cost` values; 1 missing employee role; 1 corrupted timestamp set | Reconstructed missing `material_cost` via cost balance equation; quarantined corrupted timestamps | 0 missing critical identifiers or financial cells |
-| **Validity** | Strings containing currency symbols (`RM`, `MYR `); 1 row with `'not-a-time'`; boolean mixed cases (`N`, `true`, `1`) | Extracted pure numeric decimals using regex; normalized booleans to boolean literals; quarantined unparseable row | 100% compliant data types (DECIMAL, TIMESTAMP, BOOLEAN) |
-| **Consistency** | 17 rows with inverted start/end timestamps (`start > end`); mixed date formats (`YYYY-MM-DD`, `YYYY/MM/DD`, `DD/MM/YYYY`) | Day-first aware multi-format parsing; chronological swapping of inverted pairs | 100% chronologically valid (`start <= end = timestamp`) |
-| **Referential Integrity** | Lowercase/untrimmed activities (`cpo laboratory tested`), non-standard departments (`Plantation Planning Dept.`) | Case-insensitive trimming and authoritative lookup join against master catalogs | 100% foreign key match to authoritative masters |
+6.325 − 145 − 1 = 6.179. Deduplikasi hanya berdasarkan event ID yang dinormalisasi; pengulangan aktivitas dengan event ID berbeda tetap dipertahankan. Terdapat 76 eksekusi rework menurut flag atau nama aktivitas, termasuk grading ulang dan retest yang sah.
 
----
+## Perbaikan tahap dasar
 
-### 3. Detailed Data Cleaning Decisions & Audit Trail
+Event ID dan master key dinormalisasi dengan trim serta casing. Nama aktivitas, department, role, resource type dan organizational unit dipetakan ke master. Tanggal menggunakan parser day-first; currency prefix dibersihkan sebelum cast DECIMAL. Boolean menerima true/false, yes/no, y/n, 1/0. Tiga material cost kosong dipulihkan melalui persamaan total biaya, bukan diisi nol secara seragam.
 
-#### 3.1 Deduplication of Event Logging (145 Redundant Rows)
-- **Observation**: 143 normalized `event_id` keys appeared more than once. In all instances, these represented extraction duplicates of the same execution (identical case, activity, and start/end window), differing only by casing (`evt-0000057` vs `EVT-0000057`) or whitespace.
-- **Action**: Normalized `event_id` using `UPPER(TRIM(event_id))` and filtered using window ranking prioritizing records without currency formatting anomalies. Exactly 145 duplicate rows were removed.
-- **Integrity Rule**: Distinct executions of legitimate rework (such as repeat field grading or re-testing) possess unique, distinct `event_id` values and were strictly preserved.
+Terdapat 17 pasangan start/end terbalik. Start dan end ditukar dengan bukti duration positif dan timestamp completion. **Ready time merupakan field independen dan harus dipertahankan dari raw.** Pada 16 dari 17 inversi, ready memang sama dengan end mentah; pola itu tidak berlaku untuk semuanya. Memaksakan ready menjadi start hasil swap adalah penyebab bug versi lama.
 
-#### 3.2 Quarantine Log (1 Record Excluded)
-- **Quarantined Row**: `RAW-0005170`
-- **Event ID**: `EVT-0000623` | **Case ID**: `PALM-000105`
-- **Activity**: `Buyer Remittance Matched`
-- **Corrupted Fields**: `activity_start_time = 'not-a-time'`, `activity_end_time = 'not-a-time'`, `timestamp = 'not-a-time'`, `activity_ready_time = 'not-a-time'`.
-- **Justification**: In strict adherence to laboratory instructions (*"quarantine unrecoverable records with supporting evidence; do not fabricate timestamps"*), this record cannot have its timestamps synthetically guessed without compromising process mining time-distance accuracy. It was isolated to `quarantined_events`.
+## Patch final dan bukti sumber
 
-#### 3.3 Chronological Inversion Repair (17 Records)
-- **Observation**: In 17 rows, `activity_start_time` was recorded chronologically after `activity_end_time` (e.g. `RAW-0000173`: start = 13:27, end = 13:07).
-- **Diagnostic Verification**: In every one of these 17 cases:
-  1. `start_time - end_time` exactly matched the recorded positive `activity_duration_minutes` (e.g. 20 minutes).
-  2. The process mining `timestamp` column matched `activity_start_time`.
-  3. `activity_ready_time` matched `activity_end_time`.
-- **Action**: The two timestamp fields were inverted during ETL extraction. The values were safely swapped: `start_time := parsed_end` and `end_time := parsed_start`, ensuring `duration = end - start > 0` and `timestamp = end`.
+| Field | Event diperbaiki | Dasar keputusan |
+|---|---|---|
+| case_type | 20 | Nilai authoritative case_master berdasarkan case_id |
+| employee_id dan role | 4 | resource_master memiliki pasangan employee unik; role dari employee_master |
+| resource_id dan type | 2 | employee_master memiliki pasangan resource unik; type dari resource_master |
+| activity_ready_time | 1 | Pertahankan raw RAW-0000962, dikonfirmasi event pendahulu |
 
-#### 3.4 Financial Formatting & Missing Material Cost Repair
-- **Currency Symbols**: 17 entries contained text prefixes (`RM10.83`, `MYR 49.07`, `RM0.00`). These were stripped via regex `REGEXP_REPLACE(val, '[^0-9.-]', '', 'g')` and cast to `DECIMAL(18,2)`.
-- **Missing Material Cost (3 Rows)**:
-  - `RAW-0001714` (CPO Storage Tank Updated): Total 70.97, Labor 44.75, Equip 3.30, Overhead 22.92 $\rightarrow$ Implied Material Cost = **0.00 MYR**.
-  - `RAW-0003142` (Transport to Palm Oil Mill): Total 469.67, Labor 42.50, Equip 124.90, Overhead 28.96 $\rightarrow$ Implied Material Cost = **273.31 MYR** (fuel/consumables).
-  - `RAW-0005350` (FFB Threshing Completed): Total 382.68, Labor 47.75, Equip 73.35, Overhead 24.66 $\rightarrow$ Implied Material Cost = **236.92 MYR**.
-- **Result**: Post-cleaning reconciliation verified:
-  $$\text{activity\_total\_cost} = \text{labor\_cost} + \text{material\_cost} + \text{equipment\_cost} + \text{overhead\_cost} \quad (\Delta = 0.00)$$
-  $$\text{profit\_contribution} = \text{revenue\_allocated} - \text{activity\_total\_cost} \quad (\Delta = 0.00)$$
+Keempat employee yang dipulihkan adalah EVT-0005598 → EMP-071, EVT-0004304 → EMP-030, EVT-0001776 → EMP-054, EVT-0001230 → EMP-071. Resource dipulihkan untuk EVT-0004606 → RES-055 dan EVT-0002311 → RES-071. Semua pasangan dan role kini cocok dengan master dan required role aktivitas.
 
----
+**EVT-0004091 / PALM-000074.** Raw RAW-0000962 mencatat start 2026-05-09 00:11:00, end 2026-05-08 23:41:00 (terbalik), timestamp 00:11, ready **2026-05-08 19:03:00**, duration 30 dan waiting 278 menit. Hasil final: start 23:41, end/timestamp 00:11 hari berikutnya, ready 19:03. Event pendahulu Field Team Assigned / EVT-0003894 selesai pukul 19:03. Start − ready = 278 menit; duration 30 + waiting 278 > SLA 210 sehingga flag true tetap benar. Tidak ada timestamp yang ditebak.
 
-### 4. Verification & Validation SQL Summary
-Executing `02_SQL/03_validation.sql` on `clean_events` confirms:
-1. `missing_identifiers` = **0**
-2. `invalid_financial_rows` = **0**
-3. `inconsistent_contribution_rows` = **0**
-4. `inverted_durations` = **0**
-5. `negative_waiting_times` = **0**
-6. `master_cases_matched` = **230 / 230 (100%)**
-7. `unmapped_activities` = **0**
+[Audit patch per field](cleaning_patch_audit.csv) mencatat 27 perubahan field utama pada 27 event. Role/type diturunkan dari master setelah pemulihan ID. [Ringkasan sebelum dan sesudah](before_after_summary.csv) menunjukkan total waiting, processing, SLA dan baseline keuangan tetap sama; perbedaan representasi double/decimal pada CSV audit lama bukan perubahan nilai ekonomi.
+
+## Karantina dan kelengkapan
+
+Raw RAW-0005170 / EVT-0000623 / PALM-000105 / Buyer Remittance Matched memiliki `not-a-time` pada seluruh timestamp esensial. Tidak tersedia pasangan duplikat valid untuk memulihkannya. Event tersebut dikeluarkan dari event log analisis, tetapi disimpan dalam [quarantined_events.csv](quarantined_events.csv).
+
+Penutupan lot EVT-0000624 mempunyai satu pendahulu remittance yang hilang karena karantina. [dependency_exceptions.csv](dependency_exceptions.csv) menyebut pengecualian itu secara eksplisit. Dependency check untuk case ini tidak boleh disajikan sebagai bukti bahwa seluruh trace lengkap. Biaya dan revenue baseline adalah total event yang dipertahankan; nilai event karantina tidak dimasukkan kembali tanpa timestamp.
+
+Blank facility_id pada aktivitas tanpa mesin dan exception_type kosong saat exception_flag false merupakan nilai sah. FFB grade Unknown merupakan kategori provisional yang sah. Rework, inspeksi yang dilewati secara operasional, overlap jalur minyak/kernel pada resource berbeda, dan biaya tinggi tidak dihapus sebagai noise.
+
+## Validasi rilis
+
+[validation_results.csv](validation_results.csv) berisi 26 pemeriksaan dengan nol kegagalan: keunikan dan kelengkapan ID/cell esensial, identitas duration/waiting/end timestamp/SLA/case elapsed, seluruh atribut master case, pasangan employee-resource dan role, department/SLA aktivitas, referensi facility/grade/estate, identitas biaya dan kontribusi, lokasi pengakuan revenue, sale tepat sekali dan outcome eksklusif, pembuatan/penutupan case sekali, konservasi event sumber, keunikan master key, dependensi wajib, predecessor ready, urutan inspeksi/rework/retest/closure, serta overlap facility dan employee.
+
+Overlap diperiksa pada capacity-one resource dengan interval start/end; akhir sama dengan awal berikutnya diperbolehkan. Nol overlap bukan bukti utilisasi efektif karena kalender staffed availability tidak tersedia. Pemeriksaan predecessor ready/closure mengakui satu pengecualian karantina di atas.
+
+## Dampak pada Q01 sampai Q10
+
+Q01–Q10 dihitung ulang dari rilis yang sama. Tiga varian terbesar Q01 tetap 61/23/17; throughput 19,76/8,44/17,13 jam. Q02 tetap 189 processed, 29 rejected, 12 cancelled. Q03 tetap 1.047,10 jam waiting, 3.807,23 jam processing dan 180 pelanggaran SLA. Perbaikan ready time memulihkan konsistensi kolom tanpa mengubah waiting yang sudah benar.
+
+Q04 memakai bucket dari durasi asli tanpa batas beririsan. Q05 kini mempunyai total waiting per tahap dan beban harian fasilitas. Perubahan angka finansial Q07–Q10 berasal dari koreksi horizon OPEX, basis biaya tambahan dan pembatasan overlap manfaat, bukan perubahan baseline akibat cleaning. Skenario dan target pilot belum merupakan hasil implementasi.
+
+## Reproduksi
+
+Jalankan `python3 02_SQL/run_pipeline.py` dari folder mana pun dengan package duckdb tersedia. Urutan satu koneksi: 00 import → 02 cleaning → 02b patch → 03 validation → 05 export → impor ulang dan perbandingan → 06 model skenario → Q01–Q10. Pipeline menghentikan publikasi CSV jika validasi atau roundtrip gagal. Raw tidak ditimpa. [release_manifest.json](release_manifest.json) mencatat hash SHA256 raw/output, versi DuckDB, hasil gate dan jumlah pengecualian. Jalankan `python3 -m unittest discover -s tests` untuk regresi cleaning.

@@ -1,0 +1,22 @@
+{
+  "release_date": "2026-11-11",
+  "duckdb_version": "2.0.0",
+  "validation_checks_passed": 26,
+  "patch_event_count_vs_pre_revision_csv": 27,
+  "changed_event_rows_vs_previous_csv": 0,
+  "quarantine_count": 1,
+  "dependency_exceptions": 1,
+  "csv_roundtrip_differences": 0,
+  "sha256": {
+    "01_DATA/raw/activity_catalog.csv": "21ca957fecf23c2be529a0326fb925d9ff89016f848f7c7aff29678967175912",
+    "01_DATA/raw/case_master.csv": "a7ccbbe45b127dc6acc859d3cf27a634be44a07c3544f0c3f910a5b56e847579",
+    "01_DATA/raw/department_master.csv": "5de75316e253b233e1d8a429ba974d487d599d21f4e93ab0aeed734420d4e5f2",
+    "01_DATA/raw/employee_master.csv": "44466380887e47cb796683ef6aea79661242a1d75018524b1aea44d0ea0e136d",
+    "01_DATA/raw/estate_block_master.csv": "7ef0a99ed4b8f28e6f52263a0899445b6584c6c007c2e19578bfa7dc3142276b",
+    "01_DATA/raw/facility_master.csv": "e83c74107fad67d833f1627e5f0850c5125df24831415c2d87c82865d0d03fc9",
+    "01_DATA/raw/ffb_grade_master.csv": "64778bd067ab42e038807c0fb79d6a840b86d716481bd7d059f0f413d165662f",
+    "01_DATA/raw/raw_event_log.csv": "de4c4b756bb8a2ecc568d4ba38ead16395512d2962bf32965ff1b2a470674964",
+    "01_DATA/raw/resource_master.csv": "5684e4ea4fea844468b3c39f8fd4721a0b10d758e12848874250697c100005b1",
+    "01_DATA/cleaned/celonis_event_log_clean.csv": "6192c67ae9f7eb9abe460e1e51d267fd6612b0f122ec13292a347c76b27fc44b"
+  }
+}

@@ -27,15 +27,15 @@ lot_intervals AS (
         ffb_grade,
         is_rejected,
         lot_total_cost,
-        ROUND(date_diff('minute', harvest_completion_time, mill_arrival_time) / 60.0, 2) AS harvest_to_mill_hours
+        date_diff('second', harvest_completion_time, mill_arrival_time) / 3600.0 AS harvest_to_mill_hours
     FROM harvest_to_mill_lots
 )
 -- 2. Breakdown by Time Buckets
 SELECT 
     CASE 
         WHEN harvest_to_mill_hours < 2.0 THEN '1. Rapid (< 2.0 hours)'
-        WHEN harvest_to_mill_hours BETWEEN 2.0 AND 3.0 THEN '2. Standard (2.0 - 3.0 hours)'
-        WHEN harvest_to_mill_hours BETWEEN 3.0 AND 4.0 THEN '3. Moderate Delay (3.0 - 4.0 hours)'
+        WHEN harvest_to_mill_hours <= 3.0 THEN '2. Standard (2.0 - 3.0 hours)'
+        WHEN harvest_to_mill_hours <= 4.0 THEN '3. Moderate Delay (>3.0 - 4.0 hours)'
         ELSE '4. Severe Delay (> 4.0 hours)'
     END AS lead_time_bucket,
     COUNT(*) AS lots_arrived,

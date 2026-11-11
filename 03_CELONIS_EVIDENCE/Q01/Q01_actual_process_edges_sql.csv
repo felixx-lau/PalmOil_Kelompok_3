@@ -1,0 +1,60 @@
+from_activity,to_activity,directly_follows_count
+Authorized CPO Sales Allowance,Harvest Lot Closed,14
+Buyer Remittance Matched,Authorized CPO Sales Allowance,14
+Buyer Remittance Matched,Harvest Lot Closed,174
+CPO Dispatch Confirmed,CPO Sales Invoice Issued,189
+CPO Laboratory Tested,CPO Quality Rework Applied,27
+CPO Laboratory Tested,CPO Storage Tank Updated,182
+CPO Laboratory Tested,Kernel Drying Completed,7
+CPO Loaded for Dispatch,CPO Dispatch Confirmed,189
+CPO Quality Rework Applied,CPO Laboratory Tested,26
+CPO Quality Rework Applied,Kernel Drying Completed,1
+CPO Sales Invoice Issued,Buyer Remittance Matched,188
+CPO Sales Invoice Issued,Harvest Lot Closed,1
+CPO Storage Tank Updated,CPO Transfer Authorized,189
+CPO Transfer Authorized,CPO Loaded for Dispatch,189
+Crude Oil Pressing Completed,Kernel Separation Completed,126
+Crude Oil Pressing Completed,Oil Clarification Completed,63
+FFB Field Grading,FFB Field Grading,22
+FFB Field Grading,FFB Loaded for Transport,218
+FFB Harvested,FFB Field Grading,218
+FFB Loaded for Transport,Transport to Palm Oil Mill,218
+FFB Lot Rejected,Harvest Lot Closed,29
+FFB Receipt Accepted,FFB Unloaded at Sterilizer Ramp,20
+FFB Receipt Accepted,Steam and Boiler Readiness Checked,169
+FFB Sterilization Completed,FFB Threshing Completed,189
+FFB Threshing Completed,Fruit Digestion Completed,189
+FFB Unloaded at Sterilizer Ramp,FFB Sterilization Completed,169
+FFB Unloaded at Sterilizer Ramp,Steam and Boiler Readiness Checked,20
+Field Team Assigned,Harvest Collection Dispatched,206
+Field Team Assigned,Palm Ripeness Assessed,12
+Fruit Digestion Completed,Crude Oil Pressing Completed,189
+Harvest Batch Cancelled,Harvest Lot Closed,12
+Harvest Batch Created,Harvest Plan Approved,230
+Harvest Collection Dispatched,FFB Harvested,12
+Harvest Collection Dispatched,Palm Ripeness Assessed,206
+Harvest Plan Approved,Field Team Assigned,218
+Harvest Plan Approved,Harvest Batch Cancelled,12
+Incoming FFB Quality Inspection,FFB Lot Rejected,29
+Incoming FFB Quality Inspection,FFB Receipt Accepted,184
+Kernel Drying Completed,CPO Laboratory Tested,60
+Kernel Drying Completed,CPO Storage Tank Updated,7
+Kernel Drying Completed,Oil Clarification Completed,6
+Kernel Drying Completed,Oil Purification Completed,116
+Kernel Separation Completed,CPO Laboratory Tested,2
+Kernel Separation Completed,Kernel Drying Completed,23
+Kernel Separation Completed,Oil Clarification Completed,120
+Kernel Separation Completed,Oil Purification Completed,44
+Mill Weighbridge Inbound,FFB Receipt Accepted,5
+Mill Weighbridge Inbound,Incoming FFB Quality Inspection,213
+Oil Clarification Completed,Kernel Drying Completed,99
+Oil Clarification Completed,Kernel Separation Completed,61
+Oil Clarification Completed,Oil Purification Completed,29
+Oil Purification Completed,CPO Laboratory Tested,128
+Oil Purification Completed,Kernel Drying Completed,59
+Oil Purification Completed,Kernel Separation Completed,2
+Palm Ripeness Assessed,FFB Harvested,206
+Palm Ripeness Assessed,Harvest Collection Dispatched,12
+Steam and Boiler Readiness Checked,FFB Sterilization Completed,20
+Steam and Boiler Readiness Checked,FFB Unloaded at Sterilizer Ramp,169
+Transport to Palm Oil Mill,Mill Weighbridge Inbound,218

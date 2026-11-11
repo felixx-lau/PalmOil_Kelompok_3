@@ -1,0 +1,3 @@
+dataset,events,cases,waiting_minutes,processing_minutes,sla_violations,cost_myr,revenue_myr,contribution_myr
+old_events,6179,230,62826.0,228434.0,180,6216045.659999998,7074461.68,858416.0199999992
+clean_events,6179,230,62826.00,228434.00,180,6216045.66,7074461.68,858416.02

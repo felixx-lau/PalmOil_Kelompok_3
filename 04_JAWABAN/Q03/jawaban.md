@@ -3,13 +3,15 @@
 
 Waiting pada dataset terkonsentrasi dalam satu lonjakan di Mei 2026. Seluruh 1.047,10 jam waiting tercatat pada bulan tersebut, dengan 67 pengiriman pada 8–9 Mei; hasil agregat 24 bulan tidak cukup untuk menyebut masalah ini kronis.
 
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
+
 ### 01 Evidence and Data Source
 
-**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q06: `python3 02_SQL/export_q01_q06_results.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Gambar Celonis merupakan ilustrasi tambahan.
+**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q10: `python3 02_SQL/run_pipeline.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Bukti antarmuka lama merupakan ilustrasi tambahan dengan asal aplikasi belum diverifikasi secara independen. Grafik baru berlabel SQL dibuat sendiri dengan Python, bukan ekspor Celonis; lihat manifest bukti.
 
 - **Data**: `01_DATA/cleaned/celonis_event_log_clean.csv` (6.179 event, 230 case).
 - **SQL**: `02_SQL/queries_by_question/Q03.sql`.
-- **Ilustrasi Celonis tambahan**: `03_CELONIS_EVIDENCE/Q03/Q03_sla_violations_by_activity.png` dan `Q03_waiting_vs_processing_by_activity.png`.
+- **Tangkapan layar antarmuka lama**: `03_CELONIS_EVIDENCE/Q03/Q03_sla_violations_by_activity.png` dan `Q03_waiting_vs_processing_by_activity.png`.
 - **Hasil SQL**: `02_SQL/results/Q03_01.csv` sampai `Q03_04.csv`.
 
 | Tahap | Event | Waiting rata-rata (menit) | Total waiting (jam) | Total processing (jam) | Pelanggaran SLA | Tingkat pelanggaran |
@@ -48,8 +50,8 @@ Persentase tersebut adalah beban durasi tercatat terhadap 24 jam, bukan utilisas
 
 ### 06 Recommendation Risk and Assumptions
 - **Rekomendasi**: Investigasi episode 8–9 Mei, periksa distribusi waiting sepanjang Mei, dan validasi timestamp sebelum mengubah pembagian regu atau membeli kapasitas baru.
-- **Risiko**: Perubahan jadwal tanpa mengetahui penyebab dapat memindahkan antrean ke tahap lain. Anomali ready time juga dapat memengaruhi interpretasi waiting.
-- **Asumsi dan batasan**: Perhitungan memakai kolom waiting, processing, dan flag SLA pada CSV saat ini. Koreksi cleaning dan ekspor ulang pada bagian A perlu diikuti penghitungan ulang. Beban kalender mengasumsikan pembanding 24 jam per fasilitas per hari; tidak mengasumsikan semua jam tersedia untuk operasi.
+- **Risiko**: Perubahan jadwal tanpa mengetahui penyebab dapat memindahkan antrean ke tahap lain. Kesalahan ready time EVT-0004091 telah dipulihkan dari raw 19:03 dan cocok dengan pendahulunya; waiting 278 menit tetap konsisten.
+- **Asumsi dan batasan**: Perhitungan memakai kolom waiting, processing, dan flag SLA pada CSV saat ini. Cleaning dan ekspor ulang telah selesai; hasil CSV Q03 telah dihitung ulang dan tetap sama. Beban kalender mengasumsikan pembanding 24 jam per fasilitas per hari; tidak mengasumsikan semua jam tersedia untuk operasi.
 
 ### 07 Evidence File Paths and SQL References
 - [Query Q03](../../02_SQL/queries_by_question/Q03.sql)
@@ -57,5 +59,7 @@ Persentase tersebut adalah beban durasi tercatat terhadap 24 jam, bukan utilisas
 - [Distribusi waiting bulanan](../../02_SQL/results/Q03_02.csv)
 - [Pengiriman harian](../../02_SQL/results/Q03_03.csv)
 - [Beban harian sterilizer](../../02_SQL/results/Q03_04.csv)
-- [Bukti SLA Celonis](../../03_CELONIS_EVIDENCE/Q03/Q03_sla_violations_by_activity.png)
-- [Bukti waiting dan processing Celonis](../../03_CELONIS_EVIDENCE/Q03/Q03_waiting_vs_processing_by_activity.png)
+- [Tangkapan layar SLA lama](../../03_CELONIS_EVIDENCE/Q03/Q03_sla_violations_by_activity.png)
+- [Tangkapan layar waiting dan processing lama](../../03_CELONIS_EVIDENCE/Q03/Q03_waiting_vs_processing_by_activity.png)
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q03 SQL](../../03_CELONIS_EVIDENCE/Q03/Q03_stage_waiting_sql.png).

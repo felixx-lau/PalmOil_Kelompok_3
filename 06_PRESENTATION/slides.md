@@ -1,159 +1,189 @@
-# Presentasi Analisis Proses Bisnis (Option A: Q01–Q10)
-## Tanjung Palma Agro-Industrial Estate — Palm Oil Agriculture and Processing
-**Kelompok**: 24SI1 • GROUP 03  
-**Format Presentasi**: 15 Menit Presentasi + 5 Menit Q&A  
-**Konversi Kurs BI (13 Okt 2026)**: 1 MYR = 4.384,87 IDR  
-**File Presentasi Resmi**: `06_PRESENTATION/slides.pdf`
+# Analisis Palm Oil setelah final cleaning
 
----
+- 24SI1 Group 03 | 11 November 2026
 
-### Slide 1: Company Context & Business Challenge
-- **Profil Perusahaan**: Tanjung Palma Agro-Industrial Estate (perkebunan kelapa sawit dan pabrik CPO terintegrasi).
-- **Cakupan Dataset**: 230 processing lot yang dipanen pada periode simulasi Oktober 2024 hingga September 2026.
-- **Unit of Analysis (Case Notion)**: Satu batch panen TBS (*Fresh Fruit Bunches*) yang ditelusuri sebagai lot pengolahan hingga pengapalan CPO.
-- **Business Challenge**: Mengurangi lonjakan reject buah di pabrik dan memangkas waktu tunggu logistik kebun tanpa menurunkan standar mutu CPO komersial.
-- **Alur Metodologis Wajib**: Raw CSV $\rightarrow$ Profiling $\rightarrow$ Cleaning $\rightarrow$ Validation $\rightarrow$ Cleaned Export $\rightarrow$ Celonis Analysis $\rightarrow$ Business Case.
+- Dataset sintetis; cohort Oktober 2024–September 2026; UTC.
 
----
+- Q01–Q10 dihitung ulang dari satu rilis CSV.
 
-### Slide 2: Data Quality & Cleaning Decisions
-- **Volume Awal Raw Log**: 6.325 baris transaksi mentah.
-- **Deduplikasi (145 baris dibersihkan)**: 143 event_id ganda akibat replikasi ekstraksi dibersihkan menggunakan window function ranking; seluruh pengerjaan ulang (*rework*) sah memiliki event_id unik dan dipertahankan 100%.
-- **Karantina Data Korup (1 baris)**: Record `RAW-0005170` (event `EVT-0000623`, *Buyer Remittance Matched*) dikarantina karena timestamp bernilai `'not-a-time'` demi mencegah fabrikasi data buatan.
-- **Perbaikan Timestamp Terbalik (17 baris)**: Menukar kolom `activity_start_time` dan `activity_end_time` yang terbalik saat logging sehingga konsisten dengan durasi dan timestamp end.
-- **Pembersihan Simbol Finansial**: Menghapus teks `'RM'` dan `'MYR'` pada 17 nilai angka dan merekonstruksi 3 nilai `material_cost` yang hilang via persamaan neraca biaya.
-- **Hasil Bersih**: **6.179 completed events** dan **230 unique case lots** yang 100% cocok dengan `case_master.csv`.
+- Temuan aktual dipisahkan dari target pilot dan skenario.
 
----
+<!-- pagebreak -->
 
-### Slide 3: Financial Baseline & Kurs Bank Indonesia (13 Oktober 2026)
-- **Sumber Resmi BI**: Kurs Transaksi Bank Indonesia per 13 Oktober 2026.
-  - Kurs Jual: 4.408,94 IDR | Kurs Beli: 4.360,80 IDR | **Reference Rate (Midpoint) = 4.384,87 IDR per 1 MYR**.
-- **Metrik Finansial Baseline As-Is (230 Lot)**:
-  - **Net Recognized Revenue**: **7.074.461,68 MYR** (**31.020.593.293,47 IDR**)
-  - **Total Operational Cost**: **6.216.045,66 MYR** (**27.256.552.698,81 IDR**)
-  - **Net Profit Contribution**: **858.416,02 MYR** (**3.764.040.594,66 IDR**)
-  - **Average Cost per Lot**: **27.026,29 MYR** (**118.506.750,86 IDR**)
+# Cleaning menyisakan 6.179 event yang dapat dianalisis
 
----
+- 6.325 raw − 145 duplikat − 1 karantina = 6.179 event.
 
-### Slide 4: Q01 · Harvest-to-CPO Process Discovery & Variants
-- **Varian 1 (Happy Path - 61 Lot / 26,52%)**: Alur standard panen hingga penjualan. Throughput: 19,76 jam, Kontribusi: **+9.020,64 MYR/lot** (Total: +550.259,04 MYR).
-- **Varian 2 (Early Mill Rejection - 23 Lot / 10,00%)**: Buah dipanen & diangkut ke pabrik, namun ditolak di intake. Throughput: 8,44 jam, Kontribusi: **-23.914,16 MYR/lot** (Total rugi: **-550.025,68 MYR**).
-- **Varian 3 (Agile Dispatched - 17 Lot / 7,39%)**: Operasi pemurnian minyak & pemisahan kernel berjalan paralel. Throughput: 17,13 jam, Kontribusi: **+9.270,96 MYR/lot**.
-- **Implikasi Utilisasi**: Varian 2 menyerap 10% jam truk dan jembatan timbang namun menghasilkan 0 output bagi stasiun perebusan dan press pabrik.
+- 230 case tetap dipertahankan; rework sah tidak dihapus.
 
----
+- 26 pemeriksaan lolos; ekspor dan impor ulang tanpa selisih.
 
-### Slide 5: Q02 · FFB Outcomes & Cost Leakage
-- **Processed / Dispatched (189 Lot / 82,17%)**: Menghasilkan 100% pendapatan (MYR 7,07 Juta) dan laba kontribusi **+1.571.708,26 MYR**.
-- **Rejected Lots (29 Lot / 12,61%)**: Kebocoran modal langsung sebesar **-711.861,41 MYR (-3,12 Miliar IDR)**.
-- **Cancelled Lots (12 Lot / 5,22%)**: Dibatalkan sebelum panen, biaya minimal (MYR 1.430,83 untuk perencanaan).
-- **Sunk Feedstock Risk**: 94,8% biaya lot reject adalah biaya tanam buah yang hangus saat panen (MYR 675.040,72).
-- **Total Economic Damage**: Biaya riil ditambah peluang laba hilang mencapai **953.023,09 MYR (4,18 Miliar IDR)**.
+- Satu trace memiliki dependency exception akibat remittance rusak.
 
----
+<!-- pagebreak -->
 
-### Slide 6: Q03 · Plantation-to-Mill Performance & SLA
-- **Konsentrasi Pelanggaran SLA**: Sebanyak **98,33% (177 dari 180)** pelanggaran SLA di seluruh perusahaan terjadi pada tahap **Plantation / Harvesting**.
-- **Penyumbang Antrean Terbesar**: Tahap kebun mengakumulasi 818 jam waktu antre (rata-rata 35,93 menit per aktivitas).
-- **Aktivitas Paling Kritis**: *Harvest Batch Created* (58 viol), *Palm Ripeness Assessed* (46 viol), dan *FFB Field Grading* (43 viol).
-- **Stabilitas Tahap Pabrik**: Tahap Milling dan Weighbridge mencatat 100% kepatuhan SLA (0 pelanggaran).
-- **Prioritas Utama**: Koordinasi penugasan regu panen dan penilai kematangan di kebun adalah prioritas perbaikan #1.
+# Patch memperbaiki 27 event dengan bukti sumber
 
----
+- 20 case_type mengikuti case_master.
 
-### Slide 7: Q04 · Time-to-Mill Lead Time & FFB Quality
-- **Waktu Tempuh Optimal (2–3 Jam)**: Mencatat tingkat penolakan terendah, yaitu hanya **7,53%**.
-- **Lonjakan Penolakan (>3 Jam)**: Pada durasi 3–4 jam, penolakan melonjak drastis hingga **22,58%**.
-- **Mekanisme Biologis**: Enzim lipase teraktivasi akibat luka potong buah; paparan panas saat transit mempercepat hidrolisis menjadi FFA.
-- **Ketiadaan Kausalitas Tunggal**: Lot yang diangkut sangat cepat (<2 jam) tetap ditolak sebesar 18,18%, membuktikan adanya faktor independen hulu: **fraksi kematangan buah saat dipetik di kebun**.
-- **Kerugian Total Reject**: **711.861,41 MYR (3,12 Miliar IDR)**.
+- 4 employee ID dan 2 resource ID pulih dari pasangan master unik.
 
----
+- EVT-0004091: ready asli 19:03, start 23:41; waiting tetap 278 menit.
 
-### Slide 8: Q05 · Milling Facility Bottlenecks & Capacity
-- **Bottleneck Utama Pabrik (#1)**: **FFB Sterilization** (Perebusan Uap), menyerap 255,77 jam operasi (81,2 menit/lot) dan 38,47 jam antrean.
-- **Bottleneck Sekunder (#2 & #3)**: Kempa Minyak (*Pressing*, 67,8 min) dan Klarifikasi (*Clarification*, 61,8 min).
-- **Ketimpangan Beban Sterilizer**: Unit FAC-029 menangani 79,4% lot (antre 6,4 min). Ketika overload, antrean pada unit sekunder FAC-030 dan FAC-031 melonjak hingga **34,6 menit/lot**.
-- **Jembatan Timbang Lancar**: Weighbridge bukan bottleneck (rata-rata antre hanya 0,27 menit/lot).
-- **Peluang Kapasitas**: Waktu antre 38,5 jam di sterilizer setara dengan potensi kapasitas untuk mengolah ~28 lot tambahan.
+- Raw tidak diubah; CSV patch, karantina, dan hash tersedia.
 
----
+<!-- pagebreak -->
 
-### Slide 9: Q06 · Quality Rework & Commercial Sales Allowances
-- **Data Duplicates (Technical Defect)**: 145 baris ekstraksi ganda dengan event_id dan waktu sama; telah dibersihkan.
-- **Legitimate Rework (Physical Retest)**: Eksekusi fisik ulang yang sah dengan event_id baru dan waktu baru untuk menjaga kepatuhan mutu (tagged rework_flag = true).
-- **Biaya Rework Tercatat (MYR 21.823,19)**: CPO Quality Rework (27 kasus = MYR 18.469,49), Uji Ulang Lab (27 kasus = MYR 2.308,02), dan Grading Kebun (22 kasus = MYR 1.045,68).
-- **Klaim Denda Pembeli (*Sales Allowances*)**: 14 lot mengalami potongan harga faktur akibat penalti mutu sebesar **-20.949,08 MYR**.
-- **Total Beban Kegagalan Mutu**: **43.193,28 MYR (189,4 Juta IDR)**.
+# Q01 tiga varian terbesar tetap 61 / 23 / 17
 
----
+- Throughput rata-rata 19,76 / 8,44 / 17,13 jam.
 
-### Slide 10: Q07 · Prescriptive: FFB Transport Scheduling
-- **Manfaat Waktu**: Menghemat 25,88 jam antrean truk (dari 129,4 jam menjadi 103,5 jam), atau ~7,1 menit per rit pengangkutan.
-- **Manfaat Biaya Kas (Avoidable Cost)**: Hanya 12% dari biaya truk yang dapat dihemat (BBM mesin menyala diam / idle fuel = MYR 3.290,00). Supir truk adalah karyawan bulanan tetap.
-- **Manfaat Kualitas**: Tidak dapat diasumsikan tanpa indikator empiris; penghematan 7 menit tidak signifikan terhadap laju FFA.
-- **Beban Biaya Sistem**: Biaya software dispatch (MYR 6.000) + OPEX (MYR 1.200) = MYR 7.200.
-- **Hasil Finansial Bersih**: **Net Loss sebesar -3.910,00 MYR (-17,14 Juta IDR)**. Jangan jalankan sistem berbayar mandiri!
+- Varian reject berhenti lebih awal; waktu singkat bukan efisiensi.
 
----
+- Urutan minyak/kernel berbeda; penyebab efisiensi belum dibuktikan.
 
-### Slide 11: Q08 · Prescriptive: FFB Grading Improvement
-- **Volume Diselamatkan**: Menyelamatkan **4,35 lot** dari penolakan gerbang pabrik (15% dari 29 lot).
-- **Pendapatan Penjualan Tambahan**: $4,35 \times 37.431\text{ MYR} = \mathbf{+162.824,89\text{ MYR}}$ (+713,97 Juta IDR).
-- **Logika Sunk Cost Buah**: Biaya tanam kebun (MYR 23.277/lot) sudah hangus saat panen; memproses buah menjadi CPO **tidak mengeluarkan biaya tanam baru**.
-- **Biaya Olah Tambahan (Marginal Milling)**: $4,35 \times 5.672\text{ MYR} = -24.673,46\text{ MYR}$.
-- **Beban Program**: CAPEX alat uji NIR portabel (MYR 20.000) + OPEX (MYR 5.000).
-- **Net Financial Benefit**: **+113.151,43 MYR (+496,15 Juta IDR) | ROI = 452,6%**. **PRIORITAS UTAMA #1**.
+- Screenshot lama 62/23/17; angka utama selalu mengikuti SQL.
 
----
+<!-- pagebreak -->
 
-### Slide 12: Q09 · Prescriptive: Milling Capacity Investment
-- **Dampak Operasional**: Siklus perebusan turun dari 81,2 menit menjadi 70,6 menit (menghemat 33,4 jam operasi).
-- **Kasus Permintaan Tetap (Fixed Demand - 189 Lot)**: Penjualan baru = 0,00 MYR. Perusahaan menanggung CAPEX (MYR 110.000) dan OPEX uap (MYR 15.000). **Rugi bersih = -125.000,00 MYR (-548,11 Juta IDR)**.
-- **Kasus Permintaan Tumbuh (+15% Panen Baru)**: Laba bersih positif +78.450 MYR.
-- **Prinsip Evaluasi**: *'Capacity increase bukan otomatis incremental sales'*. Menambah mesin pada permintaan tetap hanya menciptakan kapasitas menganggur.
-- **Keputusan Manajemen**: **TOLAK investasi fisik sterilizer**; gunakan penataan jadwal perebusan internal.
+# Q01 Actual Process Map mencakup cabang dan pengulangan
 
----
+- 230 batch: 12 cancelled; 218 melanjutkan panen dan transport.
 
-### Slide 13: Q10 · Prescriptive: Business Case Prioritization
-- **Prioritas 1 (Q08 - Grading Kebun di TPH)**: Net Benefit **+113.151,43 MYR (+496,15 Juta IDR)**. Memulihkan sunk cost buah yang dibuang.
-- **Prioritas 2 (Q06 - Stabilisasi Mutu CPO)**: Net Benefit **+9.703,82 MYR (+42,55 Juta IDR)**. Mengurangi 50% klaim penalti mutu pembeli dan 40% retest lab.
-- **Peringkat 3 (Q07 - Transport Scheduling)**: Net Benefit -3.910 MYR (Biaya software > penghematan BBM).
-- **Peringkat 4 (Q09 - Sterilizer CAPEX)**: Net Benefit -125.000 MYR (Investasi mesin tidak layak pada demand tetap).
-- **Portofolio Rekomendasi (P1 + P2)**: Memberikan total keuntungan bersih **+122.855,25 MYR (+538,70 Juta IDR)**.
+- Penerimaan mill: 29 reject; 189 diterima dan diproses.
 
----
+- Sesudah pressing: jalur minyak dan kernel, dengan rework/retest sah.
 
-### Slide 14: Financial Scenario Comparison (As-Is vs No-Action vs To-Be)
-| Indikator Finansial | Kondisi As-Is | No-Action Scenario | Rekomendasi To-Be (P1+P2) | Pertumbuhan Finansial |
-|---|---|---|---|---|
-| **Pendapatan Bersih (MYR)** | 7.074.461,68 MYR | 7.074.461,68 MYR | **7.247.761,11 MYR** | +173.299,43 MYR |
-| **Pendapatan Bersih (IDR)** | 31.020.593.293 IDR | 31.020.593.293 IDR | **31.780.487.043 IDR** | +759.893.749 IDR |
-| **Total Biaya Operasional (MYR)** | 6.216.045,66 MYR | 6.216.045,66 MYR | **6.266.489,84 MYR** | +50.444,18 MYR |
-| **Total Biaya Operasional (IDR)** | 27.256.552.699 IDR | 27.256.552.699 IDR | **27.477.743.266 IDR** | +221.190.567 IDR |
-| **Profit Contribution (MYR)** | **858.416,02 MYR** | **858.416,02 MYR** | **981.271,27 MYR** | **+122.855,25 MYR (+14,31%)** |
-| **Profit Contribution (IDR)** | **3.764.040.595 IDR** | **3.764.040.595 IDR** | **4.302.744.889 IDR** | **+538.704.294 IDR (+14,31%)** |
-| **Total Investasi Program (MYR)** | 0,00 MYR | 0,00 MYR | **28.000,00 MYR** | Payback < 6 Bulan |
+- Storage → dispatch → invoice → remittance → allowance bila ada → close.
 
----
+<!-- pagebreak -->
 
-### Slide 15: Management Recommendations & Strategic Action Plan
-1. **Eksekusi Segera Prioritas 1 (Q08 - Grading Kebun di TPH)**: Alokasikan CAPEX MYR 20.000 pada Q1 2027 untuk pengadaan 4 unit scanner NIR portabel dan SOP penolakan buah di TPH sebelum dimuat ke truk.
-2. **Eksekusi Prioritas 2 (Q06 - Otomasi Kontrol Suhu Pemurnian Minyak)**: Alokasikan MYR 8.000 untuk sensor suhu di purifier dan vacuum dryer guna mencegah denda klaim mutu dari pembeli.
-3. **Tolak Belanja Modal Mesin Baru (Q09) & Software Truk (Q07)**: Jangan beli mesin sterilisasi baru (hemat MYR 110.000) dan software dispatch truk (hemat MYR 6.000) karena tidak memberikan pengembalian kas positif.
-4. **Rencana Pengendalian Risiko**: Luncurkan skema insentif kualitas panen bagi mandor dan terapkan batas waktu maksimal pengangkutan dari panen ke pabrik $\le 3,0$ jam.
-- **Total Dampak Keberhasilan**: Meningkatkan laba kontribusi perusahaan menjadi **4,30 Miliar IDR** (+14,31%).
+# Q02 biaya reject sudah masuk baseline
 
----
+- 189 processed, 29 rejected, 12 cancelled.
 
-### Slide 16: Appendix & Audit Trail References
-- Cleaned Event Log CSV: `01_DATA/cleaned/celonis_event_log_clean.csv` (6.179 event / 230 lot).
-- Laporan Kualitas Data: `01_DATA/validation/data_quality_report.md` (Dokumentasi karantina RAW-0005170).
-- Naskah SQL DuckDB: `02_SQL/` (00_import.sql s/d 05_celonis_export.sql) dan `queries_by_question/Q01.sql s/d Q10.sql`.
-- Bukti Visual Celonis: `03_CELONIS_EVIDENCE/` (13 grafik analisis proses & finansial resolusi tinggi).
-- Jawaban Lengkap Q01–Q10: `04_JAWABAN/Q01/jawaban.md` hingga `04_JAWABAN/Q10/jawaban.md`.
-- Dokumentasi Kurs BI & Finansial: `05_FINANCIAL/exchange_rate.csv` (1 MYR = 4.384,87 IDR per 13 Okt 2026).
-- Executive Summary: `07_EXECUTIVE_SUMMARY/executive_summary.pdf` | Kontribusi Anggota: `08_CONTRIBUTIONS/`.
+- Reject 12,61% dari 230 case; 13,30% dari 218 harvested lot.
+
+- Biaya reject MYR 711.861,41; tidak dikurangkan lagi dari baseline.
+
+- MYR 953.023,09 adalah batas atas counterfactual seluruh reject pulih.
+
+<!-- pagebreak -->
+
+# Q03 waiting terkonsentrasi pada Mei 2026
+
+- Total waiting 1.047,10 jam; processing 3.807,23 jam.
+
+- 180 pelanggaran SLA, 177 pada tahap kebun.
+
+- 67 transport start pada 8–9 Mei: 23 dan 44 pengiriman.
+
+- Episode lonjakan belum membuktikan antrean kronis atau akar sebab.
+
+<!-- pagebreak -->
+
+# Q04 target 3 jam dan 8 persen adalah pilot
+
+- Rejection rate bucket: 18,18 / 7,53 / 22,58 / 14,75%.
+
+- Hubungan tidak monoton; asosiasi belum membuktikan sebab.
+
+- Lead time dihitung dari akhir panen sampai awal timbang masuk.
+
+- Target pilot: lead time maksimal 3 jam dan reject maksimal 8%.
+
+<!-- pagebreak -->
+
+# Q05 beban harian memperjelas episode sterilisasi
+
+- Sterilisasi: rata-rata proses 81,20 menit; waiting 12,21 menit.
+
+- Waiting total 38,47 jam pada 8–9 Mei.
+
+- FAC-029 9 Mei: 20,63 jam = 85,97% dari 24 jam kalender.
+
+- Q05.sql kini memuat waiting per tahap dan beban harian semua fasilitas.
+
+<!-- pagebreak -->
+
+# Q06 rework sah tetap menjadi bagian analisis
+
+- 76 eksekusi rework; biaya MYR 21.823,19.
+
+- Allowance MYR 20.949,08; administrasi MYR 421,01.
+
+- Total beban tercatat MYR 43.193,28 sudah masuk baseline.
+
+- Penghematan perlu pencegahan kegagalan; mandatory retest tetap berjalan.
+
+<!-- pagebreak -->
+
+# Q07 penjadwalan perlu diuji dengan biaya nyata
+
+- Target waiting turun 20% setara 25,88 jam; belum realisasi.
+
+- Savings MYR 917,19 = equipment × 12% avoidable × 20%.
+
+- CAPEX 6.000 + OPEX 2.400 untuk 24 bulan.
+
+- Net benefit −MYR 7.482,81; evaluasi alternatif berbiaya rendah.
+
+<!-- pagebreak -->
+
+# Q08 pencegahan reject menjadi prioritas pilot
+
+- Target penurunan relatif 15% = 4,35 lot ekuivalen.
+
+- Revenue tambahan MYR 162.824,91; proses tambahan MYR 24.116,89.
+
+- CAPEX 20.000 + OPEX 10.000 untuk 24 bulan.
+
+- Net benefit bersyarat +MYR 108.708,02; sunk crop bukan savings baru.
+
+<!-- pagebreak -->
+
+# Q09 tambahan kapasitas membutuhkan supply dan demand
+
+- Fixed demand: revenue baru nol; net benefit −MYR 140.000.
+
+- Growth: 28,35 lot ekuivalen baru; net benefit +MYR 95.756,24.
+
+- Pertumbuhan memakai proxy biaya penuh, termasuk crop lot baru.
+
+- Kapasitas +15% tidak otomatis memberi antrean tertentu atau sales baru.
+
+<!-- pagebreak -->
+
+# Q10 portofolio memberi manfaat bersyarat
+
+- Q08 + mutu CPO: net benefit MYR 116.493,56.
+
+- CAPEX 28.000; OPEX dua tahun 13.000.
+
+- Savings mutu 8.311 hanya CPO rework/retest; grading kebun dikecualikan.
+
+- Revenue 7.247.761,13 − biaya termasuk investasi 6.272.851,55 = 974.909,58.
+
+<!-- pagebreak -->
+
+# Keputusan investasi memerlukan bukti pilot
+
+- Mutu CPO: net benefit +7.785,54 pada allowance −50% dan rework −40%.
+
+- Tanpa penurunan allowance: −2.689; impas allowance sekitar 12,84%.
+
+- Efektivitas, kapasitas, harga dan demand perlu divalidasi.
+
+- Payback belum ditentukan karena jadwal arus kas tidak tersedia.
+
+<!-- pagebreak -->
+
+# Bukti analisis dapat direproduksi
+
+- python3 02_SQL/run_pipeline.py lalu python3 -m unittest discover -s tests
+
+- Grafik SQL dibuat sendiri; bukan ekspor Celonis.
+
+- Tangkapan layar lama: asal aplikasi/filter/sorting belum diverifikasi ulang.
+
+- Sumber: laporan cleaning, hasil Q01–Q10, model skenario dan manifest bukti.

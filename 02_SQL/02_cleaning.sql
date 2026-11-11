@@ -15,6 +15,10 @@ SELECT
     activity_start_time,
     activity_end_time,
     timestamp,
+    activity_ready_time,
+    activity_total_cost AS source_activity_total_cost,
+    revenue_allocated AS source_revenue_allocated,
+    profit_contribution AS source_profit_contribution,
     'Corrupted unrecoverable timestamp (not-a-time) - excluded to prevent synthetic fabrication' AS quarantine_reason
 FROM raw_events
 WHERE activity_start_time = 'not-a-time'
@@ -72,8 +76,8 @@ WITH deduplicated AS (
         TRY_CAST(waiting_time_minutes AS DECIMAL(18,2)) AS norm_waiting,
         TRY_CAST(case_elapsed_time_minutes AS DECIMAL(18,2)) AS norm_elapsed,
         TRY_CAST(activity_sla_minutes AS INTEGER) AS norm_sla,
-        LOWER(TRIM(sla_violation)) IN ('true', '1', 'yes', 't') AS norm_sla_viol,
-        LOWER(TRIM(rework_flag)) IN ('true', '1', 'yes', 't') AS norm_rework,
+        LOWER(TRIM(sla_violation)) IN ('true', '1', 'yes', 'y', 't') AS norm_sla_viol,
+        LOWER(TRIM(rework_flag)) IN ('true', '1', 'yes', 'y', 't') AS norm_rework,
         TRIM(activity_status) AS norm_status,
 
         -- Strip currency formatting (RM / MYR) and cast to numeric
@@ -104,7 +108,7 @@ WITH deduplicated AS (
         TRIM(processing_lot_id) AS norm_lot_id,
         TRIM(estate_block) AS norm_estate_block,
         TRIM(ffb_grade) AS norm_ffb_grade,
-        LOWER(TRIM(exception_flag)) IN ('true', '1', 'yes', 't') AS norm_exception_flag,
+        LOWER(TRIM(exception_flag)) IN ('true', '1', 'yes', 'y', 't') AS norm_exception_flag,
         NULLIF(TRIM(exception_type), '') AS norm_exception_type,
 
         -- Deduplication window: keep cleanest source record per normalized event_id
@@ -115,7 +119,7 @@ WITH deduplicated AS (
                 raw_row_id
         ) AS rn
     FROM raw_events r
-    WHERE raw_row_id != 'RAW-0005170'
+    WHERE raw_row_id NOT IN (SELECT raw_row_id FROM quarantined_events)
 )
 SELECT 
     d.norm_event_id AS event_id,
@@ -126,7 +130,8 @@ SELECT
     CASE WHEN d.parsed_start > d.parsed_end THEN d.parsed_end ELSE d.parsed_start END AS activity_start_time,
     CASE WHEN d.parsed_start > d.parsed_end THEN d.parsed_start ELSE d.parsed_end END AS activity_end_time,
     CASE WHEN d.parsed_start > d.parsed_end THEN d.parsed_start ELSE d.parsed_ts END AS timestamp,
-    CASE WHEN d.parsed_start > d.parsed_end THEN d.parsed_end ELSE d.parsed_ready END AS activity_ready_time,
+    -- Ready is independent evidence: preserve it even when start/end are swapped.
+    d.parsed_ready AS activity_ready_time,
     
     d.norm_department_id AS department_id,
     dm.department AS department,

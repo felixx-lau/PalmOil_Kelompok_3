@@ -1,0 +1,4 @@
+activity,execution_count,baseline_waiting_minutes,baseline_waiting_hours,avg_waiting_minutes_per_event,baseline_truck_cost,baseline_total_cost,minutes_saved_at_20pct,hours_saved_at_20pct
+Transport to Palm Oil Mill,218,4033.00,67.22,18.5,27472.43,109629.88,806.60,13.44
+FFB Loaded for Transport,218,3723.00,62.05,17.08,9637.00,47378.04,744.60,12.41
+Harvest Collection Dispatched,218,7.00,0.12,0.03,1106.75,8166.69,1.40,0.02

@@ -1,10 +1,10 @@
 activity,facility_id,lots_handled,avg_waiting_min,total_waiting_min,avg_duration_min,total_facility_busy_hours,total_cost_myr
-Crude Oil Pressing Completed,FAC-038,150,1.07,161.0,67.83,169.58,169056.81
-Crude Oil Pressing Completed,FAC-039,23,6.26,144.0,71.65,27.47,18985.93
-Crude Oil Pressing Completed,FAC-040,16,3.81,61.0,61.69,16.45,11988.41
-FFB Sterilization Completed,FAC-029,150,6.42,963.0,79.19,197.97,158802.61
-FFB Sterilization Completed,FAC-030,21,34.62,727.0,90.67,31.73,24723.08
-FFB Sterilization Completed,FAC-031,18,34.33,618.0,86.89,26.07,20357.33
-Oil Clarification Completed,FAC-041,148,0.47,70.0,62.32,153.72,67045.13
-Oil Clarification Completed,FAC-042,25,8.6,215.0,60.44,25.18,11332.87
-Oil Clarification Completed,FAC-043,16,10.19,163.0,59.31,15.82,7319.96
+Crude Oil Pressing Completed,FAC-038,150,1.07,161.00,67.83,169.58,169056.81
+Crude Oil Pressing Completed,FAC-039,23,6.26,144.00,71.65,27.47,18985.93
+Crude Oil Pressing Completed,FAC-040,16,3.81,61.00,61.69,16.45,11988.41
+FFB Sterilization Completed,FAC-029,150,6.42,963.00,79.19,197.97,158802.61
+FFB Sterilization Completed,FAC-030,21,34.62,727.00,90.67,31.73,24723.08
+FFB Sterilization Completed,FAC-031,18,34.33,618.00,86.89,26.07,20357.33
+Oil Clarification Completed,FAC-041,148,0.47,70.00,62.32,153.72,67045.13
+Oil Clarification Completed,FAC-042,25,8.6,215.00,60.44,25.18,11332.87
+Oil Clarification Completed,FAC-043,16,10.19,163.00,59.31,15.82,7319.96

@@ -1,0 +1,11 @@
+initiative,effectiveness,net_benefit_myr
+Q08 reject reduction,0.00,-30000.0
+Q08 reject reduction,0.05,16236.01
+Q08 reject reduction,0.10,62472.01
+Q08 reject reduction,0.15,108708.02
+Q08 reject reduction,0.20,154944.03
+Q10 allowance reduction (40% CPO rework fixed),0.00,-2689.0
+Q10 allowance reduction (40% CPO rework fixed),0.10,-594.09
+Q10 allowance reduction (40% CPO rework fixed),0.25,2548.27
+Q10 allowance reduction (40% CPO rework fixed),0.50,7785.54
+Q10 allowance reduction (40% CPO rework fixed),0.75,13022.81

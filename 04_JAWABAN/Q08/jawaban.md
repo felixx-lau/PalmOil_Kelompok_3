@@ -1,63 +1,46 @@
-# Analisis Q08 · Prescriptive
+# Analisis Q08 Prescriptive
 ## FFB Grading Improvement
 
-### 01 Evidence & Data Source
-- **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`
-- **Query Eksekusi**: `02_SQL/queries_by_question/Q08.sql`
-- **Visual Evidence**: `03_CELONIS_EVIDENCE/Q08/Q08_ffb_rejection_reduction_model.png`
+Penurunan reject 15% relatif adalah asumsi pencegahan kerusakan yang memungkinkan buah diproses, bukan sekadar menolak buah lebih awal.
 
-#### Tabel Pemodelan Skenario Penurunan Penolakan TBS Sebesar 15%:
-| Komponen Finansial & Operasional | Basis Perhitungan | Nilai (MYR) | Nilai (IDR) | Keterangan & Asumsi |
-|---|---|---|---|---|
-| **Volume Lot Diselamatkan** | $29\text{ lot ditolak} \times 15\%$ | **4,35 Lot** | **4,35 Lot** | Lot yang dicegah menjadi reject dan diproses jadi CPO |
-| **Pendapatan Tambahan (*Incremental Revenue*)** | $4,35\text{ lot} \times 37.431,01\text{ MYR}$ | **+162.824,89** | **+713.966.575,11** | CPO dispatch sales yang berhasil direalisasikan |
-| **Biaya Tanam/Bahan Baku (*Sunk Crop Cost*)** | $4,35\text{ lot} \times 23.277,27\text{ MYR}$ | **[101.256,12]** | **[443.994.922,60]** | **Sudah hangus saat panen; BUKAN biaya tambahan baru** |
-| **Biaya Pengolahan Pabrik Tambahan (*Marginal Milling Cost*)** | $4,35\text{ lot} \times 5.672,06\text{ MYR}$ | **-24.673,46** | **-108.189.928,55** | Biaya uap, listrik, press, dan clarifier per lot olah |
-| **Biaya Implementasi (*CAPEX*)** | Alat uji NIR portabel & modul pelatihan | **-20.000,00** | **-87.697.400,00** | Investasi awal pengadaan 4 unit scanner kematangan TBS |
-| **Biaya Operasional Tambahan (*OPEX*)** | Kalibrasi tahunan & audit mutu TPH | **-5.000,00** | **-21.924.350,00** | Pemeliharaan alat & insentif mandor grading |
-| **Net Financial Benefit (MYR)** | **Revenue − Mill Cost − CAPEX − OPEX** | **+113.151,43** | **+496.154.378,13** | **Laba Finansial Bersih Tambahan** |
-| **Laba Kontribusi To-Be Perusahaan** | **MYR 858.416,02 + MYR 113.151,43** | **971.567,45** | **4.260.194.972,79** | **Peningkatan +13,18% dari Laba Baseline** |
-| **Return on Investment (ROI)** | $\text{Net Benefit} \div \text{Total Program Cost}$ | **452,6%** | **452,6%** | Sangat layak secara investasi |
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
 
----
+### 01 Evidence and Data Source
+
+Data: `01_DATA/cleaned/celonis_event_log_clean.csv`. Model bersama: [06_scenario_model.sql](../../02_SQL/06_scenario_model.sql), [query Q08](../../02_SQL/queries_by_question/Q08.sql), dan [hasil skenario](../../05_FINANCIAL/scenario_comparison.csv). Grafik SQL dibuat sendiri, bukan ekspor Celonis. Kurs acuan tugas 1 MYR = 4.384,87 IDR; dipakai sebagai input konversi, tanpa verifikasi web baru.
+
+| Skenario | Revenue tambahan MYR | Savings MYR | Biaya proses tambahan MYR | CAPEX MYR | OPEX 24 bulan MYR | Net benefit MYR | Net benefit IDR |
+|---|---|---|---|---|---|---|---|
+| Q08_GRADE | 162.824,91 | 0,00 | 24.116,89 | 20.000,00 | 10.000,00 | 108.708,02 | 476.670.535,66 |
 
 ### 02 Descriptive Finding
-1. **Dampak Penurunan 15% Rejection**: Menyelamatkan **4,35 lot TBS** yang sebelumnya dibuang percuma di gerbang pabrik menjadi produk CPO komersial.
-2. **Realisasi Pendapatan Baru**: Menghasilkan tambahan penjualan kotor CPO sebesar **MYR 162.824,89** (**713,97 Juta IDR**).
-3. **Hasil Finansial Bersih yang Luar Biasa**: Setelah memperhitungkan biaya pemrosesan pabrik tambahan (MYR 24.673,46) serta seluruh biaya investasi alat dan operasional (MYR 25.000,00), inisiatif ini memberikan **Net Financial Benefit sebesar +113.151,43 MYR** (**+496,15 Juta IDR**).
 
----
+Baseline 29 reject dari 218 lot dipanen (13,30%). Pengurangan 15% relatif menghasilkan 4,35 lot ekuivalen terselamatkan, 24,65 reject tersisa, dan rejection rate 11,31%. Pecahan lot adalah volume harapan.
 
-### 03 Diagnostic Reasoning (Perlakuan Khusus Sunk Cost Kelapa Sawit)
-- **Kunci Keberhasilan Ekonomi Kelapa Sawit**:
-  - Pada industri sawit terintegrasi, biaya agronomi (*crop production cost* sebesar MYR 23.277,27 per lot) telah **dikeluarkan dan hangus (*sunk*)** saat buah dipetik dari pohon. 
-  - Jika buah tersebut ditolak di pabrik, nilai MYR 23.277 tersebut 100% musnah.
-  - Namun jika buah berhasil dicegah dari pembusukan dan diolah di pabrik, perusahaan **tidak perlu mengeluarkan biaya tanam kedua**. Biaya kas keluar tambahan (*incremental cash out*) hanyalah biaya pengolahan pabrik (*marginal milling cost*) sebesar MYR 5.672,06 per lot.
-  - Selisih antara harga jual CPO (MYR 37.431,01) dan biaya olah marjinal (MYR 5.672,06) menghasilkan **marjin kontribusi kotor sebesar MYR 31.758,95 per lot** yang diselamatkan!
+### 03 Diagnostic Reasoning
 
----
+Revenue benchmark processed = MYR 37.431,01417989418/lot; biaya proses pemulihan proxy = MYR 5.544,11291005291/lot. Proxy hanya mencakup aktivitas setelah penerimaan yang belum terjadi pada reject: receipt accepted, ramp, milling, storage, dispatch, dan finance. Biaya crop, transport, timbang, inspeksi, penolakan dan penutupan yang sudah tercatat tidak dikembalikan atau dibebankan dua kali. Gunakan presisi penuh lalu bulatkan komponen skenario ke sen.
 
-### 04 Business & Financial Implication
-- Program inspeksi awal di TPH (*early field grading*) membalikkan status kerugian lot dari $-24.546,95\text{ MYR}$ menjadi laba positif $+7.085,49\text{ MYR}$ per lot setelah memperhitungkan beban investasi program.
-- Inisiatif ini meningkatkan total laba kontribusi perkebunan Tanjung Palma sebesar **+13,18%** hanya dengan menyelamatkan 4–5 lot dari penolakan.
+### 04 Business and Financial Implication
 
----
+Revenue tambahan MYR 162.824,91 dikurangi biaya proses MYR 24.116,89, CAPEX 20.000 dan OPEX dua tahun 10.000 menghasilkan net benefit MYR 108.708,02. Ini model manfaat setelah investasi, bukan bukti pemulihan kas sunk cost.
 
-### 05 As-Is vs No-Action vs To-Be
-- **As-Is**: 29 lot ditolak dengan kerugian langsung -MYR 711.861,41.
-- **No-Action**: Mempertahankan cara grading visual lama berisiko melanjutkan pembuangan 29 lot per 2 tahun.
-- **To-Be**: Mengurangi penolakan sebesar 15%, mengangkat kontribusi perusahaan dari MYR 858.416,02 menjadi MYR 971.567,45.
+### 05 As Is No Action and To Be
 
----
+As-Is adalah baseline observed revenue MYR 7.074.461,68, biaya MYR 6.216.045,66, dan kontribusi MYR 858.416,02. No-Action adalah pengulangan cohort dengan volume/biaya sama, bukan ramalan. To-Be memakai parameter di tabel; semua OPEX tahunan dikalikan dua agar sesuai horizon 24 bulan. Seluruh hasil merupakan skenario bersyarat.
 
-### 06 Recommendation, Risk, Assumptions
-- **Rekomendasi**: **Jadikan inisiatif ini sebagai PRIORITAS UTAMA (Priority 1) manajemen**. Lakukan pengadaan alat uji kematangan digital dan pelatihan standar panen di TPH kebun secepatnya.
-- **Risiko**: Disiplin pemanen di lapangan; mandor panen harus diawasi agar tidak meloloskan buah mentah demi mengejar target tonase.
-- **Asumsi**: Asumsi penurunan 15% adalah konservatif; kapasitas stasiun perebusan pabrik masih mencukupi untuk memproses 4,35 lot tambahan.
+### 06 Recommendation Risk and Assumptions
 
----
+Prioritaskan pilot pencegahan reject. Alat, biaya, kemampuan menyelamatkan buah, kapasitas pabrik, mutu jual, dan demand perlu diuji; harga alat adalah asumsi tugas, bukan quotation vendor.
 
-### 07 Evidence File Paths / SQL References
-- **SQL Analysis Script**: [`02_SQL/queries_by_question/Q08.sql`](file:///Users/felix/Desktop/Semester%204/Process%20Mining/UAS%20Process%20Mining/24SI1_Group03_Palm_Oil/02_SQL/queries_by_question/Q08.sql)
-- **Visual Chart (Evidence)**: [`03_CELONIS_EVIDENCE/Q08/Q08_ffb_rejection_reduction_model.png`](file:///Users/felix/Desktop/Semester%204/Process%20Mining/UAS%20Process%20Mining/24SI1_Group03_Palm_Oil/03_CELONIS_EVIDENCE/Q08/Q08_ffb_rejection_reduction_model.png)
-- **Model Skenario Finansial**: [`05_FINANCIAL/scenario_comparison.csv`](file:///Users/felix/Desktop/Semester%204/Process%20Mining/UAS%20Process%20Mining/24SI1_Group03_Palm_Oil/05_FINANCIAL/scenario_comparison.csv)
+Efektivitas, avoidable share, harga, kapasitas, dan hubungan mutu merupakan asumsi yang perlu divalidasi. Angka dataset sintetis tidak membuktikan hasil operasional lapangan.
+
+### 07 Evidence File Paths and SQL References
+
+- [Hasil query Q08](../../02_SQL/results/Q08_01.csv)
+- [Model bersama](../../02_SQL/06_scenario_model.sql)
+- [Perbandingan seluruh skenario](../../05_FINANCIAL/scenario_comparison.csv)
+- [Sensitivitas](../../05_FINANCIAL/sensitivity.csv)
+- [Asal bukti visual](../../03_CELONIS_EVIDENCE/README.md)
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q08 SQL](../../03_CELONIS_EVIDENCE/Q08/Q08_scenario_sql.png).

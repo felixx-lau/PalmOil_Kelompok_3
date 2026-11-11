@@ -3,13 +3,15 @@
 
 Dari 230 lot, 189 diproses dan dikirim, 29 ditolak, dan 12 dibatalkan. Lot ditolak mencatat biaya **MYR 711.861,41** tanpa revenue. Angka ini sudah termasuk dalam baseline kontribusi perusahaan; manfaat pemulihan reject harus dinilai sebagai skenario terpisah.
 
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
+
 ### 01 Evidence and Data Source
 
-**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q06: `python3 02_SQL/export_q01_q06_results.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Gambar Celonis merupakan ilustrasi tambahan.
+**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q10: `python3 02_SQL/run_pipeline.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Bukti antarmuka lama merupakan ilustrasi tambahan dengan asal aplikasi belum diverifikasi secara independen. Grafik baru berlabel SQL dibuat sendiri dengan Python, bukan ekspor Celonis; lihat manifest bukti.
 
 - **Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`, 6.179 event dan 230 case, dengan jendela kedatangan Oktober 2024–September 2026. Dataset merupakan simulasi; timestamp memakai UTC.
 - **Query**: `02_SQL/queries_by_question/Q02.sql`; ekspor ulang hasil dengan `python3 02_SQL/export_q02_results.py` dari root proyek.
-- **Ilustrasi Celonis tambahan**: `03_CELONIS_EVIDENCE/Q02/Q02_lot_outcomes.png`.
+- **Tangkapan layar antarmuka lama**: `03_CELONIS_EVIDENCE/Q02/Q02_lot_outcomes.png`.
 - **Output**: `02_SQL/results/Q02_01.csv` sampai `Q02_06.csv`.
 
 | Outcome | Lot | Porsi seluruh case | Revenue MYR | Biaya MYR | Contribution MYR |
@@ -71,7 +73,7 @@ Manfaat finansial To-Be harus dihitung dari incremental revenue dan biaya yang b
 ### 06 Recommendation Risk and Assumptions
 - **Rekomendasi**: Verifikasi alasan reject dan lakukan pilot inspeksi awal. Bedakan pencegahan penurunan kualitas yang memungkinkan pengolahan dari penolakan lebih dini yang hanya menghindari biaya lanjutan. Pertahankan standar mutu.
 - **Risiko**: Salah grading dapat menolak buah layak atau meloloskan buah tidak layak; biaya inspeksi dan tambahan pengolahan dapat mengurangi manfaat.
-- **Asumsi dan batasan**: Outcome ditentukan dari event cancelled, rejected, dan dispatch; setiap case harus tepat satu outcome. Biaya adalah alokasi dalam simulasi, bukan seluruhnya arus kas yang bisa dihindari. Perhitungan memakai CSV saat ini dan perlu diulang setelah patch cleaning.
+- **Asumsi dan batasan**: Outcome ditentukan dari event cancelled, rejected, dan dispatch; setiap case harus tepat satu outcome. Biaya adalah alokasi dalam simulasi, bukan seluruhnya arus kas yang bisa dihindari. Perhitungan memakai CSV saat ini dan perlu diulang setelah perubahan cleaning berikutnya.
 
 ### 07 Evidence File Paths and SQL References
 - [Query Q02](../../02_SQL/queries_by_question/Q02.sql)
@@ -81,5 +83,7 @@ Manfaat finansial To-Be harus dihitung dari incremental revenue dan biaya yang b
 - [Batas atas skenario seluruh reject terselamatkan](../../02_SQL/results/Q02_04.csv)
 - [Validasi outcome biaya dan kontribusi](../../02_SQL/results/Q02_05.csv)
 - [Skenario penurunan reject 15 persen relatif](../../02_SQL/results/Q02_06.csv)
-- [Bukti outcome Celonis](../../03_CELONIS_EVIDENCE/Q02/Q02_lot_outcomes.png)
+- [Tangkapan layar outcome lama](../../03_CELONIS_EVIDENCE/Q02/Q02_lot_outcomes.png)
 - [Model program Q08](../Q08/jawaban.md)
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q02 SQL](../../03_CELONIS_EVIDENCE/Q02/Q02_outcomes_sql.png).

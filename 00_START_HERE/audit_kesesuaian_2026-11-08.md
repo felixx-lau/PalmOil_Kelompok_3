@@ -1,3 +1,5 @@
+> **ARSIP AUDIT 8 NOVEMBER.** Temuan di bawah merekam versi sebelum patch. Status rilis 11 November 2026 ada di `01_DATA/validation/data_quality_report.md` dan `validation_results.csv`; jangan gunakan dokumen ini sebagai status final.
+
 # Audit kesesuaian submission Palm Oil
 
 > Pembaruan setelah audit: Q02 pada jawaban Markdown/Word, SQL, dan enam CSV hasil sudah direvisi. Temuan Q02 di bawah merekam kondisi saat audit awal; slide, executive summary, full report, dan perbaikan bagian lain belum diselaraskan oleh revisi Q02 ini.

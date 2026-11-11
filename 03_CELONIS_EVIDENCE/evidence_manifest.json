@@ -1,0 +1,212 @@
+[
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_actual_process_map_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "51fd3b0588c62071a97cb1543ce44675e652b15703e95b92db5811b0834d0b20"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_process_map_overview_part1.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "0db4062cfb74b6be249b03e155320186bd9d01c07dabd75ec9952f4ecd9bd0c5"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_process_map_overview_part2.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "69b5b6a91efd620c34a5dd30488b912e7751f9e02f0aae4b7a1b4f4846f99900"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_variant1_happy_path_part1.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "e1385166d0fac07d06e246c0b10e3c8693b10a3d874b94a067fe164d2c457ac6"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_variant1_happy_path_part2.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "07f367e059b2dccb6666feeacb407e314655c835b9748a6c0390e67732068488"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_variant_list_top3.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "652237dc0c9ddcdcbcb5d7c622da6063e7f97c12732e29d053b34e39921730e1"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q01/Q01_variants_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "a33f41739d85b20f484f05f9ac2842e4a4bd26a8e6ff2fab962da49b3ea180a8"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q02/Q02_lot_outcomes.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "acfd7919250bfdb07b456d80c39fc23cd556e93f19b6b04d649c72637b52fd82"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q02/Q02_outcomes_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "3a7e05448abab03970b8b99fa311da13bbec13f4b39cb7456bd21ca364484a3b"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q03/Q03_sla_violations_by_activity.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "b69dc6a61ac1060fae2bc070911a333b87d81249e8b3df5554c3ad0725cdae36"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q03/Q03_stage_waiting_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "96813f4bf51a7f2e6253e46727c2c1b51c4d285b85791be24ce61c1d0de97e8d"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q03/Q03_waiting_vs_processing_by_activity.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "f682d0e23f2b811edc1e04447d369210c338090449bcdb5fabe7447087d2a76e"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q04/Q04_buckets_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "41108277ca1318204f1743a4d6dd1cd71dc76d46a3bd56e47ffc8cbe9db01fcf"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q04/Q04_harvest_to_mill_by_grade.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "a126d81b957896b0a71aed447064c42775d1df0097011ac9b41f8ab897f28892"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q04/Q04_rejection_by_grade.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "f2bb8fadc9b326aa9f9dfb97629b9c2d0d18be15fd8d118ded306f1807bc0d87"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q05/Q05_daily_load_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "2cdfdc0f8ed695f6c93cf39661dfa33d0d2570df8eb2174064716f85e5e5e448"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q05/Q05_sterilization_by_facility.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "3af4eec3248453d9c04073d22a94e894b502ed0024a87ecbc5eb5d399d1c24fe"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q05/Q05_waiting_vs_processing_by_activity.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "f682d0e23f2b811edc1e04447d369210c338090449bcdb5fabe7447087d2a76e"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q06/Q06_rework_and_allowance_summary.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "152e2a250dd0bf748c9dd9d5bbe5ba2c0293826de87fb96145c73e9e305f37fa"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q06/Q06_rework_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "de5d1ba5c0b50f9cc806cf4cfe9a83fc6d3aed73e4b3befa80a6305df08bb9f8"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q07/Q07_scenario_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "1c6b2d11d8059c00fb1b96ad56ae3f7d8fa3393f5958e8fba9fc88848e143050"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q07/Q07_transport_waiting_baseline.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "3e932037f6e0c13c0dc5ea6a1e867c2d9590ece44a18eaa794cc2a6a285e346f"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q08/Q08_rejection_baseline_by_grade.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "f2bb8fadc9b326aa9f9dfb97629b9c2d0d18be15fd8d118ded306f1807bc0d87"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q08/Q08_rejection_rate_baseline.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "ac7edc437d550e5cb8cfa075cf1b9f070045612e124d88d44e9e19f7222374c9"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q08/Q08_scenario_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "107d79ec72a3b2a0cb156270af350a3579f49278ad787aa9731b030dfe5d534e"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q09/Q09_scenario_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "ab16b99dbd4c068b7dadbfaa8db732d49c24be64792f230fd9f58899bf8e9a75"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q09/Q09_sterilization_capacity_baseline.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "3af4eec3248453d9c04073d22a94e894b502ed0024a87ecbc5eb5d399d1c24fe"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q09/Q09_sterilization_cost_components.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "f11250cb754b27060879bc6b6478fa59a44b5bdac84900ded6ea9efd7b5659a8"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q10/Q10_financial_baseline.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "51d9b6c6fbe0a6d3e7d1c7d42870fad3e6ce46eb7e8d75cf9be9fe0a7dc17751"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/Q10/Q10_scenario_sql.png",
+    "kind": "independent_sql_graphic",
+    "source": "generate_evidence.py and released SQL results",
+    "sha256": "c5e73f184a82be41eb55459d8336acb2c2556c2d928bb5a4d30ac0acbc9dfcf7"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/performance_analysis/sla_violations_by_activity.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "b69dc6a61ac1060fae2bc070911a333b87d81249e8b3df5554c3ad0725cdae36"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_map/process_map_overview_part1.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "0db4062cfb74b6be249b03e155320186bd9d01c07dabd75ec9952f4ecd9bd0c5"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_map/process_map_overview_part2.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "69b5b6a91efd620c34a5dd30488b912e7751f9e02f0aae4b7a1b4f4846f99900"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_variants/variant1_happy_path_part1.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "e1385166d0fac07d06e246c0b10e3c8693b10a3d874b94a067fe164d2c457ac6"
+  },
+  {
+    "path": "03_CELONIS_EVIDENCE/process_variants/variant1_happy_path_part2.png",
+    "kind": "preexisting_ui_capture_unverified_origin",
+    "source": "provided in project before this revision; originating app/session not independently verified",
+    "sha256": "07f367e059b2dccb6666feeacb407e314655c835b9748a6c0390e67732068488"
+  }
+]

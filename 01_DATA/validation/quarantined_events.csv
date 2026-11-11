@@ -1,0 +1,2 @@
+raw_row_id,event_id,case_id,activity,activity_start_time,activity_end_time,timestamp,activity_ready_time,source_activity_total_cost,source_revenue_allocated,source_profit_contribution,quarantine_reason
+RAW-0005170,EVT-0000623,PALM-000105,Buyer Remittance Matched,not-a-time,not-a-time,not-a-time,not-a-time,52.98,0.00,-52.98,Corrupted unrecoverable timestamp (not-a-time) - excluded to prevent synthetic fabrication

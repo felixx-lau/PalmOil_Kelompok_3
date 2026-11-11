@@ -1,13 +1,15 @@
 # Analisis Q04 · Diagnostic
 ## Time-to-Mill and FFB Quality
 
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
+
 ### 01 Evidence & Data Source
 
-**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q06: `python3 02_SQL/export_q01_q06_results.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Gambar Celonis merupakan ilustrasi tambahan.
+**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q10: `python3 02_SQL/run_pipeline.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Bukti antarmuka lama merupakan ilustrasi tambahan dengan asal aplikasi belum diverifikasi secara independen. Grafik baru berlabel SQL dibuat sendiri dengan Python, bukan ekspor Celonis; lihat manifest bukti.
 
 - **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`
 - **Query Eksekusi**: `02_SQL/queries_by_question/Q04.sql`
-- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q04/Q04_harvest_to_mill_by_grade.png`
+- **Tangkapan layar antarmuka lama**: `03_CELONIS_EVIDENCE/Q04/Q04_harvest_to_mill_by_grade.png`
 
 #### Tabel 1: Hubungan Durasi Panen-ke-Pabrik (*Harvest-to-Mill Lead Time*) terhadap Penolakan:
 | Kelompok Waktu (*Lead Time Bucket*) | Rentang Waktu Tempuh | Jumlah Lot Tiba | Jumlah Lot Ditolak | Tingkat Penolakan (%) | Rata-rata Durasi (Jam) | Total Kerugian Biaya Lot Ditolak (MYR) |
@@ -37,7 +39,7 @@
 ---
 
 ### 03 Diagnostic Reasoning
-DuckDB menghitung lead time dari akhir `FFB Harvested` sampai awal `Mill Weighbridge Inbound`, bukan durasi perjalanan truk saja. Interval tersebut juga dapat mencakup grading, pemuatan, dan waktu tunggu di antaranya. Kelompok waktu dibentuk dari jam yang dibulatkan dua desimal sesuai query; batas 3,00 jam masuk kelompok standar.
+DuckDB menghitung lead time dari akhir `FFB Harvested` sampai awal `Mill Weighbridge Inbound`, bukan durasi perjalanan truk saja. Interval tersebut juga dapat mencakup grading, pemuatan, dan waktu tunggu di antaranya. Kelompok waktu dibentuk dari durasi asli sebelum pembulatan, dengan interval <2, 2–3, >3–4, dan >4 jam. Batas 3,00 masuk standar; 4,00 masuk moderate.
 
 Kelompok 2–3 jam memiliki rejection rate terendah dalam sampel, tetapi hubungan waktu dengan penolakan tidak meningkat secara konsisten: kelompok di bawah 2 jam mencapai 18,18%, sedangkan di atas 4 jam 14,75%. Hasil ini menunjukkan asosiasi, bukan bukti bahwa delay menyebabkan reject. Grade, kondisi lot, blok kebun, dan periode lonjakan dapat menjadi faktor lain. Grade Unknown hanya berisi tiga lot sehingga persentasenya tidak stabil. Kolom grade dipakai sebagai grade provisional sesuai dataset; perlu verifikasi definisinya sebelum menafsirkannya sebagai mutu akhir.
 
@@ -47,7 +49,7 @@ Sebanyak 29 lot reject mencatat biaya MYR 711.861,41 tanpa revenue. Dari biaya t
 ### 05 As Is No Action and To Be
 - **As-Is**: 92 dari 218 lot panen (42,20%) memiliki lead time lebih dari 3 jam; 16 dari 92 lot tersebut ditolak (17,39%). Kelompok sampai 3 jam mencatat 13 reject dari 126 lot (10,32%).
 - **No-Action**: Jika komposisi volume, mutu, dan biaya sama, risiko kontribusi negatif pada reject dapat berulang; data 24 bulan tidak membuktikan kerugian tersebut terjadi setiap tahun atau setiap siklus panen.
-- **To-Be**: Uji target lead time maksimal 3 jam bersama pemeriksaan mutu awal. Rejection rate maksimal 8% diperlakukan sebagai target pilot, bukan hasil model yang sudah terbukti. Nilai manfaat harus diuji dengan kelompok pembanding dan biaya implementasi pada horizon yang sama.
+- **To-Be**: Uji **target pilot lead time maksimal 3 jam** bersama pemeriksaan mutu awal. Rejection rate maksimal 8% diperlakukan sebagai target pilot, bukan hasil model yang sudah terbukti. Nilai manfaat harus diuji dengan kelompok pembanding dan biaya implementasi pada horizon yang sama.
 
 ### 06 Recommendation Risk and Assumptions
 - **Rekomendasi**: Telusuri alasan reject, pisahkan interval panen–grading–pemuatan–perjalanan, lalu prioritaskan tahap penyumbang keterlambatan berdasarkan DuckDB.
@@ -63,3 +65,5 @@ Hasil DuckDB yang mendasari tabel:
 
 - [Hasil query 1](../../02_SQL/results/Q04_01.csv)
 - [Hasil query 2](../../02_SQL/results/Q04_02.csv)
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q04 SQL](../../03_CELONIS_EVIDENCE/Q04/Q04_buckets_sql.png).

@@ -1,0 +1,28 @@
+event_id,field_name,old_value,new_value,evidence
+EVT-0000013,case_type,NULL,Plantation-to-Mill Lot,case_master.case_id
+EVT-0005579,case_type,,Plantation-to-Mill Lot,case_master.case_id
+EVT-0003531,case_type,NULL,Plantation-to-Mill Lot,case_master.case_id
+EVT-0004653,case_type,NULL,Plantation-to-Mill Lot,case_master.case_id
+EVT-0003601,case_type,N/A,Plantation-to-Mill Lot,case_master.case_id
+EVT-0004490,case_type,NULL,Plantation-to-Mill Lot,case_master.case_id
+EVT-0003763,case_type,-,Plantation-to-Mill Lot,case_master.case_id
+EVT-0004733,case_type,-,Plantation-to-Mill Lot,case_master.case_id
+EVT-0003510,case_type,N/A,Plantation-to-Mill Lot,case_master.case_id
+EVT-0005016,case_type,,Plantation-to-Mill Lot,case_master.case_id
+EVT-0005169,case_type,-,Plantation-to-Mill Lot,case_master.case_id
+EVT-0005179,case_type,,Plantation-to-Mill Lot,case_master.case_id
+EVT-0002514,case_type,NULL,Plantation-to-Mill Lot,case_master.case_id
+EVT-0002145,case_type,N/A,Plantation-to-Mill Lot,case_master.case_id
+EVT-0002180,case_type,NULL,Plantation-to-Mill Lot,case_master.case_id
+EVT-0001298,case_type,N/A,Plantation-to-Mill Lot,case_master.case_id
+EVT-0002630,case_type,-,Plantation-to-Mill Lot,case_master.case_id
+EVT-0001138,case_type,N/A,Plantation-to-Mill Lot,case_master.case_id
+EVT-0001017,case_type,NULL,Plantation-to-Mill Lot,case_master.case_id
+EVT-0003357,case_type,N/A,Plantation-to-Mill Lot,case_master.case_id
+EVT-0005598,employee_id,,EMP-071,resource_master unique resource_id -> employee_id
+EVT-0004304,employee_id,,EMP-030,resource_master unique resource_id -> employee_id
+EVT-0001776,employee_id,,EMP-054,resource_master unique resource_id -> employee_id
+EVT-0001230,employee_id,,EMP-071,resource_master unique resource_id -> employee_id
+EVT-0004606,resource_id,,RES-055,employee_master unique employee_id -> resource_id
+EVT-0002311,resource_id,,RES-071,employee_master unique employee_id -> resource_id
+EVT-0004091,activity_ready_time,2026-05-08 23:41:00,2026-05-08 19:03:00,RAW-0000962 ready time preserved; predecessor EVT-0003894 confirms it

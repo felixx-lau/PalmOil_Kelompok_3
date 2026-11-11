@@ -1,74 +1,50 @@
-# Analisis Q10 · Prescriptive
-## Estate-to-Mill Business Case
+# Analisis Q10 Prescriptive
+## Estate to Mill Business Case
 
-### 01 Evidence & Data Source
-- **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`, `05_FINANCIAL/exchange_rate.csv`
-- **Query Eksekusi**: `02_SQL/queries_by_question/Q10.sql`
-- **Visual Evidence**: `03_CELONIS_EVIDENCE/Q10/Q10_business_case_ranking_myr_idr.png`
-- **Kurs Bank Indonesia (13 Oktober 2026)**: **1 MYR = 4.384,87 IDR**
+Prioritas berdasarkan net benefit bersyarat pada horizon 24 bulan; keberhasilan perlu dibuktikan melalui pilot.
 
-#### Tabel 1: Peringkat Prioritas Perbaikan Proses Bisnis (*Process Improvement Ranking*):
-| Peringkat Prioritas | Program Perbaikan Proses | Potensi Penghematan / Revenue Baru (MYR) | Biaya Implementasi CAPEX (MYR) | Biaya Operasional OPEX & Olah (MYR) | Net Financial Benefit (MYR) | Net Financial Benefit (IDR) | Kemudahan Implementasi (*Implementability*) | Tingkat Risiko |
-|---|---|---|---|---|---|---|---|---|
-| **Prioritas 1 (P1)** | **Peningkatan Grading Kebun (Q08)** | +162.824,89 | 20.000,00 | 29.673,46 | **+113.151,43** | **+496.154.378,13** | **Sangat Tinggi** | Rendah |
-| **Prioritas 2 (P2)** | **Stabilisasi Mutu CPO & Pengurangan Diskon (Q06)** | +19.203,82 | 8.000,00 | 1.500,00 | **+9.703,82** | **+42.550.115,89** | **Tinggi** | Sangat Rendah |
-| **Pilihan 3** | Penjadwalan Armada Truk Transportasi (Q07) | +3.290,00 | 6.000,00 | 1.200,00 | **-3.910,00** | -17.144.841,70 | Sedang | Rendah |
-| **Pilihan 4** | Investasi Kapasitas Mesin Sterilisasi (Q09) | 0,00 | 110.000,00 | 15.000,00 | **-125.000,00** | -548.108.750,00 | Rendah (Konstruksi) | Sangat Tinggi |
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
 
-#### Tabel 2: Perbandingan Menyeluruh No-Action vs. To-Be:
-| Indikator Finansial Utama | Kondisi As-Is (Baseline) | Skenario No-Action (Status Quo) | Rekomendasi To-Be (Portofolio P1 + P2) | Pertumbuhan / Dampak Finansial Bersih |
-|---|---|---|---|---|
-| **Pendapatan Bersih (MYR)** | 7.074.461,68 | 7.074.461,68 | **7.247.761,11** | **+173.299,43 MYR** |
-| **Pendapatan Bersih (IDR)** | 31.020.593.293,47 | 31.020.593.293,47 | **31.780.487.042,82** | **+759.893.749,35 IDR** |
-| **Biaya Operasional (MYR)** | 6.216.045,66 | 6.216.045,66 | **6.266.489,84** | **+50.444,18 MYR** |
-| **Biaya Operasional (IDR)** | 27.256.552.698,81 | 27.256.552.698,81 | **27.477.743.265,51** | **+221.190.566,70 IDR** |
-| **Profit Contribution (MYR)** | **858.416,02** | **858.416,02** | **981.271,27** | **+122.855,25 MYR (+14,31%)** |
-| **Profit Contribution (IDR)** | **3.764.040.594,66** | **3.764.040.594,66** | **4.302.744.888,68** | **+538.704.294,02 IDR (+14,31%)** |
+### 01 Evidence and Data Source
 
----
+Data: `01_DATA/cleaned/celonis_event_log_clean.csv`. Model bersama: [06_scenario_model.sql](../../02_SQL/06_scenario_model.sql), [query Q10](../../02_SQL/queries_by_question/Q10.sql), dan [hasil skenario](../../05_FINANCIAL/scenario_comparison.csv). Grafik SQL dibuat sendiri, bukan ekspor Celonis. Kurs acuan tugas 1 MYR = 4.384,87 IDR; dipakai sebagai input konversi, tanpa verifikasi web baru.
+
+| Skenario | Revenue tambahan MYR | Savings MYR | Biaya proses tambahan MYR | CAPEX MYR | OPEX 24 bulan MYR | Net benefit MYR | Net benefit IDR |
+|---|---|---|---|---|---|---|---|
+| Q08_GRADE | 162.824,91 | 0,00 | 24.116,89 | 20.000,00 | 10.000,00 | 108.708,02 | 476.670.535,66 |
+| Q10_QUALITY | 10.474,54 | 8.311,00 | 0,00 | 8.000,00 | 3.000,00 | 7.785,54 | 34.138.580,78 |
+| Q07_SCHED | 0,00 | 917,19 | 0,00 | 6.000,00 | 2.400,00 | -7.482,81 | -32.811.149,08 |
+| Q09_CAPEX_FIXED | 0,00 | 0,00 | 0,00 | 110.000,00 | 30.000,00 | -140.000,00 | -613.881.800,00 |
+| Q10_COMBINED | 173.299,45 | 8.311,00 | 24.116,89 | 28.000,00 | 13.000,00 | 116.493,56 | 510.809.116,44 |
 
 ### 02 Descriptive Finding
-1. **Dua Program Unggulan Terbaik**:
-   - **Prioritas 1: FFB Early Grading Improvement (Q08)** memberikan manfaat finansial terbesar dengan Net Benefit sebesar **+113.151,43 MYR** (**+496,15 Juta IDR**).
-   - **Prioritas 2: CPO Quality Retesting & Sales Allowance Mitigation (Q06)** memberikan Net Benefit sebesar **+9.703,82 MYR** (**+42,55 Juta IDR**).
-2. **Kombinasi Portofolio Rekomendasi**: Menghasilkan total manfaat finansial bersih sebesar **+122.855,25 MYR** (**+538,70 Juta IDR**).
-3. **Peningkatan Profit Contribution**: Mengerek total laba kontribusi perkebunan Tanjung Palma dari MYR 858.416,02 menjadi **MYR 981.271,27**, atau melonjak sebesar **+14,31%**.
 
----
+Ranking program mandiri: Q08 MYR 108.708,02; pencegahan mutu CPO MYR 7.785,54; Q07 −MYR 7.482,81; Q09 demand tetap −MYR 140.000,00. Skenario growth Q09 terpisah karena membutuhkan tambahan pasokan dan demand.
 
 ### 03 Diagnostic Reasoning
-- Mengapa P1 dan P2 mengungguli P3 dan P4?
-  - **P1 (Grading)** secara langsung memulihkan *sunk cost* bahan baku yang bernilai paling tinggi di neraca perusahaan. Dengan biaya implementasi yang sangat rendah (MYR 20.000), program ini merekrut kembali nilai ekonomi buah yang sebelumnya dibuang percuma.
-  - **P2 (Quality Stabilization)** menutup kebocoran ganda: biaya uji ulang laboratorium internal dan pemotongan faktur komersial (*allowance penalties*) oleh pembeli.
-  - Sebaliknya, **P3 (Transport)** tidak menghasilkan penghematan kas nyata karena struktur gaji supir truk bersifat tetap, dan **P4 (Sterilization CAPEX)** memicu pemborosan modal besar karena tidak ada pertambahan kuota panen di kebun.
 
----
+Program mutu hanya memakai quality rework + retest CPO MYR 20.777,51 × 40% = MYR 8.311,00; field grading tidak dihitung agar tidak tumpang tindih dengan Q08. Allowance MYR 20.949,08 × 50% = MYR 10.474,54. Retest wajib dipertahankan; savings diasumsikan berasal dari pencegahan kegagalan, bukan melewati uji. Manfaat pada lot baru Q08 tidak diberi tambahan savings mutu agar tidak dihitung ganda.
 
-### 04 Business & Financial Implication
-- Eksekusi portofolio To-Be membutuhkan total modal kerja (*total project investment*) sebesar **MYR 28.000,00** (IDR 122.776.360,00), yang langsung terbayar kembali (*payback period*) dalam waktu **kurang dari 6 bulan** operasional.
-- Risiko *cash flow* sangat minim karena 80% dari manfaat finansial berasal dari penerimaan kas penjualan CPO tambahan.
+### 04 Business and Financial Implication
 
----
+Gabungan menambah revenue MYR 173.299,45. Biaya bersih bertambah MYR 56.805,89 = proses 24.116,89 + CAPEX 28.000 + OPEX 13.000 − savings 8.311. Net benefit MYR 116.493,56 dan nilai setelah investasi MYR 974.909,58. Revenue MYR 7.247.761,13 − biaya termasuk investasi MYR 6.272.851,55 = MYR 974.909,58. CAPEX dibebankan sekali untuk evaluasi investasi, bukan dicampur sebagai laba akuntansi tanpa depresiasi.
 
-### 05 As-Is vs No-Action vs To-Be
-- **As-Is**: Perusahaan beroperasi dengan laba kontribusi sebesar MYR 858.416,02 di tengah kebocoran biaya reject buah sebesar MYR 711.861,41 dan denda kualitas sebesar MYR 21.370,09.
-- **No-Action**: Mempertahankan status quo berarti membiarkan modal kerja tergerus rutin sebesar ~3,2 Miliar IDR per siklus tanpa ada upaya pemulihan.
-- **To-Be**: Dengan menjalankan Prioritas 1 dan Prioritas 2, perusahaan merealisasikan laba bersih tambahan sebesar **+538,70 Juta IDR**, menjadikan operasional Tanjung Palma jauh lebih tangguh dan efisien.
+### 05 As Is No Action and To Be
 
----
+As-Is adalah baseline observed revenue MYR 7.074.461,68, biaya MYR 6.216.045,66, dan kontribusi MYR 858.416,02. No-Action adalah pengulangan cohort dengan volume/biaya sama, bukan ramalan. To-Be memakai parameter di tabel; semua OPEX tahunan dikalikan dua agar sesuai horizon 24 bulan. Seluruh hasil merupakan skenario bersyarat.
 
-### 06 Recommendation, Risk, Assumptions
-- **Rekomendasi Eksekutif**:
-  1. Setujui implementasi **Prioritas 1 (FFB Grading Mobile Kit & Training)** dengan anggaran modal MYR 20.000,00 secepatnya pada Q1 2027.
-  2. Setujui implementasi **Prioritas 2 (Sensor Otomasi Suhu Clarifier & Vacuum Tank)** dengan anggaran MYR 8.000,00.
-  3. Batalkan rencana ekspansi fisik mesin sterilizer (P4) dan pengadaan software dispatch truk berbayar (P3).
-- **Risiko & Mitigasi**:
-  - *Risiko Adopsi Mandor*: Terapkan insentif bagi mandor yang berhasil menjaga tingkat penolakan TPH di bawah 5%.
-- **Asumsi**: Kurs referensi Bank Indonesia 13 Oktober 2026 (1 MYR = 4.384,87 IDR) bersifat konstan untuk proyeksi analytical translation 2026–2028.
+### 06 Recommendation Risk and Assumptions
 
----
+Jalankan pilot Q08 dan mutu CPO secara bertahap, dengan baseline serta kelompok pembanding. Tanpa reduksi allowance, program mutu negatif MYR 2.689; perlu penurunan allowance sekitar 12,84% untuk impas pada savings rework 40%. Sensitivitas Q08 tersedia pada reduksi reject 0–20%. Payback belum ditentukan karena jadwal arus kas tidak tersedia.
 
-### 07 Evidence File Paths / SQL References
-- **SQL Analysis Script**: [`02_SQL/queries_by_question/Q10.sql`](file:///Users/felix/Desktop/Semester%204/Process%20Mining/UAS%20Process%20Mining/24SI1_Group03_Palm_Oil/02_SQL/queries_by_question/Q10.sql)
-- **Visual Chart (Evidence)**: [`03_CELONIS_EVIDENCE/Q10/Q10_business_case_ranking_myr_idr.png`](file:///Users/felix/Desktop/Semester%204/Process%20Mining/UAS%20Process%20Mining/24SI1_Group03_Palm_Oil/03_CELONIS_EVIDENCE/Q10/Q10_business_case_ranking_myr_idr.png)
-- **Model Pembanding Finansial**: [`05_FINANCIAL/scenario_comparison.csv`](file:///Users/felix/Desktop/Semester%204/Process%20Mining/UAS%20Process%20Mining/24SI1_Group03_Palm_Oil/05_FINANCIAL/scenario_comparison.csv)
+Efektivitas, avoidable share, harga, kapasitas, dan hubungan mutu merupakan asumsi yang perlu divalidasi. Angka dataset sintetis tidak membuktikan hasil operasional lapangan.
+
+### 07 Evidence File Paths and SQL References
+
+- [Hasil query Q10](../../02_SQL/results/Q10_01.csv)
+- [Model bersama](../../02_SQL/06_scenario_model.sql)
+- [Perbandingan seluruh skenario](../../05_FINANCIAL/scenario_comparison.csv)
+- [Sensitivitas](../../05_FINANCIAL/sensitivity.csv)
+- [Asal bukti visual](../../03_CELONIS_EVIDENCE/README.md)
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q10 SQL](../../03_CELONIS_EVIDENCE/Q10/Q10_scenario_sql.png).

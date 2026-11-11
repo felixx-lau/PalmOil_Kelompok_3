@@ -3,16 +3,18 @@
 
 Analisis DuckDB atas 230 lot menunjukkan tiga varian terbesar dengan 61, 23, dan 17 case. Varian adalah kelompok lot dengan urutan aktivitas tercatat yang persis sama, bukan jenis produk. Varian 3 memiliki throughput lebih singkat daripada Varian 1, tetapi data belum membuktikan penyebabnya; perbedaan paparan periode lonjakan perlu diperhitungkan.
 
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
+
 ### 01 Evidence and Data Source
 
-**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q06: `python3 02_SQL/export_q01_q06_results.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Gambar Celonis merupakan ilustrasi tambahan.
+**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q10: `python3 02_SQL/run_pipeline.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Bukti antarmuka lama merupakan ilustrasi tambahan dengan asal aplikasi belum diverifikasi secara independen. Grafik baru berlabel SQL dibuat sendiri dengan Python, bukan ekspor Celonis; lihat manifest bukti.
 
 - **Data**: `01_DATA/cleaned/celonis_event_log_clean.csv` (6.179 event, 230 case).
 - **SQL**: `02_SQL/queries_by_question/Q01.sql`.
-- **Ilustrasi Celonis tambahan**: `03_CELONIS_EVIDENCE/Q01/Q01_variant_list_top3.png`, `Q01_variant1_happy_path_part1.png`, dan `Q01_variant1_happy_path_part2.png`.
+- **Tangkapan layar antarmuka lama**: `03_CELONIS_EVIDENCE/Q01/Q01_variant_list_top3.png`, `Q01_variant1_happy_path_part1.png`, dan `Q01_variant1_happy_path_part2.png`.
 - **Hasil SQL**: `02_SQL/results/Q01_01.csv` untuk profil varian dan `Q01_02.csv` untuk perbandingan periode.
 
-**Acuan analisis Q01 adalah DuckDB**, dengan urutan `timestamp, event_id` yang konsisten. Seluruh volume, waktu, dan nilai finansial di bawah memakai kelompok DuckDB. Screenshot Celonis lama menampilkan 62/23/17 case; hasilnya berbeda satu case pada varian terbesar. Timestamp yang sama dapat memengaruhi pengelompokan urutan; penyebab selisih perlu dicocokkan pada case terkait dan tidak dianggap sudah terbukti. Celonis hanya ilustrasi tambahan.
+**Acuan analisis Q01 adalah DuckDB**, dengan urutan `timestamp, event_id` yang konsisten. Seluruh volume, waktu, dan nilai finansial di bawah memakai kelompok DuckDB. Tangkapan layar varian lama berlabel Celonis menampilkan 62/23/17 case; hasilnya berbeda satu case pada varian terbesar. Timestamp yang sama dapat memengaruhi pengelompokan urutan; penyebab selisih perlu dicocokkan pada case terkait dan tidak dianggap sudah terbukti. Bukti lama hanya ilustrasi; asal aplikasi dan pengaturan sortirnya belum diverifikasi ulang. Selisih satu case belum direkonsiliasi dan tidak dipakai untuk angka utama.
 
 | Varian | Karakteristik | Case DuckDB | Proporsi SQL | Throughput SQL rata-rata (jam) |
 |---|---|---|---|---|
@@ -27,6 +29,16 @@ Analisis DuckDB atas 230 lot menunjukkan tiga varian terbesar dengan 61, 23, dan
 | 3 | 28.286,01 | 37.556,96 | +9.270,96 | +157.606,30 |
 
 Total kontribusi dihitung langsung dari penjumlahan event, bukan perkalian rata-rata yang telah dibulatkan dengan jumlah lot. Baseline seluruh 230 case tetap **MYR 858.416,02**.
+
+#### Actual Process Map
+
+Rujukan langsung gambar peta antarmuka yang tersedia: [peta bagian 1](../../03_CELONIS_EVIDENCE/Q01/Q01_process_map_overview_part1.png) dan [peta bagian 2](../../03_CELONIS_EVIDENCE/Q01/Q01_process_map_overview_part2.png). Keduanya adalah tangkapan layar lama yang disediakan dalam proyek; belum ada verifikasi ulang workspace Celonis. [Peta SQL rilis terbaru](../../03_CELONIS_EVIDENCE/Q01/Q01_actual_process_map_sql.png) adalah visualisasi mandiri dari pasangan event berurutan, bukan screenshot Celonis.
+
+Alur aktual diawali pembuatan dan persetujuan batch pada 230 lot. Sebanyak 12 lot mengambil cabang pembatalan lalu ditutup; 218 lot melanjutkan penugasan tim, penugasan koleksi, penilaian kematangan, panen, grading, pemuatan, dan transportasi. Pada penerimaan mill, 29 lot ditolak lalu ditutup, sedangkan 189 lot diterima dan melanjutkan pengolahan. Sebagian lot melewati incoming inspection; ini deviasi kontrol operasional yang dipertahankan, bukan baris yang dihapus oleh cleaning.
+
+Lot diterima menjalani pembongkaran dan pemeriksaan kesiapan boiler sebelum sterilisasi, threshing, digestion, dan pressing. Sesudah pressing terdapat jalur minyak (clarification, purification, lab) dan jalur kernel (separation, drying). Keduanya dapat tumpang tindih pada resource berbeda sesuai dokumentasi proses; urutan event selesai saja tidak membuktikan bahwa overlap menyebabkan throughput lebih cepat. Grading ulang dan rework diikuti retest merupakan pengulangan sah. Setelah storage, transfer, pemuatan dan dispatch, proses berlanjut ke invoice, pencocokan pembayaran, allowance bila ada, lalu penutupan lot. Satu pencocokan pembayaran dikeluarkan karena timestamp rusak sehingga log case terkait tidak lengkap.
+
+Peta SQL memakai urutan `timestamp, event_id`. Panah menunjukkan hubungan langsung pada urutan penyelesaian tercatat, sehingga dapat menggambarkan interleaving jalur minyak/kernel; panah tersebut bukan spesifikasi dependensi fisik. Tiga varian terbesar tetap 61/23/17 setelah patch dan ekspor ulang.
 
 ### 02 Descriptive Finding
 1. Varian 1 merupakan jalur SQL terbesar: 61 dari 230 lot, dengan throughput rata-rata 19,76 jam.
@@ -151,7 +163,7 @@ Kegagalan deteksi kualitas di kebun, termasuk kemungkinan buah mentah atau busuk
 ### 05 As Is No Action and To Be
 - **As-Is**: Varian 1 dan 3 bersama-sama menghasilkan kontribusi MYR 707.865,40; Varian 2 mencatat kontribusi −MYR 550.025,75.
 - **No-Action**: Jika volume, komposisi, dan biaya tetap sama, kerugian pada varian penolakan berpotensi berulang. Ini skenario bersyarat, bukan proyeksi terukur.
-- **To-Be**: Uji perbaikan grading dan pencegahan reject dengan model Q08. Model tersebut mengasumsikan penurunan 15% dari seluruh 29 reject (4,35 lot ekuivalen) dan net benefit **MYR 113.151,43**, setelah biaya pengolahan tambahan, CAPEX, dan OPEX. Angka ini merupakan hasil skenario Q08, bukan manfaat terukur dari perubahan varian; tidak ditambahkan lagi sebagai manfaat Q01.
+- **To-Be**: Uji perbaikan grading dan pencegahan reject dengan model Q08. Model tersebut mengasumsikan penurunan 15% dari seluruh 29 reject (4,35 lot ekuivalen) dan net benefit **MYR 108.708,02**, setelah biaya pengolahan tambahan, CAPEX, dan OPEX. Angka ini merupakan hasil skenario Q08, bukan manfaat terukur dari perubahan varian; tidak ditambahkan lagi sebagai manfaat Q01.
 
 ### 06 Recommendation Risk and Assumptions
 - **Rekomendasi**: Gunakan hasil DuckDB untuk Q01 dan cocokkan selisih urutan pada ilustrasi Celonis bila masih dipakai, bandingkan Varian 1 dan 3 dalam periode setara, lalu verifikasi alasan reject sebelum menetapkan intervensi grading.
@@ -164,5 +176,7 @@ Kegagalan deteksi kualitas di kebun, termasuk kemungkinan buah mentah atau busuk
 - [Perbandingan periode](../../02_SQL/results/Q01_02.csv)
 - [Urutan aktivitas lengkap tiga varian DuckDB](../../02_SQL/results/Q01_04.csv)
 - [Kumpulan activity Varian 1 dan 3](../../02_SQL/results/Q01_03.csv)
-- [Daftar tiga varian Celonis](../../03_CELONIS_EVIDENCE/Q01/Q01_variant_list_top3.png)
+- [Daftar varian antarmuka lama](../../03_CELONIS_EVIDENCE/Q01/Q01_variant_list_top3.png)
 - [Model Q08](../Q08/jawaban.md)
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q01 SQL](../../03_CELONIS_EVIDENCE/Q01/Q01_variants_sql.png).

@@ -1,13 +1,15 @@
 # Analisis Q05 · Diagnostic
 ## Milling Facility Bottlenecks
 
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
+
 ### 01 Evidence & Data Source
 
-**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q06: `python3 02_SQL/export_q01_q06_results.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Gambar Celonis merupakan ilustrasi tambahan.
+**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q10: `python3 02_SQL/run_pipeline.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Bukti antarmuka lama merupakan ilustrasi tambahan dengan asal aplikasi belum diverifikasi secara independen. Grafik baru berlabel SQL dibuat sendiri dengan Python, bukan ekspor Celonis; lihat manifest bukti.
 
 - **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`
 - **Query Eksekusi**: `02_SQL/queries_by_question/Q05.sql`
-- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q05/Q05_waiting_vs_processing_by_activity.png`
+- **Tangkapan layar antarmuka lama**: `03_CELONIS_EVIDENCE/Q05/Q05_waiting_vs_processing_by_activity.png`
 
 #### Tabel 1: Analisis Stasiun Pabrik Kelapa Sawit (Processing vs. Queue Delay):
 | Aktivitas Stasiun Pabrik | Fasilitas Terlibat | Jumlah Eksekusi | Rata-rata Queue Wait (Menit) | Total Queue Wait (Jam) | Rata-rata Durasi Proses (Menit) | Total Durasi Proses (Jam) | Total Biaya Stasiun (MYR) | Status Bottleneck |
@@ -69,3 +71,10 @@ Hasil DuckDB yang mendasari tabel:
 
 - [Hasil query 1](../../02_SQL/results/Q05_01.csv)
 - [Hasil query 2](../../02_SQL/results/Q05_02.csv)
+
+- [Total waiting per tahap di Q05](../../02_SQL/results/Q05_03.csv)
+- [Beban kalender harian semua fasilitas di Q05](../../02_SQL/results/Q05_04.csv)
+
+Beban harian membagi interval pada tengah malam, menggunakan 24 jam kalender sebagai denominator, dan hanya menampilkan hari dengan aktivitas. Validasi rilis mendeteksi nol overlap pada fasilitas dan employee. Beban kalender tetap berbeda dari utilisasi jam kerja efektif dan OEE.
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q05 SQL](../../03_CELONIS_EVIDENCE/Q05/Q05_daily_load_sql.png).

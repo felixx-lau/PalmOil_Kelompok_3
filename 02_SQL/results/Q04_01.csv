@@ -1,5 +1,5 @@
 lead_time_bucket,lots_arrived,lots_rejected,rejection_rate_pct,avg_lead_time_hours,total_rejected_cost_leakage_myr
 1. Rapid (< 2.0 hours),33,6,18.18,1.79,133719.52
 2. Standard (2.0 - 3.0 hours),93,7,7.53,2.36,157352.90
-3. Moderate Delay (3.0 - 4.0 hours),31,7,22.58,3.41,193935.13
+3. Moderate Delay (>3.0 - 4.0 hours),31,7,22.58,3.41,193935.13
 4. Severe Delay (> 4.0 hours),61,9,14.75,8.16,226853.86

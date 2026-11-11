@@ -1,13 +1,15 @@
 # Analisis Q06 · Diagnostic
 ## Quality Rework and Allowances
 
+**Revisi 11 November 2026.** CSV telah dibangun ulang melalui `00_import.sql`, `02_cleaning.sql`, `02b_patch_clean.sql`, validasi, dan ekspor ulang. Reproduksi lengkap: `python3 02_SQL/run_pipeline.py`. Seluruh query Q01–Q10 dihitung ulang dari rilis yang sama. Dataset sintetis; timestamp UTC. Satu event remittance dikarantina, sehingga satu dependensi penutupan lot memiliki pengecualian terdokumentasi.
+
 ### 01 Evidence & Data Source
 
-**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q06: `python3 02_SQL/export_q01_q06_results.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Gambar Celonis merupakan ilustrasi tambahan.
+**Metode analisis utama: DuckDB SQL.** Query dijalankan pada tabel `clean_events` yang dibaca dari CSV bersih (6.179 event, 230 case). Reproduksi seluruh Q01–Q10: `python3 02_SQL/run_pipeline.py` dari folder induk proyek, menggunakan package Python `duckdb`. Hasil SELECT disimpan ke `02_SQL/results/`; angka tabel dan kesimpulan memakai hasil DuckDB. Bukti antarmuka lama merupakan ilustrasi tambahan dengan asal aplikasi belum diverifikasi secara independen. Grafik baru berlabel SQL dibuat sendiri dengan Python, bukan ekspor Celonis; lihat manifest bukti.
 
 - **Sumber Data**: `01_DATA/cleaned/celonis_event_log_clean.csv`
 - **Query Eksekusi**: `02_SQL/queries_by_question/Q06.sql`
-- **Ilustrasi tambahan**: `03_CELONIS_EVIDENCE/Q06/Q06_rework_and_allowance_summary.png`
+- **Tangkapan layar antarmuka lama**: `03_CELONIS_EVIDENCE/Q06/Q06_rework_and_allowance_summary.png`
 
 #### Tabel 1: Biaya Rework Operasional yang Tercatat (*Recorded Rework Cost*):
 | Aktivitas Rework Sah | Penanda Rework (*rework_flag*) | Frekuensi Eksekusi | Total Biaya Tenaga Kerja (MYR) | Total Biaya Bahan & Kimia (MYR) | Total Biaya Alat/Mesin (MYR) | Total Biaya Overhead (MYR) | Total Biaya Rework (MYR) | Rata-rata Biaya per Kasus (MYR) |
@@ -49,12 +51,13 @@ Log membuktikan biaya rework dan allowance, tetapi belum memastikan deviasi suhu
 ### 05 As Is No Action and To Be
 - **As-Is**: 27 dari 189 lot olah (14,29%) membutuhkan rework mutu CPO, dan 14 dari 189 lot (7,41%) memiliki allowance. Beban rework MYR 21.823,19 ditambah penurunan revenue MYR 20.949,08 serta administrasi MYR 421,01 menghasilkan total MYR 43.193,28 pada horizon 24 bulan. Beban ini sudah masuk baseline kontribusi.
 - **No-Action**: Pada komposisi lot dan kondisi yang sama, beban dapat berulang; angka 24 bulan tidak boleh disebut kerugian tahunan tanpa normalisasi dan bukti pola waktu.
-- **To-Be**: Mengikuti asumsi portofolio Q10, uji penurunan allowance 50% dan biaya rework operasional 40%. Pemulihan revenue = 50% × MYR 20.949,08 = MYR 10.474,54; penghematan rework = 40% × MYR 21.823,19 = MYR 8.729,28 setelah pembulatan. Manfaat kotor MYR 19.203,82 dikurangi implementasi MYR 8.000,00 dan OPEX MYR 1.500,00 menghasilkan **manfaat bersih MYR 9.703,82** pada horizon model yang sama. Biaya administrasi allowance tidak dimasukkan sebagai penghematan tambahan. **Sensitivitas**: jika allowance tidak turun sama sekali, net benefit = -MYR 770,72; net benefit baru positif bila allowance turun lebih dari ±3,68% (`05_FINANCIAL/sensitivity.csv`). Angka ini adalah skenario, bukan hasil pilot. Pengurangan 40% mencakup seluruh biaya rework teridentifikasi, termasuk grading kebun; kelayakan cakupan intervensi harus diuji agar manfaatnya tidak tumpang tindih dengan Q08.
+- **To-Be**: Uji pencegahan rework CPO 40% dan allowance 50%. Basis rework program dibatasi pada quality rework + retest CPO MYR 20.777,51, sehingga grading kebun tidak dihitung lagi bersama Q08. Penghematan = MYR 8.311,00 dan pemulihan revenue = MYR 10.474,54. CAPEX MYR 8.000 ditambah OPEX tahunan MYR 1.500 × 2 menghasilkan net benefit **MYR 7.785,54** pada 24 bulan. Administrasi allowance tidak dikreditkan sebagai penghematan tambahan. Jika allowance tidak turun, net benefit −MYR 2.689,00; titik impas allowance sekitar 12,84% dengan asumsi lain tetap. Ini asumsi pilot, bukan hasil implementasi. Retest wajib tetap dijalankan untuk setiap kebutuhan mutu.
+
 
 ### 06 Recommendation Risk and Assumptions
 - **Rekomendasi**: Telusuri parameter proses yang berkaitan dengan rework dan klaim pembeli, kemudian uji stabilisasi proses dengan kontrol mutu tetap berjalan.
 - **Risiko**: Penghapusan retest semata-mata untuk menekan biaya dapat melemahkan deteksi mutu. Penurunan rework tidak otomatis menurunkan allowance dengan proporsi yang sama.
-- **Asumsi**: Allowance merupakan pengurangan revenue yang sah. Model mengasumsikan biaya rework dapat dihindari secara proporsional 40% dan allowance 50%; biaya intervensi dan kelayakannya perlu diverifikasi.
+- **Asumsi**: Allowance merupakan pengurangan revenue yang sah. Model mengasumsikan biaya quality rework dan retest CPO dapat dicegah secara proporsional 40% melalui pencegahan kegagalan dan allowance 50%; biaya intervensi dan kelayakannya perlu diverifikasi.
 
 ### 07 Evidence File Paths / SQL References
 - **SQL Analysis Script**: [`02_SQL/queries_by_question/Q06.sql`](../../02_SQL/queries_by_question/Q06.sql)
@@ -66,3 +69,5 @@ Hasil DuckDB yang mendasari tabel:
 - [Hasil query 1](../../02_SQL/results/Q06_01.csv)
 - [Hasil query 2](../../02_SQL/results/Q06_02.csv)
 - [Hasil query 3](../../02_SQL/results/Q06_03.csv)
+
+[Manifest asal bukti visual](../../03_CELONIS_EVIDENCE/README.md). Grafik mandiri terbaru: [Q06 SQL](../../03_CELONIS_EVIDENCE/Q06/Q06_rework_sql.png).
